@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<tool_dependency>
+  <package name="gd_c_tools" version="0.1">
+    <install version="1.0">
+      <actions>
+        <!-- Download source code -->
+        <action type="download_by_url">http://www.bx.psu.edu/miller_lab/dist/gd_c_tools.0.1.1.tar.gz</action>
+
+        <!-- Build gd_c_tools -->
+        <action type="shell_command">make install</action>
+
+        <!-- Install gd_c_tools -->
+        <action type="shell_command">cp -R bin $INSTALL_DIR</action>
+
+        <!-- Set environment for dependent repositories -->
+        <action type="set_environment">
+          <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
+        </action>
+      </actions>
+    </install>
+  </package>
+</tool_dependency>
