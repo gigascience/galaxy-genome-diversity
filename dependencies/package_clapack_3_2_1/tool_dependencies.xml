@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<tool_dependency>
+  <package name="clapack" version="3.2.1">
+    <install version="1.0">
+      <actions>
+        <!-- Download source code -->
+        <action type="download_by_url" target_filename="CLAPACK-3.2.1.tar.gz">http://www.netlib.org/clapack/clapack-3.2.1.tgz</action>
+
+        <!-- Build libraries -->
+        <action type="shell_command">cp make.inc.example make.inc</action>
+        <action type="shell_command">make f2clib</action>
+        <action type="shell_command">make blaslib</action>
+        <action type="shell_command">make lib</action>
+
+        <!-- Install libraries -->
+        <action type="shell_command">cp -R INCLUDE $INSTALL_DIR</action>
+        <action type="shell_command">mkdir -p $INSTALL_DIR/F2CLIBS</action>
+        <action type="shell_command">cp F2CLIBS/*.a $INSTALL_DIR/F2CLIBS</action>
+        <action type="shell_command">cp *.a $INSTALL_DIR</action>
+
+        <!-- Set environment for dependent repositories -->
+        <action type="set_environment">
+          <environment_variable name="CLAPACKPATH" action="set_to">$INSTALL_DIR</environment_variable>
+        </action>
+      </actions>
+    </install>
+  </package>
+</tool_dependency>
