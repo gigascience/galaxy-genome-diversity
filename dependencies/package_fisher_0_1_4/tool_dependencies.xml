@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<tool_dependency>
+  <package name="numpy" version="1.7.1">
+    <repository prior_installation_required="True" toolshed="http://gigatoolshed.net" owner="peterli" name="package_numpy_1_7" changeset_revision="" />
+  </package>
+
+  <package name="fisher" version="0.1.4">
+    <install version="1.0">
+      <actions>
+        <!-- Download source code -->
+        <action type="download_by_url">https://pypi.python.org/packages/source/f/fisher/fisher-0.1.4.tar.gz</action>
+
+        <!-- Get PYTHONPATH_NUMPY from numpy package -->
+        <action type="set_environment_for_install">
+          <repository toolshed="http://gigatoolshed.net" owner="peterli" name="package_numpy_1_7" changeset_revision="">
+            <package name="numpy" version="1.7.1" />
+          </repository>
+        </action>
+
+        <!-- Build and install fisher -->
+        <action type="shell_command">mkdir -p $INSTALL_DIR/lib/python</action>
+        <action type="shell_command">PYTHONPATH=$PYTHONPATH:$INSTALL_DIR/lib/python:$PYTHONPATH_NUMPY python setup.py install --home $INSTALL_DIR</action>
+
+        <!-- Set environment for dependent repositories -->
+        <action type="set_environment">
+          <environment_variable action="append_to" name="PYTHONPATH">$ENV[PYTHONPATH_NUMPY]</environment_variable>
+          <environment_variable action="append_to" name="PYTHONPATH">$INSTALL_DIR/lib/python</environment_variable>
+        </action>
+      </actions>
+    </install>
+  </package>
+</tool_dependency>
