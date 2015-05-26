@@ -1,0 +1,61 @@
+<tool id="gd_discover_familial_relationships" name="Close relatives" version="1.0.0">
+  <description>: Discover familial relationships</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    discover_familial_relationships.py '$input' '$input.ext' '$ind_arg' '$pop_input' '$output'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="gd_snp,gd_genotype" label="Input dataset" />
+    <param name="pop_input" type="data" format="gd_indivs" label="Individuals dataset" />
+  </inputs>
+
+  <outputs>
+    <data name="output" format="tabular" />
+  </outputs>
+  <!--
+  <tests>
+  </tests>
+  -->
+  <help>
+**Dataset formats**
+
+The input datasets are in gd_snp_, gd_genotype_, and gd_indivs_ formats.
+The output dataset is in tabular_ format.
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+.. _tabular: ./static/formatHelp.html#tab
+
+-----
+
+**What it does**
+
+The user specifies a SNP table (either gd_snp or gd_genotype format) and
+a set of individuals.  The command runs the KING program (Manichaikul et
+al., 2010) to look for pairs of distinct individuals in the specified
+set that have a close family relationship.  Putatively related pairs
+are classified into five categories:
+
+  1. duplicate or MZ twin
+  2. 1st degree relatives -- siblings (other than identical twins) or parent-child
+  3. 2nd degree relatives -- e.g., half-siblings, grandparent-grandchild pair, individual-uncle/aunt pair
+  4. 3rd degree relatives -- e.g., first cousins
+  5. unrelated
+
+Reference:
+
+Manichaikul A, Mychaleckyj JC, Rich SS, Daly K, Sale M, Chen WM (2010) Robust relationship inference in genome-wide association studies. Bioinformatics 26: 2867-2873.
+  </help>
+</tool>
