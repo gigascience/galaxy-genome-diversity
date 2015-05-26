@@ -1,0 +1,102 @@
+<tool id="gd_sum_gd_snp" name="Aggregate Individuals" version="1.1.0">
+  <description>: Append summary columns for a population</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    aggregate_gd_indivs.py '$input' '$p1_input' '$output'
+    #if $input_type.choice == '0'
+      'gd_snp'
+    #else if $input_type.choice == '1'
+      'gd_genotype'
+    #end if
+    '$ind_arg'
+  </command>
+  <inputs>
+  <conditional name="input_type">
+    <param name="choice" type="select" format="integer" label="Input format">
+      <option value="0" selected="true">gd_snp</option>
+      <option value="1">gd_genotype</option>
+    </param>
+    <when value="0">
+      <param name="input" type="data" format="gd_snp" label="SNP dataset" />
+    </when>
+    <when value="1">
+      <param name="input" type="data" format="gd_genotype" label="Genotype dataset" />
+    </when>
+  </conditional>
+    <param name="p1_input" type="data" format="gd_indivs" label="Population individuals" />
+  </inputs>
+  <outputs>
+    <data name="output" format="input" format_source="input" metadata_source="input" />
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp" />
+      <param name="p1_input" value="test_in/a.gd_indivs" ftype="gd_indivs" />
+      <output name="output" file="test_out/modify_snp_table/modify.gd_snp" />
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The input datasets are in gd_snp_, gd_genotype_, and gd_indivs_ formats.
+The output dataset is in gd_snp_ or gd_genotype_ format.  (`Dataset missing?`_)
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+The user specifies that some of the individuals in a gd_snp or gd_genotype
+dataset form a "population", by supplying a list that has been previously
+created using the Specify Individuals tool.  The program appends a new
+"entity" (set of four columns for a gd_snp table, or one column for a
+gd_genotype table), analogous to the column(s) for an individual but
+containing summary data for the population as a group.  For a gd_snp
+table, these four columns give the total counts for the two alleles,
+the "genotype" for the population, and the maximum quality value, taken
+over all individuals in the population.  If all defined genotypes in
+the population are 2 (agree with the reference), then the population's
+genotype is 2, and similarly for 0; otherwise the genotype is 1 (unless
+all individuals have undefined genotype, in which case it is -1).
+For a gd_genotype file, only the aggregate genotype is appended.
+
+-----
+
+**Example**
+
+- input gd_snp::
+
+    Contig161_chr1_4641264_4641879   115  C  T  73.5   chr1   4641382  C   6  0  2  45   8  0  2  51   15  0  2  72   5  0  2  42   6  0  2  45   10  0  2  57   Y  54  0.323  0
+    Contig48_chr1_10150253_10151311   11  A  G  94.3   chr1  10150264  A   1  0  2  30   1  0  2  30    1  0  2  30   3  0  2  36   1  0  2  30    1  0  2  30   Y  22  +99.   0
+    Contig20_chr1_21313469_21313570   66  C  T  54.0   chr1  21313534  C   4  0  2  39   4  0  2  39    5  0  2  42   4  0  2  39   4  0  2  39    5  0  2  42   N   1  +99.   0
+    etc.
+
+- input individuals::
+
+    9   PB1
+    13  PB2
+    17  PB3
+
+- output::
+
+    Contig161_chr1_4641264_4641879   115  C  T  73.5   chr1   4641382  C   6  0  2  45   8  0  2  51   15  0  2  72   5  0  2  42   6  0  2  45   10  0  2  57   Y  54  0.323  0   29  0  2  72
+    Contig48_chr1_10150253_10151311   11  A  G  94.3   chr1  10150264  A   1  0  2  30   1  0  2  30    1  0  2  30   3  0  2  36   1  0  2  30    1  0  2  30   Y  22  +99.   0    3  0  2  30
+    Contig20_chr1_21313469_21313570   66  C  T  54.0   chr1  21313534  C   4  0  2  39   4  0  2  39    5  0  2  42   4  0  2  39   4  0  2  39    5  0  2  42   N   1  +99.   0   13  0  2  42
+    etc.
+  </help>
+</tool>
