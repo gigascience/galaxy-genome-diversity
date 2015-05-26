@@ -1,0 +1,68 @@
+<tool id="gd_diversity_pi" name="Diversity" version="1.1.0">
+  <description>: pi, allowing for unsequenced intervals</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $snp_names = $input.dataset.metadata.individual_names
+    #set $snp_colms = $input.dataset.metadata.individual_columns
+    #set $snp_dict = dict(zip($snp_names, $snp_colms))
+    #set $snp_json = json.dumps($snp_dict, separators=(',',':'))
+    #set $snp_comp = zlib.compress($snp_json, 9)
+    #set $snp_arg = base64.b64encode($snp_comp)
+    #if $use_cov.choice == '1'
+      #set $cov_file = $use_cov.cov_input
+      #set $cov_ext = $use_cov.cov_input.ext
+      #set $cov_names = $use_cov.cov_input.dataset.metadata.individual_names
+      #set $cov_colms = $use_cov.cov_input.dataset.metadata.individual_columns
+      #set $cov_dict = dict(zip($cov_names, $cov_colms))
+      #set $cov_json = json.dumps($cov_dict, separators=(',',':'))
+      #set $cov_comp = zlib.compress($cov_json, 9)
+      #set $cov_arg = base64.b64encode($cov_comp)
+      #set $cov_min = $use_cov.min_coverage
+      #set $cov_req = $use_cov.req_thresh
+    #else
+      #set $cov_file = '/dev/null'
+      #set $cov_ext = ''
+      #set $cov_arg = ''
+      #set $cov_min = 0
+      #set $cov_req = 0
+    #end if
+    diversity_pi.py '$input' '$input.ext' '$snp_arg' '$cov_file' '$cov_ext' '$cov_arg' '$indiv_input' '$cov_min' '$cov_req' '$output'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="gd_snp,gd_genotype" label="SNP/Genotype dataset" />
+    <conditional name="use_cov">
+      <param name="choice" type="select" format="integer" label="Include Coverage dataset">
+        <option value="1" selected="true">yes</option>
+        <option value="0">no</option>
+      </param>
+      <when value="0" />
+      <when value="1">
+        <param name="cov_input" type="data" format="gd_snp,gd_genotype" label="Coverage dataset" />
+        <param name="min_coverage" type="integer" min="1" value="1" label="Minimum coverage" />
+        <param name="req_thresh" type="integer" min="1" value="1" label="Lower bound for shared well-covered bp" />
+      </when>
+    </conditional>
+    <param name="indiv_input" type="data" format="gd_indivs" label="Population Individuals" />
+  </inputs>
+  <outputs>
+    <data name="output" format="txt" metadata_source="input" />
+  </outputs>
+  <help>
+**What it does**
+
+The user supplies the following:
+
+   1. A file in gd_genotype or gd_snp format giving the mitochondrial SNPs.
+   2. An optional gd_genotype file gives the sequence coverage for each individual at each mitochondrial position.
+   3. A set of individuals specified with the "Specify individuals" tool.
+   4. The minimum depth of sequence coverage. Positions where an individual has less coverage are ignored.
+   5. The number of adequately covered positions that must be shared by two individuals before their diversity is included in the reported average.
+
+For each pair of individual (with adequate shared coverage), the program divides the number of nucleotide difference between the individuals in those intervals by the intervals' total length. Those ratios are averaged over the relevant pairs of individuals.
+  </help>
+</tool>
