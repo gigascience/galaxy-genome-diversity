@@ -1,0 +1,152 @@
+<tool id="gd_average_fst" name="Overall FST" version="1.3.0">
+  <description>: Estimate the relative fixation index between two populations</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    average_fst.py '$input' '$p1_input' '$p2_input'
+    #if $input_type.choice == '0'
+      'gd_snp' '$input_type.data_source.choice'
+      #if $input_type.data_source.choice == '0'
+        '$input_type.data_source.min_value'
+      #else if $input_type.data_source.choice == '1'
+        '1'
+      #end if
+    #else if $input_type.choice == '1'
+      'gd_genotype' '1' '1'
+    #end if
+    '$discard_fixed' '$output'
+    #if $use_randomization.choice == '0'
+      '0' '/dev/null'
+    #else if $use_randomization.choice == '1'
+      '$use_randomization.shuffles' '$use_randomization.p0_input'
+    #end if
+    '$ind_arg'
+  </command>
+  <inputs>
+    <conditional name="input_type">
+      <param name="choice" type="select" format="integer" label="Input format">
+        <option value="0" selected="true">gd_snp</option>
+        <option value="1">gd_genotype</option>
+      </param>
+      <when value="0">
+        <param name="input" type="data" format="gd_snp" label="SNP dataset" />
+        <conditional name="data_source">
+          <param name="choice" type="select" format="integer" label="Frequency metric">
+            <option value="0">sequence coverage</option>
+            <option value="1" selected="true">estimated genotype</option>
+          </param>
+          <when value="0">
+            <param name="min_value" type="integer" min="1" value="1" label="Minimum total read count for a population" />
+          </when>
+          <when value="1"/>
+        </conditional>
+      </when>
+      <when value="1">
+        <param name="input" type="data" format="gd_genotype" label="Genotype dataset" />
+      </when>
+    </conditional>
+    <param name="p1_input" type="data" format="gd_indivs" label="Population 1 individuals" />
+    <param name="p2_input" type="data" format="gd_indivs" label="Population 2 individuals" />
+    <param name="discard_fixed" type="select" label="For SNPs that appear to be fixed across both populations">
+      <option value="0">retain</option>
+      <option value="1" selected="true">delete</option>
+    </param>
+    <conditional name="use_randomization">
+      <param name="choice" type="select" format="integer" label="Use randomization">
+        <option value="0" selected="true">no</option>
+        <option value="1">yes</option>
+      </param>
+      <when value="0" />
+      <when value="1">
+        <param name="shuffles" type="integer" min="0" value="0" label="Shuffles" />
+        <param name="p0_input" type="data" format="gd_indivs" label="Individuals for randomization" />
+      </when>
+    </conditional>
+  </inputs>
+  <outputs>
+    <data name="output" format="txt" />
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp" />
+      <param name="p1_input" value="test_in/a.gd_indivs" ftype="gd_indivs" />
+      <param name="p2_input" value="test_in/b.gd_indivs" ftype="gd_indivs" />
+      <param name="ds_choice" value="0" />
+      <param name="min_value" value="3" />
+      <param name="discard_fixed" value="1" />
+      <param name="choice" value="0" />
+      <output name="output" file="test_out/average_fst/average_fst.txt" />
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The input datasets are in gd_snp_, gd_genotype_, and gd_indivs_ formats.
+The output dataset is in text_ format.  (`Dataset missing?`_)
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+.. _text: ./static/formatHelp.html#text
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+The user specifies a SNP table and two "populations" of individuals, both previously defined using the Galaxy tool to specify individuals from a SNP table. No individual can be in both populations. Other choices are as follows.
+
+Frequency metric. The allele frequencies of a SNP in the two populations can be estimated either by the total number of reads of each allele (if the table is in gd_snp format, but not with gd_genotype), or by adding the frequencies inferred from genotypes of individuals in the populations.
+
+After specifying the frequency metric, the user sets lower bounds on amount of data required at a SNP. For estimating the FST using read counts, the bound is the minimum count of reads of the two alleles in a population. For estimations based on genotype, the bound is the minimum reported genotype quality per individual. SNPs not meeting these lower bounds are ignored.
+
+The user specifies whether SNPs where both populations appear to be fixed for the same allele should be retained or discarded.
+
+Finally, the user decides whether to use randomizations. If so, then the user specifies how many randomly generated population pairs (retaining the numbers of individuals of the originals) to generate, as well as the "population" of additional individuals (not in the first two populations) that can be used in the randomization process.
+
+The program prints the following measures of FST for the two populations.
+
+1. The Reich-Patterson estimator (average over FSTs for all SNPs).
+2. The population-based Reich-Patterson estimator.
+3. The formulation by Sewall Wright (average over FSTs for all SNPs).
+4. The Weir-Cockerham estimator (average over FSTs for all SNPs).
+
+If randomizations were requested, it prints a summary for each of the four definitions of FST that includes the maximum and average value, and the highest-scoring population pair (if any scored higher than the two user-specified populations).
+
+References:
+
+Sewall Wright (1951) The genetical structure of populations. Ann Eugen 15:323-354.
+
+Weir, B.S. and Cockerham, C. Clark (1984) Estimating F-statistics for the analysis of population structure. Evolution 38:1358-1370.
+
+Weir, B.S. 1996. Population substructure. Genetic data analysis II, pp. 161-173. Sinauer Associates, Sundand, MA.
+
+David Reich, Kumarasamy Thangaraj, Nick Patterson, Alkes L. Price, and Lalji Singh (2009) Reconstructing Indian population history. Nature 461:489-494, especially Supplement 2.  
+
+Their effectiveness for computing FSTs when there are many SNPs but few individuals is discussed in the following paper.
+
+Eva-Maria Willing, Christine Dreyer, Cock van Oosterhout (2012) Estimates of genetic differentiation measured by FST do not necessarily require large sample sizes when using many SNP markers. PLoS One 7:e42649.
+
+-----
+
+**Example**
+
+- output::
+
+   Using 37847 SNPs, we compute:
+   Average Reich-Patterson FST is 0.31012.
+   The population-based Reich-Patterson Fst is 0.33625.
+   Average Wright FST is 0.22810.
+   Average Weir-Cockerham FST is 0.30813.
+  </help>
+</tool>
