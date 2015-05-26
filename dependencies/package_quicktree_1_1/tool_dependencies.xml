@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<tool_dependency>
+  <package name="quicktree" version="1.1">
+    <install version="1.0">
+      <actions>
+        <!-- Download source code -->
+        <action type="download_by_url" target_filename="quicktree_1.1.tar.gz">ftp://ftp.sanger.ac.uk/pub/resources/software/quicktree/quicktree.tar.gz</action>
+
+        <!-- Build quicktree -->
+        <action type="shell_command">make quicktree</action>
+
+        <!-- Install quicktree -->
+        <action type="shell_command">cp -R bin $INSTALL_DIR</action>
+
+        <!-- Set environment for dependent repositories -->
+        <action type="set_environment">
+          <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
+        </action>
+      </actions>
+    </install>
+  </package>
+</tool_dependency>
