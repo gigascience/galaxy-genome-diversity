@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<datatypes>
+  <datatype_files>
+    <datatype_file name="wsf.py"/>
+  </datatype_files>
+  <registration>
+    <datatype extension="gd_indivs" type="galaxy.datatypes.wsf:Individuals" display_in_upload="true"/>
+    <datatype extension="gd_ped" type="galaxy.datatypes.wsf:Wped" display_in_upload="true"/>
+    <datatype extension="gd_snp" type="galaxy.datatypes.wsf:GDSnp" display_in_upload="true"/>
+    <datatype extension="gd_genotype" type="galaxy.datatypes.wsf:GDGenotype" display_in_upload="true"/>
+    <datatype extension="gd_sap" type="galaxy.datatypes.wsf:GDSap" display_in_upload="true"/>
+    <datatype extension="gd_covered_cds" type="galaxy.datatypes.interval:Interval" subclass="true" display_in_upload="true"/>
+  </registration>
+  <sniffers/>
+</datatypes>
