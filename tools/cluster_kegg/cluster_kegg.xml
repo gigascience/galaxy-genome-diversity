@@ -1,0 +1,40 @@
+<tool id="gd_cluster_kegg" name="Cluster KEGG" version="1.0.0">
+  <description>: Group gene categories connected by shared genes</description>
+  <requirements>
+    <requirement type="package" version="1.8.1">networkx</requirement>
+  </requirements>
+  <command interpreter="python">
+    #set $ensembltcolmn_arg = int(str($ensembltcolmn)) - 1
+    cluster_onConnctdComps.py '--input=$input' '--input_columns=${input.dataset.metadata.columns}' '--outfile=$output' '--threshold=$threshold' '--ENSEMBLTcolmn=$ensembltcolmn_arg' '--classClmns=$classclmns'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="tabular" label="Input dataset" />
+    <param name="ensembltcolmn" type="data_column" data_ref="input" numerical="false" label="Column with the ENSEMBL code in the Input dataset" />
+    <param name="threshold" type="float" value="90" min="0" max="100" label="Threshold to disconnect the nodes" />
+    <param name="classclmns" size="10" type="text" value="c1,c2" label="Gene category columns"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="tabular" />
+  </outputs>
+  <help>
+**What it does**
+
+The program builds a network of gene categories connected by shared
+genes.  The edges of this network are weighted based on the number of
+genes that each node shares.  The clustering coefficient, c\ :sub:`u`\ , is then calculated for each node using the formula:
+
+.. image:: $PATH_TO_IMAGES/cluster_kegg_formula.png
+
+|
+
+where deg(u) is the degree of u and edge weights, w\ :sub:`uv`\ ,
+are normalized by the maximum weight in the network.  The cluster
+coefficients are then filtered by our program based on threshold (that
+could be a percentile or a value choose by the user) and all the nodes
+with a cluster coefficient lower than this threshold are deleted from
+the network.  Finally, the program reports each connected component as
+a cluster of gene classifications.  With our program a lower number of
+gene categories is obtained, but the results are easier to interpret as
+they exclude genes present in many gene groups.
+  </help>
+</tool>

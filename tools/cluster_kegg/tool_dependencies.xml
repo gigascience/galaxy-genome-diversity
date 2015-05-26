@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="networkx" version="1.8.1">
+        <repository  changeset_revision="" name="package_networkx_1_8_1" owner="peterli" toolshed="http://gigatoolshed.net" />
+    </package>
+</tool_dependency>
