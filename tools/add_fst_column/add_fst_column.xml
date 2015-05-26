@@ -1,0 +1,182 @@
+<tool id="gd_add_fst_column" name="Per-SNP FSTs" version="1.2.0">
+  <description>: Compute a fixation index score for each SNP</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    add_fst_column.py '$input' '$p1_input' '$p2_input'
+    #if $input_type.choice == '0'
+      'gd_snp' '$input_type.data_source.choice'
+      #if $input_type.data_source.choice == '0'
+        '$input_type.data_source.min_reads' '$input_type.data_source.min_qual'
+      #else if $input_type.data_source.choice == '1'
+        '0' '0'
+      #end if
+    #else if $input_type.choice == '1'
+      'gd_genotype' '1' '0' '0'
+    #end if
+    '$retain' '$discard_fixed' '$biased' '$output' '$ind_arg'
+  </command>
+  <inputs>
+    <conditional name="input_type">
+      <param name="choice" type="select" format="integer" label="Input format">
+        <option value="0" selected="true">gd_snp</option>
+        <option value="1">gd_genotype</option>
+      </param>
+
+      <when value="0">
+        <param name="input" type="data" format="gd_snp" label="SNP dataset" />
+
+        <conditional name="data_source">
+          <param name="choice" type="select" format="integer" label="Frequency metric">
+            <option value="0">sequence coverage</option>
+            <option value="1" selected="true">estimated genotype</option>
+          </param>
+          <when value="0">
+            <param name="min_reads" type="integer" min="0" value="0" label="Minimum total read count for a population" />
+            <param name="min_qual" type="integer" min="0" value="0" label="Minimum individual genotype quality" />
+          </when>
+          <when value="1"/>
+        </conditional>
+      </when>
+      <when value="1">
+        <param name="input" type="data" format="gd_genotype" label="Genotype dataset" />
+      </when>
+    </conditional>
+    <param name="p1_input" type="data" format="gd_indivs" label="Population 1 individuals" />
+    <param name="p2_input" type="data" format="gd_indivs" label="Population 2 individuals" />
+    <param name="retain" type="select" label="If a SNP is below minimum">
+      <option value="0" selected="true">skip SNP</option>
+      <option value="1">set FST = -1</option>
+    </param>
+    <param name="discard_fixed" type="select" label="For SNPs that appear to be fixed across both populations">
+      <option value="0">retain</option>
+      <option value="1" selected="true">delete</option>
+    </param>
+    <param name="biased" type="select" label="FST estimator">
+      <option value="0">Wright's original definition</option>
+      <option value="1">the Weir-Cockerham estimator</option>
+      <option value="2" selected="true">the Reich-Patterson estimator</option>
+    </param>
+  </inputs>
+  <outputs>
+    <data name="output" format="input" format_source="input" metadata_source="input" />
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp" />
+      <param name="p1_input" value="test_in/a.gd_indivs" ftype="gd_indivs" />
+      <param name="p2_input" value="test_in/b.gd_indivs" ftype="gd_indivs" />
+      <param name="data_source" value="0" />
+      <param name="min_reads" value="3" />
+      <param name="min_qual" value="0" />
+      <param name="retain" value="0" />
+      <param name="discard_fixed" value="1" />
+      <param name="biased" value="0" />
+      <output name="output" file="test_out/add_fst_column/add_fst_column.gd_snp" />
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The input datasets are in gd_snp_, gd_genotype_, and gd_indivs_ formats.
+The output dataset is in gd_snp_ or gd_genotype_ format.  (`Dataset missing?`_)
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+The user specifies a SNP table and two "populations" of individuals, both
+previously defined using the Galaxy tool to specify individuals from a SNP
+table. No individual can be in both populations. Other choices are as follows.
+
+Frequency metric. The allele frequencies of a SNP in the two populations can be
+estimated either by the total number of reads of each allele (if the table is in
+gd_snp format, but not with gd_genotype), or by adding the frequencies inferred
+from genotypes of individuals in the populations.
+
+After specifying the frequency metric, the user sets lower bounds on amount of
+data required at a SNP. For estimating the Fst using read counts, the bound is
+the minimum count of reads of the two alleles in a population. For estimations
+based on genotype, the bound is the minimum reported genotype quality per
+individual.
+
+The user specifies whether the SNPs that violate the lower bound should be
+ignored or the Fst set to -1.
+
+The user specifies whether SNPs where both populations appear to be fixed for
+the same allele should be retained or discarded.
+
+Finally, the user chooses which definition of Fst to use: Wright's original
+definition, the Weir-Cockerham unbiased estimator, or the Reich-Patterson estimator.
+
+A column is appended to the SNP table giving the Fst for each retained SNP.
+
+References:
+
+Sewall Wright (1951) The genetical structure of populations. Ann Eugen
+15:323-354.
+
+Weir, B.S. and Cockerham, C. Clark (1984) Estimating F-statistics for the
+analysis of population structure. Evolution 38:1358-1370.
+
+Weir, B.S. 1996. Population substructure. Genetic data analysis II, pp. 161-173.
+Sinauer Associates, Sundand, MA.
+
+David Reich, Kumarasamy Thangaraj, Nick Patterson, Alkes L. Price, and Lalji
+Singh (2009) Reconstructing Indian population history. Nature 461:489-494,
+especially Supplement 2.
+
+Their effectiveness for computing FSTs when there are many SNPs but few
+individuals is discussed in the following paper.
+
+Eva-Maria Willing, Christine Dreyer, Cock van Oosterhout (2012) Estimates of
+genetic differentiation measured by FST do not necessarily require large sample
+sizes when using many SNP markers. PLoS One 7:e42649.
+
+-----
+
+**Example**
+
+- input, SNP table::
+
+   #{"column_names":["scaf","pos","A","B","qual","ref","rpos","rnuc","1A","1B","1G","1Q","2A","2B","2G","2Q","3A","3B","3G","3Q","4A","4B","4G","4Q",
+   #"5A","5B","5G","5Q","6A","6B","6G","6Q","pair","dist","prim","rflp"],"dbkey":"canFam2",
+   #"individuals":[["PB1",9],["PB2",13],["PB3",17],["PB4",21],["PB6",25],["PB8",29]],
+   #"pos":2,"rPos":7,"ref":6,"scaffold":1,"species":"bear"}
+   Contig161_chr1_4641264_4641879    115  C  T  73.5  chr1  4641382  C  6  0  2  45  8  0  2  51  15  0  2  72  5  0  2  42  6  0  2  45  10  0  2  57  Y  54   0.323  0
+   Contig113_chr5_11052263_11052603  28   C  T  38.2  chr5  11052280 C  1  2  1  12  3  2  1  10  5   0  2  42  2  1  2  13  3  0  2  36  8   0  2  51  Y  161  +99.   0
+   Contig215_chr5_70946445_70947428  363  T  G  28.2  chr5  70946809 C  4  0  2  39  0  5  0  12  9   0  2  54  6  0  2  45  3  3  2  1   9   0  2  54  N  43   0.153  0
+   etc.
+
+- input, Population 1 individuals::
+
+   9       PB1
+   13      PB2
+
+- input, Population 2 individuals::
+
+   17      PB3
+   21      PB4
+
+- output (minimum read count of 3, discard fixed)::
+
+   Contig113_chr5_11052263_11052603  28   C  T  38.2  chr5  11052280  C  1  2  1  12  3  2  1  10  5  0  2  42  2  1  2  13  3  0  2  36  8  0  2  51  Y  161  +99.   0  0.1636
+   Contig215_chr5_70946445_70947428  363  T  G  28.2  chr5  70946809  C  4  0  2  39  0  5  0  12  9  0  2  54  6  0  2  45  3  3  2  1   9  0  2  54  N  43   0.153  0  0.3846
+   etc.
+  </help>
+</tool>
