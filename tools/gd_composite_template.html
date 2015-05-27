@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/static/style/base.css" type="text/css" />
+    <title>${tool.title}</title>
+  </head>
+  <body>
+    <div class="document">
+      Output completed: $tool.timestamp
+      <p/>
+      #if $tool.outputs
+      <div id="gd_outputs">
+        Outputs
+        <ul>
+          #for output in $tool.outputs
+            <li>${output.display()}</li>
+          #end for
+        </ul>
+      </div>
+      #end if
+      #if $tool.inputs
+      <div id="gd_inputs">
+        Inputs
+        <ul>
+          #for input in $tool.inputs
+            <li>${input.display()}</li>
+          #end for
+        </ul>
+      </div>
+      #end if
+      #if $tool.misc
+      <div id="gd_misc">
+        $tool.misc.display()
+      </div>
+      #end if
+    </div>
+  </body>
+</html>
