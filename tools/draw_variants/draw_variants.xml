@@ -1,0 +1,97 @@
+<tool id="gd_draw_variants" name="Draw variants" version="1.1.0">
+  <description>: show positions of SNVs and unsequenced intervals</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #if $use_snp.choice == '1'
+      #set $snp_file = $use_snp.snp_input
+      #set $snp_ext = $use_snp.snp_input.ext
+      #set $snp_names = $use_snp.snp_input.dataset.metadata.individual_names
+      #set $snp_colms = $use_snp.snp_input.dataset.metadata.individual_columns
+      #set $snp_dict = dict(zip($snp_names, $snp_colms))
+      #set $snp_json = json.dumps($snp_dict, separators=(',',':'))
+      #set $snp_comp = zlib.compress($snp_json, 9)
+      #set $snp_arg = base64.b64encode($snp_comp)
+    #else
+      #set $snp_file = '/dev/null'
+      #set $snp_ext = ''
+      #set $snp_arg = ''
+    #end if
+    #if $use_cov.choice == '1'
+      #set $cov_file = $use_cov.cov_input
+      #set $cov_ext = $use_cov.cov_input.ext
+      #set $cov_names = $use_cov.cov_input.dataset.metadata.individual_names
+      #set $cov_colms = $use_cov.cov_input.dataset.metadata.individual_columns
+      #set $cov_dict = dict(zip($cov_names, $cov_colms))
+      #set $cov_json = json.dumps($cov_dict, separators=(',',':'))
+      #set $cov_comp = zlib.compress($cov_json, 9)
+      #set $cov_arg = base64.b64encode($cov_comp)
+      #set $cov_min = $use_cov.min_coverage
+    #else
+      #set $cov_file = '/dev/null'
+      #set $cov_ext = ''
+      #set $cov_arg = ''
+      #set $cov_min = 0
+    #end if
+    #if $use_indiv.choice == '1'
+      #set $ind_arg = $use_indiv.indiv_input
+    #else
+      #set $ind_arg = '/dev/null'
+    #end if
+    draw_variants.py '$snp_file' '$snp_ext' '$snp_arg' '$ind_arg' '$annotation_input' '$cov_file' '$cov_ext' '$cov_arg' '$cov_min' '$output'
+  </command>
+  <inputs>
+    <conditional name="use_snp">
+      <param name="choice" type="select" format="integer" label="Include SNP/Genotype dataset">
+        <option value="1" selected="true">yes</option>
+        <option value="0">no</option>
+      </param>
+      <when value="0" />
+      <when value="1">
+        <param name="snp_input" type="data" format="gd_snp,gd_genotype" label="SNP/Genotype dataset" />
+      </when>
+    </conditional>
+    <conditional name="use_cov">
+      <param name="choice" type="select" format="integer" label="Include Coverage dataset">
+        <option value="1" selected="true">yes</option>
+        <option value="0">no</option>
+      </param>
+      <when value="0" />
+      <when value="1">
+        <param name="cov_input" type="data" format="gd_snp,gd_genotype" label="Coverage dataset" />
+        <param name="min_coverage" type="integer" min="1" value="1" label="Minimum coverage" />
+      </when>
+    </conditional>
+    <conditional name="use_indiv">
+      <param name="choice" type="select" label="Compute for">
+        <option value="0" selected="true">All individuals</option>
+        <option value="1">Individuals in a population</option>
+      </param>
+      <when value="0" />
+      <when value="1">
+        <param name="indiv_input" type="data" format="gd_indivs" label="Population Individuals" />
+      </when>
+    </conditional>
+    <param name="annotation_input" type="data" format="interval" label="Annotation dataset" />
+  </inputs>
+  <outputs>
+    <data name="output" format="tiff" />
+  </outputs>
+  <help>
+**What it does**
+
+The user supplies the following:
+
+   1. A optional file in gd_genotype or gd_snp format giving the mitochondrial SNPs.
+   2. An optional gd_genotype file gives the sequence coverage for each individual at each mitochondrial position.
+   3. The minimum depth of sequence coverage. Positions where an individual has less coverage are ignoried.
+   4. A set of individuals specified with the "Specify individuals" tool.
+   5. A file of annotation for the reference mitochondrial sequence.
+
+The program draws a picture indicating the locations of SNPs and the inadequately covered interval.
+  </help>
+</tool>
