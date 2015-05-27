@@ -1,0 +1,138 @@
+<tool id="gd_filter_gd_snp" name="Filter SNPs" version="1.2.0">
+  <description>: Discard some SNPs based on coverage, quality or spacing</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    filter_gd_snp.py '$input' '$output'
+    #if str($input.dataset.metadata.dbkey) == '?'
+      '0'
+    #else
+      '$input.dataset.metadata.ref'
+    #end if
+    '$min_spacing' '$lo_genotypes' '$input_type.p1_input'
+    #if $input_type.choice == '0'
+      'gd_snp' '$input_type.lo_coverage' '$input_type.hi_coverage' '$input_type.low_ind_cov' '$input_type.lo_quality'
+    #else if $input_type.choice == '1'
+      'gd_genotype' '0' '0' '0' '0'
+    #end if
+    '$ind_arg'
+  </command>
+  <inputs>
+    <conditional name="input_type">
+      <param name="choice" type="select" format="integer" label="Input format">
+        <option value="0" selected="true">gd_snp</option>
+        <option value="1">gd_genotype</option>
+      </param>
+      <when value="0">
+        <param name="input" type="data" format="gd_snp" label="SNP dataset" />
+        <param name="p1_input" type="data" format="gd_indivs" label="Population individuals" />
+        <param name="lo_coverage" type="text" value="0" label="Lower bound on total coverage">
+          <sanitizer>
+            <valid initial="string.digits">
+              <!-- &#37; is the percent (%) character -->
+              <add value="&#37;" />
+            </valid>
+          </sanitizer>
+        </param>
+        <param name="hi_coverage" type="text" value="1000" label="Upper bound on total coverage">
+          <sanitizer>
+            <valid initial="string.digits">
+              <!-- &#37; is the percent (%) character -->
+              <add value="&#37;" />
+            </valid>
+          </sanitizer>
+        </param>
+        <param name="low_ind_cov" type="integer" min="0" value="0" label="Lower bound on individual coverage" />
+        <param name="lo_quality" type="integer" min="0" value="0" label="Lower bound on individual quality values" />
+      </when>
+      <when value="1">
+        <param name="input" type="data" format="gd_genotype" label="Genotype dataset" />
+        <param name="p1_input" type="data" format="gd_indivs" label="Population individuals" />
+      </when>
+    </conditional>
+    <param name="min_spacing" type="integer" min="0" value="0" label="Minimum spacing between SNPs" />
+    <param name="lo_genotypes" type="integer" min="0" value="0" label="Lower bound on the number of defined genotypes" />
+  </inputs>
+  <outputs>
+    <data name="output" format="input" format_source="input" metadata_source="input" />
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp" />
+      <param name="p1_input" value="test_in/a.gd_indivs" ftype="gd_indivs" />
+      <param name="lo_coverage" value="0" />
+      <param name="hi_coverage" value="1000" />
+      <param name="low_ind_cov" value="3" />
+      <param name="lo_quality" value="30" />
+      <output name="output" file="test_out/modify_snp_table/modify.gd_snp" />
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The input datasets are in gd_snp_, gd_genotype_, and gd_indivs_ formats.
+The output dataset is in gd_snp_ or gd_genotype_ format.  (`Dataset missing?`_)
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+For a gd_snp dataset, the user specifies that some of the individuals
+form a "population", by supplying a list that has been previously created
+using the Specify Individuals tool.  SNPs are then discarded if their
+total coverage for the population is too low or too high, or if their
+coverage or quality score for any individual in the population is too low.
+
+The upper and lower bounds on total population coverage can be specified
+either as read counts or as percentiles (e.g. "5%", with no decimal
+places).  For percentile bounds the SNPs are ranked by read count, so
+for example, a lower bound of "10%" means that the least-covered 10%
+of the SNPs will be discarded, while an upper bound of, say, "80%" will
+discard all SNPs above the 80% mark, i.e. the top 20%.  The threshold
+for the lower bound on individual coverage can only be specified as a
+plain read count.
+
+For either a gd_snp or gd_genotype dataset, the user can specify a
+minimum number of defined genotypes (i.e., not -1) and/or a minimum
+spacing relative to the reference sequence.  An error is reported if the
+user requests a minimum spacing but no reference sequence is available.
+
+-----
+
+**Example**
+
+- input gd_snp::
+
+    Contig161_chr1_4641264_4641879   115  C  T  73.5   chr1   4641382  C   6  0  2  45   8  0  2  51   15  0  2  72   5  0  2  42   6  0  2  45   10  0  2  57   Y  54  0.323  0
+    Contig48_chr1_10150253_10151311   11  A  G  94.3   chr1  10150264  A   1  0  2  30   1  0  2  30    1  0  2  30   3  0  2  36   1  0  2  30    1  0  2  30   Y  22  +99.   0
+    Contig20_chr1_21313469_21313570   66  C  T  54.0   chr1  21313534  C   4  0  2  39   4  0  2  39    5  0  2  42   4  0  2  39   4  0  2  39    5  0  2  42   N   1  +99.   0
+    etc.
+
+- input individuals::
+
+    9   PB1
+    13  PB2
+    17  PB3
+
+- output when the lower bound on individual coverage is "3"::
+
+    Contig161_chr1_4641264_4641879   115  C  T  73.5   chr1   4641382  C   6  0  2  45   8  0  2  51   15  0  2  72   5  0  2  42   6  0  2  45   10  0  2  57   Y  54  0.323  0
+    Contig20_chr1_21313469_21313570   66  C  T  54.0   chr1  21313534  C   4  0  2  39   4  0  2  39    5  0  2  42   4  0  2  39   4  0  2  39    5  0  2  42   N   1  +99.   0
+    etc.
+  </help>
+</tool>
