@@ -1,0 +1,68 @@
+<tool id="gd_restore_attributes" name="Restore Attributes" version="1.1.0">
+  <description>: Fill in missing properties for a gd_snp or gd_genotype dataset</description>
+  <command interpreter="python">
+    cp.py "$dst" "$output"
+  </command>
+  <inputs>
+    <conditional name="input_type">
+      <param name="choice" type="select" format="integer" label="Input format">
+        <option value="0" selected="true">gd_snp</option>
+        <option value="1">gd_genotype</option>
+      </param>
+      <when value="0">
+        <param name="input" type="data" format="gd_snp" label="SNP dataset to copy attributes from" />
+        <param name="dst" type="data" format="gd_snp" label="SNP dataset to receive attributes" />
+      </when>
+      <when value="1">
+        <param name="input" type="data" format="gd_genotype" label="Genotype dataset to copy attributes from" />
+        <param name="dst" type="data" format="gd_genotype" label="Genotype dataset to receive attributes" />
+      </when>
+    </conditional>
+  </inputs>
+  <outputs>
+    <data name="output" format="input" format_source="input" metadata_source="input" />
+  </outputs>
+  <help>
+**Dataset formats**
+
+All of the input and output datasets are in gd_snp_ or gd_genotype_ format.  (`Dataset missing?`_)
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+This tool copies metadata information from one SNP dataset to another, leaving
+the actual SNP data itself unchanged.  Datasets in gd_snp format have a number
+of "extra" properties associated with them, such as the focus species (which
+may be different from the reference assembly), names of individuals, column
+numbers containing certain data fields, etc.  These values are stored in the
+dataset's metadata, in addition to the more usual attributes like dataset name,
+assembly build, and so forth.  You can see some of these by clicking on the
+pencil icon for the dataset.
+
+The Genome Diversity tools need this information to perform their tasks.
+However, these additional attributes may be lost if the datatype is changed.
+For example, suppose you want to see which SNPs overlap some other dataset in
+your history, like coding regions or TAL1 binding sites.  The Intersect tool
+only works on datasets that are in interval format, so you might use the Compute
+tool to append a new column with the End position of the SNP (= Start + 1),
+then use the pencil icon to change the datatype to "interval".  This works
+great for doing the intersection, but if you then want to run one of the Genome
+Diversity tools on the resulting SNPs, there's a problem: you can change the
+datatype back to gd_snp easily enough, but the extra attributes have been lost
+in the conversion to interval.
+
+As long as the proper values of the lost attributes have not changed, then this
+tool can restore them by copying from the old gd_snp dataset in your history.
+In the above example, appending a column does not change the numbering of the
+earlier columns, and deleting rows via Intersect does not affect the extra
+attributes either.  Note that all of the metadata is copied, not just the extra
+attributes specific to gd_snp (though standard items like the assembly build,
+the number of lines, and the name for the output dataset are updated
+automatically by the Galaxy framework).
+  </help>
+</tool>
