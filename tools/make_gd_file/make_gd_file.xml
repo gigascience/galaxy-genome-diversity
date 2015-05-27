@@ -1,0 +1,93 @@
+<tool id="gd_make_gd_file" name="Make File" version="1.0.0">
+  <description>: Build a gd_snp or gd_genotype file</description>
+  <command interpreter="python">
+    #import base64
+    #set $preamble_arg = base64.b64encode(str($preamble_names))
+    #set $species_arg = base64.b64encode(str($species))
+    make_gd_file.py '$input' '$scaffold_col' '$pos_col' '$ref_col' '$rPos_col' '$preamble_arg' '$names' '$species_arg' '$dbkey' '$output_type' '$output'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="tabular" label="Input dataset" />
+    <param name="scaffold_col" type="data_column" data_ref="input" label="Column with scaffold/contig" />
+    <param name="pos_col" type="data_column" numerical="true" data_ref="input" label="Column with position" />
+    <param name="ref_col" type="data_column" data_ref="input" label="Column with reference species chromosome" />
+    <param name="rPos_col" type="data_column" numerical="true" data_ref="input" label="Column with reference species position" />
+    <param name="preamble_names" type="text" area="true" size="5x40" label="Preamble column names">
+      <sanitizer>
+        <valid initial="string.printable"/>
+      </sanitizer>
+    </param>
+    <param name="names" type="data" format="txt" label="Names dataset" />
+    <param name="species" type="text" label="Focus species">
+      <sanitizer>
+        <valid initial="string.printable"/>
+      </sanitizer>
+    </param>
+    <param name="dbkey" type="genomebuild" label="Reference species" />
+    <param name="output_type" type="select" label="Output format">
+      <option value="gd_snp" selected="true">gd_snp</option>
+      <option value="gd_genotype">gd_genotype</option>
+    </param>
+  </inputs>
+  <outputs>
+    <data name="output" format="gd_snp">
+      <change_format>
+        <when input="output_type" value="gd_genotype" format="gd_genotype" />
+      </change_format>
+    </data>
+  </outputs>
+  <!--
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp" />
+      <param name="p1_input" value="test_in/a.gd_indivs" ftype="gd_indivs" />
+      <param name="lo_coverage" value="0" />
+      <param name="hi_coverage" value="1000" />
+      <param name="low_ind_cov" value="3" />
+      <param name="lo_quality" value="30" />
+      <output name="output" file="test_out/modify_snp_table/modify.gd_snp" />
+    </test>
+  </tests>
+  -->
+  <help>
+**Dataset formats**
+
+The input datasets are in tabular_ and text_ formats.
+The output dataset is in gd_snp_ or gd_genotype_ format.  (`Dataset missing?`_)
+
+.. _tabular: ./static/formatHelp.html#tab
+.. _text: ./static/formatHelp.html#text
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+This tool simplifies the job of creating a Galaxy file with format gd_snp
+or gd_genotype.  Often, the most complex part of preparing one of these
+files is to specify how individuals are related to columns of the table,
+a task facilitated by this command.  Each gd_snp or gd_genotype file
+typically has columnns giving:
+
+1. scaffold/contig name
+2. zero-based position in the scaffold/contig
+3. reference species chromosome
+4. zero-based position in the reference species chromosome
+
+The user needs to specify the columns containing these data.  Columns are
+numbered starting with 1.  The user also specifies brief column names for
+these columns.  When the focus species and the reference species are the
+same, the scaffold/contig name and reference species chromosome columns
+will be identical, as will the position in the scaffold/contig and
+position in the reference species chromosome columns.
+
+To inform Galaxy about the correpondence between individuals and columns
+of the table, the user directs the tool to a history item that lists
+the individuals in order.  Each line starts with unique name for the
+individuals (no embedded space or tab character), followed by an arbitrary
+(possibly empty) set of words that are helpful for specifying groups
+of individuals.
+  </help>
+</tool>
