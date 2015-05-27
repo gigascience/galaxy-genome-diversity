@@ -1,0 +1,38 @@
+<tool id="gd_nucleotide_diversity_pi" name="Nucleotide Diversity" version="1.0.0">
+  <description>: &amp;pi; and &amp;theta;</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $snps.dataset.metadata.individual_names
+    #set $ind_colms = $snps.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    nucleotide_diversity_pi.py '$saps' '$snps' '$intervals' '$indivs' '$output' '$ind_arg'
+  </command>
+  <inputs>
+    <param name="saps" type="data" format="gd_sap" label="SAP Dataset" />
+    <param name="snps" type="data" format="gd_snp" label="SNP Dataset" />
+    <param name="intervals" type="data" format="gd_covered_cds" label="Covered intervals" />
+    <param name="indivs" type="data" format="gd_indivs" label="Population individuals" />
+  </inputs>
+  <outputs>
+    <data name="output" format="txt" />
+  </outputs>
+  <help>
+**What it does**
+
+This tool computes values that estimate some basic parameters.
+
+**Output**
+
+the number of nonsyn SNPs, total number of nonsynon sites, piNon,
+the number of synon SNPs, total number of synon sites, piSyn, plus
+total length of covered intervals, thetaNon, thetaSyn
+  </help>
+</tool>
