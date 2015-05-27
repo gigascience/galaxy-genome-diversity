@@ -1,0 +1,126 @@
+<tool id="gd_inbreeding_and_kinship" name="Inbreeding and kinship" version="1.0.0">
+  <description>: Analyze the pedigree without genomic data</description>
+    <requirements>
+        <requirement type="package" version="0.1">gd_c_tools</requirement>
+    </requirements>
+  <command interpreter="python">
+    inbreeding_and_kinship.py '$ped_input' '$ind_input' '$computed_value' '$output'
+    #if $kinship_dataset.choice == '0'
+      '/dev/null'
+    #else if $kinship_dataset.choice == '1'
+      '$kinship_input'
+    #end if
+  </command>
+  <inputs>
+    <param name="ped_input" type="data" format="txt" label="Pedigree dataset" />
+    <param name="ind_input" type="data" format="txt" label="Individuals dataset" />
+    <conditional name="kinship_dataset">
+      <param name="choice" type="select" format="integer" label="Kinship dataset">
+        <option value="0" selected="true">no kinship dataset</option>
+        <option value="1">select kinship dataset</option>
+      </param>
+      <when value="0" />
+      <when value="1">
+        <param name="kinship_input" type="data" format="txt" label="Kinship dataset" />
+      </when>
+    </conditional>
+    <param name="computed_value" type="select" format="integer" label="Computed value">
+      <option value="0" selected="true">inbreeding coeffiecients</option>
+      <option value="1">kinships</option>
+      <option value="2">mean kinships</option>
+    </param>
+  </inputs>
+  <outputs>
+    <data name="output" format="txt" />
+  </outputs>
+  <!--
+  <tests>
+  </tests>
+  -->
+  <help>
+**Dataset formats**
+
+The input datasets are in text_ format.
+The output dataset is in text_ format.
+
+.. _text: ./static/formatHelp.html#text
+
+-----
+
+**What it does**
+
+The user specifies a pedigree.  This is done with a Galaxy table with one
+row per individual, containing (1) the individual's name, (2) the name of
+one of the individual's parents, which must have occurred at the start
+of a previous line, and (3) the name of the individual's other parent,
+which occurred at the start of a previous line.  For a pedigree founder,
+each parent name is replaced by &quot;-&quot;.
+
+The user also provides a file that specifies a set of names of individuals
+(specifically the first word on each line (one line per individual);
+any subsequent information on a line is ignored.
+
+The user can optionally provide a file giving kinship information for
+each pair of distinct individuals from the founder set.
+
+Finally the user picks from among the options:
+
+  1. inbreeding coefficients for each specified individual
+  2. the kinship for each pair of distinct specified individual
+  3. the mean kinship for each specified individual, i.e., the average kinship value for that individual and every specified individual
+
+The command reports the requested values.
+
+-----
+
+**Example**
+
+- input::
+
+   A - -
+   B - -
+   C - -
+   D - -
+   E - -
+   F A B
+   G A B
+   Thelma A F
+   Louise F G
+
+Rows can have more than three columns (such as the individual's sex),
+but only the first three columns affect this command.
+
+Suppose on the other hand that we select an alternative
+&quot;founder&quot; set, {A, F, G}.  (We require a founder sets to have a
+member on any ancestral path from Thelma or Louise.)  The above pedigree
+file is then replaced by::
+
+   A - -
+   F - -
+   G - -
+   Thelma A F
+   Louise F G
+
+The user then also provides a file giving kinship information for each
+pairs of distinct individuals from the founder set; for the current
+example, the kinship file is as follows::
+
+   A F 0.25
+   A G 0.25
+   F G 0.25
+
+since parent-child pairs and siblings both have kinship 0.25.  The
+advantage is that this capability can be used in cases where the kinships
+of the founders are not initially known, but instead are computationally
+predicted, e.g., with the Galaxy &quot;Discover&quot; tool.
+  </help>
+</tool>
+
+
+
+
+
+
+
+
+
