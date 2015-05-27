@@ -1,0 +1,109 @@
+<tool id="gd_specify" name="Specify Individuals" version="1.1.0">
+  <description>: Define a collection of individuals from a gd_snp dataset</description>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    #set $cb_string = str($individuals).strip()
+    #if $cb_string != 'None'
+      #set $cb_dict = dict.fromkeys($cb_string.split('\t'))
+      #for $cb_name in $cb_dict:
+        #set $cb_idx = $input.dataset.metadata.individual_names.index($cb_name)
+        #set $cb_dict[$cb_name] = str($input.dataset.metadata.individual_columns[$cb_idx])
+      #end for
+    #else
+      #set $cb_dict = dict()
+    #end if
+    #set $cb_json = json.dumps($cb_dict, separators=(',',':'))
+    #set $cb_comp = zlib.compress($cb_json, 9)
+    #set $cb_arg = base64.b64encode($cb_comp)
+    #set $str_string = str($string).strip()
+    #set $str_comp = zlib.compress($str_string, 9)
+    #set $str_arg = base64.b64encode($str_comp)
+    specify.py '$input' '$output' '$ind_arg' '$cb_arg' '$str_arg'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="gd_snp,gd_genotype" label="SNP or Genotype dataset"/>
+    <param name="individuals" type="select" display="checkboxes" multiple="true" separator="&#9;" label="Individuals to include">
+      <options>
+        <filter type="data_meta" ref="input" key="individual_names" />
+      </options>
+    </param>
+    <param name="outname" type="text" size="20" label="Label for this collection">
+      <validator type="empty_field" message="You must enter a label."/>
+      #used to be "Individuals from ${input.hid}"
+    </param>
+    <param name="string" type="text" area="true" size="5x40" label="Individuals to include">
+      <sanitizer>
+        <valid initial="string.printable"/>
+      </sanitizer>
+    </param>
+  </inputs>
+  <outputs>
+    <data name="output" format="gd_indivs" label="${outname}" />
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp" />
+      <param name="individuals" value="PB1,PB2" />
+      <output name="output" file="test_in/a.gd_indivs" />
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The input dataset is in gd_snp_ or gd_genotype_ format;
+the output is in gd_indivs_ format.  (`Dataset missing?`_)
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+This tool makes a list of selected entities, i.e., the sets of four
+columns representing individuals or groups from a gd_snp dataset, or
+sets of single columns in a gd_genotype file.  It does not copy the
+data; it just records which entities should be considered as belonging
+to some collection or population.  The label you specify is used to
+name the output dataset in your history.  This list can then be used
+to instruct other tools to work on just part of the original gd_snp or
+gd_genotype dataset.  The entities can be specified with the checklist
+and/or by pasting their names (possibly with extraneous characters, as
+in a portion of the Newick-format output of the Phylogenetic Tree tool)
+into the box provided at the bottom of the page.
+
+-----
+
+**Example**
+
+- input::
+
+   Contig161_chr1_4641264_4641879   115  C  T  73.5   chr1   4641382  C   6  0  2  45   8  0  2  51   15  0  2  72   5  0  2  42   6  0  2  45  10  0  2  57   Y  54  0.323  0
+   Contig48_chr1_10150253_10151311   11  A  G  94.3   chr1  10150264  A   1  0  2  30   1  0  2  30    1  0  2  30   3  0  2  36   1  0  2  30   1  0  2  30   Y  22  +99.   0
+   Contig20_chr1_21313469_21313570   66  C  T  54.0   chr1  21313534  C   4  0  2  39   4  0  2  39    5  0  2  42   4  0  2  39   4  0  2  39   5  0  2  42   N   1  +99.   0
+   etc.
+
+- input metadata::
+
+   #{"column_names":["scaf","pos","A","B","qual","ref","rpos","rnuc",
+   #"1A","1B","1G","1Q","2A","2B","2G","2Q","3A","3B","3G","3Q","4A","4B","4G","4Q","5A","5B","5G","5Q","6A","6B","6G","6Q",
+   #"pair","dist","prim","rflp"],"dbkey":"canFam2","individuals":[["PB1",9],["PB2",13],["PB3",17],["PB4",21],["PB6",25],["PB8",29]],
+   #"pos":2,"rPos":7,"ref":6,"scaffold":1,"species":"bear"}
+
+- output when individuals PB1, PB2, and PB3 are selected::
+
+   9   PB1
+   13  PB2
+   17  PB3
+  </help>
+</tool>
