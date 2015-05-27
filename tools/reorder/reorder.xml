@@ -1,0 +1,74 @@
+<tool id="gd_reorder" name="Reorder individuals" version="1.0.0">
+  <description>: exchange rows in the above picture</description>
+  <command interpreter="python">
+    reorder.py '$input' '$output' '$order'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="gd_indivs" label="Individuals dataset" />
+    <param name="order" size="40" type="text" value="" label="New order"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="gd_indivs" metadata_source="input"/>
+  </outputs>
+  <help>
+**Dataset formats**
+
+The input and output datasets are in gd_indivs_ format.
+
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+
+-----
+
+**What it does**
+
+The user picks a gd_indivs dataset from their history and specifies
+a new ordering.  This tool creates a new gd_indivs dataset with the
+individuals reordered as specified by the user.
+
+The new ordering is a list of comma separated ranges (e.g **5,6-12,20**).
+Ranges can be either a single number (e.g. **3**) or two dash separated
+numbers (e.g. **3-5**).  The numbers represent the line number of
+gd_indivs dataset.  Line numbers that are not listed will appear on the
+output after the specified line numbers in their same relative ordering.
+
+-----
+
+**Example**
+
+Input dataset (six rows)::
+
+   18  McClintock
+   22  Peltonen-Palotie
+   26  Sager
+   30  Franklin
+   34  Auerbach
+   38  Stevens
+
+new ordering "**1,3-4**" will return::
+
+   18  McClintock
+   26  Sager
+   30  Franklin
+   22  Peltonen-Palotie
+   34  Auerbach
+   38  Stevens
+
+new ordering "**3,5,1,6**" will return::
+
+   26  Sager
+   34  Auerbach
+   18  McClintock
+   38  Stevens
+   22  Peltonen-Palotie
+   30  Franklin
+
+new ordering "**3-1,6,4-5**" will return::
+
+   26  Sager
+   22  Peltonen-Palotie
+   18  McClintock
+   38  Stevens
+   30  Franklin
+   34  Auerbach
+  </help>
+</tool>
