@@ -1,0 +1,6 @@
+#<species>  <primers_file_path>
+#aye-aye	/home/galaxy/tooldep/genome_diversity/primers/aye-aye_Galaxy_primers.txt
+#bear	/home/galaxy/tooldep/genome_diversity/primers/bear_Galaxy_primers.txt
+#bighorn	/home/galaxy/tooldep/genome_diversity/primers/bighorn_Galaxy_primers.txt
+#tasmanian_devil	/home/galaxy/tooldep/genome_diversity/primers/devil_Galaxy_primers.txt
+#tick	/home/galaxy/tooldep/genome_diversity/primers/tick_Galaxy_primers.txt

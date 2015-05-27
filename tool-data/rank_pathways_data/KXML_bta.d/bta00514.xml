@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!DOCTYPE pathway SYSTEM "http://www.genome.jp/kegg/xml/KGML_v0.7.1_.dtd">
+<!-- Creation date: Jan 24, 2011 14:59:42 +0900 (GMT+09:00) -->
+<pathway name="path:bta00514" org="bta" number="00514"
+         title="Other types of O-glycan biosynthesis"
+         image="http://www.genome.jp/kegg/pathway/bta/bta00514.png"
+         link="http://www.genome.jp/kegg-bin/show_pathway?bta00514">
+    <entry id="1" name="path:bta00514" type="map"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta00514">
+        <graphics name="TITLE:Other types of O-glycan biosynthesis" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="roundrectangle" x="207" y="58" width="333" height="25"/>
+    </entry>
+    <entry id="2" name="ko:K05538 ko:K10968 ko:K10969" type="ortholog" reaction="rn:R09302"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K05538+K10968+K10969">
+        <graphics name="K05538..." fgcolor="#000000" bgcolor="#FFFFFF"
+             type="line" coords="161,350,176,365"/>
+    </entry>
+    <entry id="4" name="bta:506551" type="gene" reaction="rn:R07619"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:506551">
+        <graphics name="POMGNT1, FLJ20277" fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="299,292,329,292"/>
+    </entry>
+    <entry id="5" name="ko:K10970" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K10970">
+        <graphics name="K10970" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="line" coords="83,409,113,409"/>
+    </entry>
+    <entry id="6" name="ko:K10970" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K10970">
+        <graphics name="K10970" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="line" coords="160,406,175,391"/>
+    </entry>
+    <entry id="7" name="ko:K10967" type="ortholog" reaction="rn:R09301"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K10967">
+        <graphics name="K10967" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="line" coords="222,372,252,342"/>
+    </entry>
+    <entry id="8" name="ko:K10967" type="ortholog" reaction="rn:R09300"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K10967">
+        <graphics name="K10967" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="line" coords="298,336,328,306"/>
+    </entry>
+    <entry id="9" name="bta:537054 bta:617609" type="gene" reaction="rn:R07620"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:537054+bta:617609">
+        <graphics name="POMT2..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="379,292,409,292"/>
+    </entry>
+    <entry id="11" name="ko:K05538 ko:K10968 ko:K10969" type="ortholog" reaction="rn:R09303"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K05538+K10968+K10969">
+        <graphics name="K05538..." fgcolor="#000000" bgcolor="#FFFFFF"
+             type="line" coords="82,348,112,348"/>
+    </entry>
+    <entry id="13" name="ko:K10971" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K10971">
+        <graphics name="K10971" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="line" coords="199,395,199,415"/>
+    </entry>
+    <entry id="14" name="bta:513167 bta:514996 bta:789150" type="gene" reaction="rn:R03380"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:513167+bta:514996+bta:789150">
+        <graphics name="GLT25D1, MGC157388..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="139,762,169,762"/>
+    </entry>
+    <entry id="15" name="bta:509511" type="gene" reaction="rn:R09316"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:509511">
+        <graphics name="B3GALTL" fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="266,566,281,551"/>
+    </entry>
+    <entry id="16" name="bta:514996" type="gene" reaction="rn:R04491"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:514996">
+        <graphics name="PLOD3" fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="66,762,96,762"/>
+    </entry>
+    <entry id="17" name="bta:282073 bta:444859 bta:493992" type="gene" reaction="rn:R09297 rn:R09298"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:282073+bta:444859+bta:493992">
+        <graphics name="ST6GAL1, SIAT1..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="89,522,119,522"/>
+    </entry>
+    <entry id="18" name="bta:505267 bta:516209 bta:532242" type="gene" reaction="rn:R09296"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:505267+bta:516209+bta:532242">
+        <graphics name="MFNG..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="268,522,283,537"/>
+    </entry>
+    <entry id="19" name="bta:100125390 bta:281781 bta:515771" type="gene" reaction="rn:R09299"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:100125390+bta:281781+bta:515771">
+        <graphics name="B4GALT2, MGC165796..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="176,522,206,522"/>
+    </entry>
+    <entry id="20" name="bta:360194 bta:404083" type="gene" reaction="rn:R09295"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:360194+bta:404083">
+        <graphics name="POFUT1..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="331,545,361,545"/>
+    </entry>
+    <entry id="22" name="bta:511862" type="gene" reaction="rn:R09315"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:511862">
+        <graphics name="POGLUT1, KTELC1, MDS010" fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="212,664,242,664"/>
+    </entry>
+    <entry id="23" name="bta:507299 bta:617596" type="gene" reaction="rn:R09290"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:507299+bta:617596">
+        <graphics name="GXYLT2..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="140,664,170,664"/>
+    </entry>
+    <entry id="24" name="bta:532053" type="gene" reaction="rn:R09304"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:532053">
+        <graphics name="OGT" fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="88,149,118,149"/>
+    </entry>
+    <entry id="25" name="ko:K09661" type="ortholog" reaction="rn:R07621"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K09661">
+        <graphics name="K09661" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="line" coords="300,248,330,278"/>
+    </entry>
+    <entry id="26" name="bta:100125390 bta:281781 bta:515771" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:100125390+bta:281781+bta:515771">
+        <graphics name="B4GALT2, MGC165796..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="210,247,240,247"/>
+    </entry>
+    <entry id="27" name="bta:100125390 bta:281781 bta:515771" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:100125390+bta:281781+bta:515771">
+        <graphics name="B4GALT2, MGC165796..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="211,291,241,291"/>
+    </entry>
+    <entry id="28" name="bta:444859" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:444859">
+        <graphics name="ST3GAL3, SIAT6" fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="153,313,168,298"/>
+    </entry>
+    <entry id="29" name="bta:100036592 bta:282853 bta:282854" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:100036592+bta:282853+bta:282854">
+        <graphics name="FUT7..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="226,318,241,303"/>
+    </entry>
+    <entry id="30" name="bta:100296421 bta:286792 bta:511743 bta:515638 bta:533587 bta:540615 bta:615303 bta:751790" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:100296421+bta:286792+bta:511743+bta:515638+bta:533587+bta:540615+bta:615303+bta:751790">
+        <graphics name="100296421..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="154,270,169,285"/>
+    </entry>
+    <entry id="31" name="bta:100296421 bta:286792 bta:511743 bta:515638 bta:533587 bta:540615 bta:615303 bta:751790" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:100296421+bta:286792+bta:511743+bta:515638+bta:533587+bta:540615+bta:615303+bta:751790">
+        <graphics name="100296421..." fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="135,247,165,247"/>
+    </entry>
+    <entry id="32" name="bta:511215" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:511215">
+        <graphics name="CHST10" fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="57,247,87,247"/>
+    </entry>
+    <entry id="33" name="bta:511215" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?bta:511215">
+        <graphics name="CHST10" fgcolor="#BFFFBF" bgcolor="#FFFFFF"
+             type="line" coords="77,269,107,269"/>
+    </entry>
+    <reaction id="4" name="rn:R07619" type="reversible">
+    </reaction>
+    <reaction id="9" name="rn:R07620" type="reversible">
+    </reaction>
+    <reaction id="14" name="rn:R03380" type="reversible">
+    </reaction>
+    <reaction id="15" name="rn:R09316" type="reversible">
+    </reaction>
+    <reaction id="16" name="rn:R04491" type="reversible">
+    </reaction>
+    <reaction id="17" name="rn:R09297 rn:R09298" type="reversible">
+    </reaction>
+    <reaction id="18" name="rn:R09296" type="reversible">
+    </reaction>
+    <reaction id="19" name="rn:R09299" type="reversible">
+    </reaction>
+    <reaction id="20" name="rn:R09295" type="reversible">
+    </reaction>
+    <reaction id="22" name="rn:R09315" type="reversible">
+    </reaction>
+    <reaction id="23" name="rn:R09290" type="reversible">
+    </reaction>
+    <reaction id="24" name="rn:R09304" type="reversible">
+    </reaction>
+</pathway>

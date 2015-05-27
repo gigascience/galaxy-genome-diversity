@@ -1,0 +1,721 @@
+hg19	hsa00010	hsa00010 - Glycolysis/ Gluconeogenesis
+hg19	hsa00020	hsa00020 - Citratecycle (TCA cycle)
+hg19	hsa00030	hsa00030 - Pentosephosphate pathway
+hg19	hsa00040	hsa00040 - Pentoseand glucuronate interconversions
+hg19	hsa00051	hsa00051 - Fructoseand mannose metabolism
+hg19	hsa00052	hsa00052 - Galactosemetabolism
+hg19	hsa00053	hsa00053 - Ascorbateand aldarate metabolism
+hg19	hsa00061	hsa00061 - Fattyacid biosynthesis
+hg19	hsa00062	hsa00062 - Fattyacid elongation
+hg19	hsa00071	hsa00071 - Fattyacid metabolism
+hg19	hsa00072	hsa00072 - Synthesisand degradation of ketone bodies
+hg19	hsa00100	hsa00100 - Steroidbiosynthesis
+hg19	hsa00120	hsa00120 - Primarybile acid biosynthesis
+hg19	hsa00130	hsa00130 - Ubiquinoneand other terpenoid-quinone biosynthesis
+hg19	hsa00140	hsa00140 - Steroidhormone biosynthesis
+hg19	hsa00190	hsa00190 - Oxidativephosphorylation
+hg19	hsa00230	hsa00230 - Purinemetabolism
+hg19	hsa00232	hsa00232 - Caffeinemetabolism
+hg19	hsa00240	hsa00240 - Pyrimidinemetabolism
+hg19	hsa00250	hsa00250 - Alanine,aspartate and glutamate metabolism
+hg19	hsa00260	hsa00260 - Glycine,serine and threonine metabolism
+hg19	hsa00270	hsa00270 - Cysteineand methionine metabolism
+hg19	hsa00280	hsa00280 - Valine,leucine and isoleucine degradation
+hg19	hsa00290	hsa00290 - Valine,leucine and isoleucine biosynthesis
+hg19	hsa00300	hsa00300 - Lysinebiosynthesis
+hg19	hsa00310	hsa00310 - Lysinedegradation
+hg19	hsa00330	hsa00330 - Arginineand proline metabolism
+hg19	hsa00340	hsa00340 - Histidinemetabolism
+hg19	hsa00350	hsa00350 - Tyrosinemetabolism
+hg19	hsa00360	hsa00360 - Phenylalaninemetabolism
+hg19	hsa00380	hsa00380 - Tryptophanmetabolism
+hg19	hsa00400	hsa00400 - Phenylalanine,tyrosine and tryptophan biosynthesis
+hg19	hsa00410	hsa00410 - beta-Alaninemetabolism
+hg19	hsa00430	hsa00430 - Taurineand hypotaurine metabolism
+hg19	hsa00450	hsa00450 - Selenocompoundmetabolism
+hg19	hsa00460	hsa00460 - Cyanoaminoacid metabolism
+hg19	hsa00480	hsa00480 - Glutathionemetabolism
+hg19	hsa00500	hsa00500 - Starchand sucrose metabolism
+hg19	hsa00510	hsa00510 - N-Glycanbiosynthesis
+hg19	hsa00511	hsa00511 - Otherglycan degradation
+hg19	hsa00512	hsa00512 - Mucintype O-Glycan biosynthesis
+hg19	hsa00514	hsa00514 - Othertypes of O-glycan biosynthesis
+hg19	hsa00520	hsa00520 - Aminosugar and nucleotide sugar metabolism
+hg19	hsa00524	hsa00524 - Butirosinand neomycin biosynthesis
+hg19	hsa00531	hsa00531 - Glycosaminoglycandegradation
+hg19	hsa00532	hsa00532 - Glycosaminoglycanbiosynthesis - chondroitin sulfate
+hg19	hsa00533	hsa00533 - Glycosaminoglycanbiosynthesis - keratan sulfate
+hg19	hsa00534	hsa00534 - Glycosaminoglycanbiosynthesis - heparan sulfate
+hg19	hsa00561	hsa00561 - Glycerolipidmetabolism
+hg19	hsa00562	hsa00562 - Inositolphosphate metabolism
+hg19	hsa00563	hsa00563 - Glycosylphosphatidylinositol(GPI)-anchorbiosynthesis
+hg19	hsa00564	hsa00564 - Glycerophospholipidmetabolism
+hg19	hsa00565	hsa00565 - Etherlipid metabolism
+hg19	hsa00590	hsa00590 - Arachidonicacid metabolism
+hg19	hsa00591	hsa00591 - Linoleicacid metabolism
+hg19	hsa00592	hsa00592 - alpha-Linolenicacid metabolism
+hg19	hsa00600	hsa00600 - Sphingolipidmetabolism
+hg19	hsa00601	hsa00601 - Glycosphingolipidbiosynthesis - lacto and neolacto series
+hg19	hsa00603	hsa00603 - Glycosphingolipidbiosynthesis - globo series
+hg19	hsa00604	hsa00604 - Glycosphingolipidbiosynthesis - ganglio series
+hg19	hsa00620	hsa00620 - Pyruvatemetabolism
+hg19	hsa00630	hsa00630 - Glyoxylateand dicarboxylate metabolism
+hg19	hsa00640	hsa00640 - Propanoatemetabolism
+hg19	hsa00650	hsa00650 - Butanoatemetabolism
+hg19	hsa00670	hsa00670 - Onecarbon pool by folate
+hg19	hsa00730	hsa00730 - Thiaminemetabolism
+hg19	hsa00740	hsa00740 - Riboflavinmetabolism
+hg19	hsa00750	hsa00750 - VitaminB6 metabolism
+hg19	hsa00760	hsa00760 - Nicotinateand nicotinamide metabolism
+hg19	hsa00770	hsa00770 - Pantothenateand CoA biosynthesis
+hg19	hsa00780	hsa00780 - Biotinmetabolism
+hg19	hsa00785	hsa00785 - Lipoicacid metabolism
+hg19	hsa00790	hsa00790 - Folatebiosynthesis
+hg19	hsa00830	hsa00830 - Retinolmetabolism
+hg19	hsa00860	hsa00860 - Porphyrinand chlorophyll metabolism
+hg19	hsa00900	hsa00900 - Terpenoidbackbone biosynthesis
+hg19	hsa00910	hsa00910 - Nitrogenmetabolism
+hg19	hsa00920	hsa00920 - Sulfurmetabolism
+hg19	hsa00970	hsa00970 - Aminoacyl-tRNAbiosynthesis
+hg19	hsa00980	hsa00980 - Metabolismof xenobiotics by cytochrome P450
+hg19	hsa00982	hsa00982 - Drugmetabolism - cytochrome P450
+hg19	hsa00983	hsa00983 - Drugmetabolism - other enzymes
+hg19	hsa01040	hsa01040 - Biosynthesisof unsaturated fatty acids
+hg19	hsa01100	hsa01100 - Metabolicpathways
+hg19	hsa02010	hsa02010 - ABCtransporters
+hg19	hsa03008	hsa03008 - Ribosomebiogenesis in eukaryotes
+hg19	hsa03010	hsa03010 - Ribosome
+hg19	hsa03013	hsa03013 - RNAtransport
+hg19	hsa03015	hsa03015 - mRNAsurveillance pathway
+hg19	hsa03018	hsa03018 - RNAdegradation
+hg19	hsa03020	hsa03020 - RNApolymerase
+hg19	hsa03022	hsa03022 - Basaltranscription factors
+hg19	hsa03030	hsa03030 - DNAreplication
+hg19	hsa03040	hsa03040 - Spliceosome
+hg19	hsa03050	hsa03050 - Proteasome
+hg19	hsa03060	hsa03060 - Proteinexport
+hg19	hsa03320	hsa03320 - PPARsignaling pathway
+hg19	hsa03410	hsa03410 - Baseexcision repair
+hg19	hsa03420	hsa03420 - Nucleotideexcision repair
+hg19	hsa03430	hsa03430 - Mismatchrepair
+hg19	hsa03440	hsa03440 - Homologousrecombination
+hg19	hsa03450	hsa03450 - Non-homologousend-joining
+hg19	hsa03460	hsa03460 - Fanconianemia pathway
+hg19	hsa04010	hsa04010 - MAPKsignaling pathway
+hg19	hsa04012	hsa04012 - ErbBsignaling pathway
+hg19	hsa04020	hsa04020 - Calciumsignaling pathway
+hg19	hsa04060	hsa04060 - Cytokine-cytokinereceptor interaction
+hg19	hsa04062	hsa04062 - Chemokinesignaling pathway
+hg19	hsa04070	hsa04070 - Phosphatidylinositolsignaling system
+hg19	hsa04080	hsa04080 - Neuroactiveligand-receptor interaction
+hg19	hsa04110	hsa04110 - Cellcycle
+hg19	hsa04114	hsa04114 - Oocytemeiosis
+hg19	hsa04115	hsa04115 - p53signaling pathway
+hg19	hsa04120	hsa04120 - Ubiquitinmediated proteolysis
+hg19	hsa04122	hsa04122 - Sulfurrelay system
+hg19	hsa04130	hsa04130 - SNAREinteractions in vesicular transport
+hg19	hsa04140	hsa04140 - Regulationof autophagy
+hg19	hsa04141	hsa04141 - Proteinprocessing in endoplasmic reticulum
+hg19	hsa04142	hsa04142 - Lysosome
+hg19	hsa04144	hsa04144 - Endocytosis
+hg19	hsa04145	hsa04145 - Phagosome
+hg19	hsa04146	hsa04146 - Peroxisome
+hg19	hsa04150	hsa04150 - mTORsignaling pathway
+hg19	hsa04210	hsa04210 - Apoptosis
+hg19	hsa04260	hsa04260 - Cardiacmuscle contraction
+hg19	hsa04270	hsa04270 - Vascularsmooth muscle contraction
+hg19	hsa04310	hsa04310 - Wntsignaling pathway
+hg19	hsa04320	hsa04320 - Dorso-ventralaxis formation
+hg19	hsa04330	hsa04330 - Notchsignaling pathway
+hg19	hsa04340	hsa04340 - Hedgehogsignaling pathway
+hg19	hsa04350	hsa04350 - TGF-betasignaling pathway
+hg19	hsa04360	hsa04360 - Axonguidance
+hg19	hsa04370	hsa04370 - VEGFsignaling pathway
+hg19	hsa04380	hsa04380 - Osteoclastdifferentiation
+hg19	hsa04510	hsa04510 - Focaladhesion
+hg19	hsa04512	hsa04512 - ECM-receptorinteraction
+hg19	hsa04514	hsa04514 - Celladhesion molecules (CAMs)
+hg19	hsa04520	hsa04520 - Adherensjunction
+hg19	hsa04530	hsa04530 - Tightjunction
+hg19	hsa04540	hsa04540 - Gapjunction
+hg19	hsa04610	hsa04610 - Complementand coagulation cascades
+hg19	hsa04612	hsa04612 - Antigenprocessing and presentation
+hg19	hsa04614	hsa04614 - Renin-angiotensinsystem
+hg19	hsa04620	hsa04620 - Toll-likereceptor signaling pathway
+hg19	hsa04621	hsa04621 - NOD-likereceptor signaling pathway
+hg19	hsa04622	hsa04622 - RIG-I-likereceptor signaling pathway
+hg19	hsa04623	hsa04623 - CytosolicDNA-sensing pathway
+hg19	hsa04630	hsa04630 - Jak-STATsignaling pathway
+hg19	hsa04640	hsa04640 - Hematopoieticcell lineage
+hg19	hsa04650	hsa04650 - Naturalkiller cell mediated cytotoxicity
+hg19	hsa04660	hsa04660 - Tcell receptor signaling pathway
+hg19	hsa04662	hsa04662 - Bcell receptor signaling pathway
+hg19	hsa04664	hsa04664 - Fcepsilon RI signaling pathway
+hg19	hsa04666	hsa04666 - Fcgamma R-mediated phagocytosis
+hg19	hsa04670	hsa04670 - Leukocytetransendothelial migration
+hg19	hsa04672	hsa04672 - Intestinalimmune network for IgA production
+hg19	hsa04710	hsa04710 - Circadianrhythm - mammal
+hg19	hsa04720	hsa04720 - Long-termpotentiation
+hg19	hsa04721	hsa04721 - Synapticvesicle cycle
+hg19	hsa04722	hsa04722 - Neurotrophinsignaling pathway
+hg19	hsa04724	hsa04724 - Glutamatergicsynapse
+hg19	hsa04725	hsa04725 - Cholinergicsynapse
+hg19	hsa04727	hsa04727 - GABAergicsynapse
+hg19	hsa04728	hsa04728 - Dopaminergicsynapse
+hg19	hsa04730	hsa04730 - Long-termdepression
+hg19	hsa04740	hsa04740 - Olfactorytransduction
+hg19	hsa04742	hsa04742 - Tastetransduction
+hg19	hsa04744	hsa04744 - Phototransduction
+hg19	hsa04810	hsa04810 - Regulationof actin cytoskeleton
+hg19	hsa04910	hsa04910 - Insulinsignaling pathway
+hg19	hsa04912	hsa04912 - GnRHsignaling pathway
+hg19	hsa04914	hsa04914 - Progesterone-mediatedoocyte maturation
+hg19	hsa04916	hsa04916 - Melanogenesis
+hg19	hsa04920	hsa04920 - Adipocytokinesignaling pathway
+hg19	hsa04930	hsa04930 - TypeII diabetes mellitus
+hg19	hsa04940	hsa04940 - TypeI diabetes mellitus
+hg19	hsa04950	hsa04950 - Maturityonset diabetes of the young
+hg19	hsa04960	hsa04960 - Aldosterone-regulatedsodium reabsorption
+hg19	hsa04961	hsa04961 - Endocrineand other factor-regulated calcium reabsorption
+hg19	hsa04962	hsa04962 - Vasopressin-regulatedwater reabsorption
+hg19	hsa04964	hsa04964 - Proximaltubule bicarbonate reclamation
+hg19	hsa04966	hsa04966 - Collectingduct acid secretion
+hg19	hsa04970	hsa04970 - Salivarysecretion
+hg19	hsa04971	hsa04971 - Gastricacid secretion
+hg19	hsa04972	hsa04972 - Pancreaticsecretion
+hg19	hsa04973	hsa04973 - Carbohydratedigestion and absorption
+hg19	hsa04974	hsa04974 - Proteindigestion and absorption
+hg19	hsa04975	hsa04975 - Fatdigestion and absorption
+hg19	hsa04976	hsa04976 - Bilesecretion
+hg19	hsa04977	hsa04977 - Vitamindigestion and absorption
+hg19	hsa04978	hsa04978 - Mineralabsorption
+hg19	hsa05010	hsa05010 - Alzheimer'sdisease
+hg19	hsa05012	hsa05012 - Parkinson'sdisease
+hg19	hsa05014	hsa05014 - Amyotrophiclateral sclerosis (ALS)
+hg19	hsa05016	hsa05016 - Huntington'sdisease
+hg19	hsa05020	hsa05020 - Priondiseases
+hg19	hsa05100	hsa05100 - Bacterialinvasion of epithelial cells
+hg19	hsa05132	hsa05132 - Salmonellainfection
+hg19	hsa05133	hsa05133 - Pertussis
+hg19	hsa05134	hsa05134 - Legionellosis
+hg19	hsa05140	hsa05140 - Leishmaniasis
+hg19	hsa05142	hsa05142 - Chagasdisease (American trypanosomiasis)
+hg19	hsa05143	hsa05143 - Africantrypanosomiasis
+hg19	hsa05144	hsa05144 - Malaria
+hg19	hsa05145	hsa05145 - Toxoplasmosis
+hg19	hsa05146	hsa05146 - Amoebiasis
+hg19	hsa05150	hsa05150 - Staphylococcusaureus infection
+hg19	hsa05152	hsa05152 - Tuberculosis
+hg19	hsa05160	hsa05160 - HepatitisC
+hg19	hsa05162	hsa05162 - Measles
+hg19	hsa05164	hsa05164 - InfluenzaA
+hg19	hsa05166	hsa05166 - HTLV-Iinfection
+hg19	hsa05168	hsa05168 - Herpessimplex infection
+hg19	hsa05200	hsa05200 - Pathwaysin cancer
+hg19	hsa05202	hsa05202 - Transcriptionalmisregulation in cancers
+hg19	hsa05210	hsa05210 - Colorectalcancer
+hg19	hsa05211	hsa05211 - Renalcell carcinoma
+hg19	hsa05212	hsa05212 - Pancreaticcancer
+hg19	hsa05213	hsa05213 - Endometrialcancer
+hg19	hsa05214	hsa05214 - Glioma
+hg19	hsa05215	hsa05215 - Prostatecancer
+hg19	hsa05216	hsa05216 - Thyroidcancer
+hg19	hsa05217	hsa05217 - Basalcell carcinoma
+hg19	hsa05218	hsa05218 - Melanoma
+hg19	hsa05219	hsa05219 - Bladdercancer
+hg19	hsa05220	hsa05220 - Chronicmyeloid leukemia
+hg19	hsa05221	hsa05221 - Acutemyeloid leukemia
+hg19	hsa05222	hsa05222 - Smallcell lung cancer
+hg19	hsa05223	hsa05223 - Non-smallcell lung cancer
+hg19	hsa05310	hsa05310 - Asthma
+hg19	hsa05320	hsa05320 - Autoimmunethyroid disease
+hg19	hsa05322	hsa05322 - Systemiclupus erythematosus
+hg19	hsa05323	hsa05323 - Rheumatoidarthritis
+hg19	hsa05330	hsa05330 - Allograftrejection
+hg19	hsa05332	hsa05332 - Graft-versus-hostdisease
+hg19	hsa05340	hsa05340 - Primaryimmunodeficiency
+hg19	hsa05410	hsa05410 - Hypertrophiccardiomyopathy (HCM)
+hg19	hsa05412	hsa05412 - Arrhythmogenicright ventricular cardiomyopathy (ARVC)
+hg19	hsa05414	hsa05414 - Dilatedcardiomyopathy
+hg19	hsa05416	hsa05416 - Viralmyocarditis
+canFam2	cfa00010	cfa00010 - Glycolysis/ Gluconeogenesis
+canFam2	cfa00020	cfa00020 - Citratecycle (TCA cycle)
+canFam2	cfa00030	cfa00030 - Pentosephosphate pathway
+canFam2	cfa00040	cfa00040 - Pentoseand glucuronate interconversions
+canFam2	cfa00051	cfa00051 - Fructoseand mannose metabolism
+canFam2	cfa00052	cfa00052 - Galactosemetabolism
+canFam2	cfa00053	cfa00053 - Ascorbateand aldarate metabolism
+canFam2	cfa00061	cfa00061 - Fattyacid biosynthesis
+canFam2	cfa00062	cfa00062 - Fattyacid elongation in mitochondria
+canFam2	cfa00071	cfa00071 - Fattyacid metabolism
+canFam2	cfa00072	cfa00072 - Synthesisand degradation of ketone bodies
+canFam2	cfa00100	cfa00100 - Steroidbiosynthesis
+canFam2	cfa00120	cfa00120 - Primarybile acid biosynthesis
+canFam2	cfa00130	cfa00130 - Ubiquinoneand other terpenoid-quinone biosynthesis
+canFam2	cfa00140	cfa00140 - Steroidhormone biosynthesis
+canFam2	cfa00190	cfa00190 - Oxidativephosphorylation
+canFam2	cfa00230	cfa00230 - Purinemetabolism
+canFam2	cfa00232	cfa00232 - Caffeinemetabolism
+canFam2	cfa00240	cfa00240 - Pyrimidinemetabolism
+canFam2	cfa00250	cfa00250 - Alanine,aspartate and glutamate metabolism
+canFam2	cfa00260	cfa00260 - Glycine,serine and threonine metabolism
+canFam2	cfa00270	cfa00270 - Cysteineand methionine metabolism
+canFam2	cfa00280	cfa00280 - Valine,leucine and isoleucine degradation
+canFam2	cfa00290	cfa00290 - Valine,leucine and isoleucine biosynthesis
+canFam2	cfa00300	cfa00300 - Lysinebiosynthesis
+canFam2	cfa00310	cfa00310 - Lysinedegradation
+canFam2	cfa00330	cfa00330 - Arginineand proline metabolism
+canFam2	cfa00340	cfa00340 - Histidinemetabolism
+canFam2	cfa00350	cfa00350 - Tyrosinemetabolism
+canFam2	cfa00360	cfa00360 - Phenylalaninemetabolism
+canFam2	cfa00380	cfa00380 - Tryptophanmetabolism
+canFam2	cfa00400	cfa00400 - Phenylalanine,tyrosine and tryptophan biosynthesis
+canFam2	cfa00410	cfa00410 - beta-Alaninemetabolism
+canFam2	cfa00430	cfa00430 - Taurineand hypotaurine metabolism
+canFam2	cfa00450	cfa00450 - Selenocompoundmetabolism
+canFam2	cfa00460	cfa00460 - Cyanoaminoacid metabolism
+canFam2	cfa00472	cfa00472 - D-Arginineand D-ornithine metabolism
+canFam2	cfa00480	cfa00480 - Glutathionemetabolism
+canFam2	cfa00500	cfa00500 - Starchand sucrose metabolism
+canFam2	cfa00510	cfa00510 - N-Glycanbiosynthesis
+canFam2	cfa00511	cfa00511 - Otherglycan degradation
+canFam2	cfa00512	cfa00512 - Mucintype O-Glycan biosynthesis
+canFam2	cfa00514	cfa00514 - Othertypes of O-glycan biosynthesis
+canFam2	cfa00520	cfa00520 - Aminosugar and nucleotide sugar metabolism
+canFam2	cfa00531	cfa00531 - Glycosaminoglycandegradation
+canFam2	cfa00532	cfa00532 - Glycosaminoglycanbiosynthesis - chondroitin sulfate
+canFam2	cfa00533	cfa00533 - Glycosaminoglycanbiosynthesis - keratan sulfate
+canFam2	cfa00534	cfa00534 - Glycosaminoglycanbiosynthesis - heparan sulfate
+canFam2	cfa00561	cfa00561 - Glycerolipidmetabolism
+canFam2	cfa00562	cfa00562 - Inositolphosphate metabolism
+canFam2	cfa00563	cfa00563 - Glycosylphosphatidylinositol(GPI)-anchorbiosynthesis
+canFam2	cfa00564	cfa00564 - Glycerophospholipidmetabolism
+canFam2	cfa00565	cfa00565 - Etherlipid metabolism
+canFam2	cfa00590	cfa00590 - Arachidonicacid metabolism
+canFam2	cfa00591	cfa00591 - Linoleicacid metabolism
+canFam2	cfa00592	cfa00592 - alpha-Linolenicacid metabolism
+canFam2	cfa00600	cfa00600 - Sphingolipidmetabolism
+canFam2	cfa00601	cfa00601 - Glycosphingolipidbiosynthesis - lacto and neolacto series
+canFam2	cfa00603	cfa00603 - Glycosphingolipidbiosynthesis - globo series
+canFam2	cfa00604	cfa00604 - Glycosphingolipidbiosynthesis - ganglio series
+canFam2	cfa00620	cfa00620 - Pyruvatemetabolism
+canFam2	cfa00630	cfa00630 - Glyoxylateand dicarboxylate metabolism
+canFam2	cfa00640	cfa00640 - Propanoatemetabolism
+canFam2	cfa00650	cfa00650 - Butanoatemetabolism
+canFam2	cfa00670	cfa00670 - Onecarbon pool by folate
+canFam2	cfa00730	cfa00730 - Thiaminemetabolism
+canFam2	cfa00740	cfa00740 - Riboflavinmetabolism
+canFam2	cfa00750	cfa00750 - VitaminB6 metabolism
+canFam2	cfa00760	cfa00760 - Nicotinateand nicotinamide metabolism
+canFam2	cfa00770	cfa00770 - Pantothenateand CoA biosynthesis
+canFam2	cfa00780	cfa00780 - Biotinmetabolism
+canFam2	cfa00785	cfa00785 - Lipoicacid metabolism
+canFam2	cfa00790	cfa00790 - Folatebiosynthesis
+canFam2	cfa00830	cfa00830 - Retinolmetabolism
+canFam2	cfa00860	cfa00860 - Porphyrinand chlorophyll metabolism
+canFam2	cfa00900	cfa00900 - Terpenoidbackbone biosynthesis
+canFam2	cfa00910	cfa00910 - Nitrogenmetabolism
+canFam2	cfa00920	cfa00920 - Sulfurmetabolism
+canFam2	cfa00970	cfa00970 - Aminoacyl-tRNAbiosynthesis
+canFam2	cfa00980	cfa00980 - Metabolismof xenobiotics by cytochrome P450
+canFam2	cfa00982	cfa00982 - Drugmetabolism - cytochrome P450
+canFam2	cfa00983	cfa00983 - Drugmetabolism - other enzymes
+canFam2	cfa01040	cfa01040 - Biosynthesisof unsaturated fatty acids
+canFam2	cfa01100	cfa01100 - Metabolicpathways
+canFam2	cfa02010	cfa02010 - ABCtransporters
+canFam2	cfa03008	cfa03008 - Ribosomebiogenesis in eukaryotes
+canFam2	cfa03010	cfa03010 - Ribosome
+canFam2	cfa03013	cfa03013 - RNAtransport
+canFam2	cfa03015	cfa03015 - mRNAsurveillance pathway
+canFam2	cfa03018	cfa03018 - RNAdegradation
+canFam2	cfa03020	cfa03020 - RNApolymerase
+canFam2	cfa03022	cfa03022 - Basaltranscription factors
+canFam2	cfa03030	cfa03030 - DNAreplication
+canFam2	cfa03040	cfa03040 - Spliceosome
+canFam2	cfa03050	cfa03050 - Proteasome
+canFam2	cfa03060	cfa03060 - Proteinexport
+canFam2	cfa03320	cfa03320 - PPARsignaling pathway
+canFam2	cfa03410	cfa03410 - Baseexcision repair
+canFam2	cfa03420	cfa03420 - Nucleotideexcision repair
+canFam2	cfa03430	cfa03430 - Mismatchrepair
+canFam2	cfa03440	cfa03440 - Homologousrecombination
+canFam2	cfa03450	cfa03450 - Non-homologousend-joining
+canFam2	cfa03460	cfa03460 - Fanconianemia pathway
+canFam2	cfa04010	cfa04010 - MAPKsignaling pathway
+canFam2	cfa04012	cfa04012 - ErbBsignaling pathway
+canFam2	cfa04020	cfa04020 - Calciumsignaling pathway
+canFam2	cfa04060	cfa04060 - Cytokine-cytokinereceptor interaction
+canFam2	cfa04062	cfa04062 - Chemokinesignaling pathway
+canFam2	cfa04070	cfa04070 - Phosphatidylinositolsignaling system
+canFam2	cfa04080	cfa04080 - Neuroactiveligand-receptor interaction
+canFam2	cfa04110	cfa04110 - Cellcycle
+canFam2	cfa04114	cfa04114 - Oocytemeiosis
+canFam2	cfa04115	cfa04115 - p53signaling pathway
+canFam2	cfa04120	cfa04120 - Ubiquitinmediated proteolysis
+canFam2	cfa04122	cfa04122 - Sulfurrelay system
+canFam2	cfa04130	cfa04130 - SNAREinteractions in vesicular transport
+canFam2	cfa04140	cfa04140 - Regulationof autophagy
+canFam2	cfa04141	cfa04141 - Proteinprocessing in endoplasmic reticulum
+canFam2	cfa04142	cfa04142 - Lysosome
+canFam2	cfa04144	cfa04144 - Endocytosis
+canFam2	cfa04145	cfa04145 - Phagosome
+canFam2	cfa04146	cfa04146 - Peroxisome
+canFam2	cfa04150	cfa04150 - mTORsignaling pathway
+canFam2	cfa04210	cfa04210 - Apoptosis
+canFam2	cfa04260	cfa04260 - Cardiacmuscle contraction
+canFam2	cfa04270	cfa04270 - Vascularsmooth muscle contraction
+canFam2	cfa04310	cfa04310 - Wntsignaling pathway
+canFam2	cfa04320	cfa04320 - Dorso-ventralaxis formation
+canFam2	cfa04330	cfa04330 - Notchsignaling pathway
+canFam2	cfa04340	cfa04340 - Hedgehogsignaling pathway
+canFam2	cfa04350	cfa04350 - TGF-betasignaling pathway
+canFam2	cfa04360	cfa04360 - Axonguidance
+canFam2	cfa04370	cfa04370 - VEGFsignaling pathway
+canFam2	cfa04380	cfa04380 - Osteoclastdifferentiation
+canFam2	cfa04510	cfa04510 - Focaladhesion
+canFam2	cfa04512	cfa04512 - ECM-receptorinteraction
+canFam2	cfa04514	cfa04514 - Celladhesion molecules (CAMs)
+canFam2	cfa04520	cfa04520 - Adherensjunction
+canFam2	cfa04530	cfa04530 - Tightjunction
+canFam2	cfa04540	cfa04540 - Gapjunction
+canFam2	cfa04610	cfa04610 - Complementand coagulation cascades
+canFam2	cfa04612	cfa04612 - Antigenprocessing and presentation
+canFam2	cfa04614	cfa04614 - Renin-angiotensinsystem
+canFam2	cfa04620	cfa04620 - Toll-likereceptor signaling pathway
+canFam2	cfa04621	cfa04621 - NOD-likereceptor signaling pathway
+canFam2	cfa04622	cfa04622 - RIG-I-likereceptor signaling pathway
+canFam2	cfa04623	cfa04623 - CytosolicDNA-sensing pathway
+canFam2	cfa04630	cfa04630 - Jak-STATsignaling pathway
+canFam2	cfa04640	cfa04640 - Hematopoieticcell lineage
+canFam2	cfa04650	cfa04650 - Naturalkiller cell mediated cytotoxicity
+canFam2	cfa04660	cfa04660 - Tcell receptor signaling pathway
+canFam2	cfa04662	cfa04662 - Bcell receptor signaling pathway
+canFam2	cfa04664	cfa04664 - Fcepsilon RI signaling pathway
+canFam2	cfa04666	cfa04666 - Fcgamma R-mediated phagocytosis
+canFam2	cfa04670	cfa04670 - Leukocytetransendothelial migration
+canFam2	cfa04672	cfa04672 - Intestinalimmune network for IgA production
+canFam2	cfa04710	cfa04710 - Circadianrhythm - mammal
+canFam2	cfa04720	cfa04720 - Long-termpotentiation
+canFam2	cfa04721	cfa04721 - Synapticvesicle cycle
+canFam2	cfa04722	cfa04722 - Neurotrophinsignaling pathway
+canFam2	cfa04724	cfa04724 - Glutamatergicsynapse
+canFam2	cfa04725	cfa04725 - Cholinergicsynapse
+canFam2	cfa04727	cfa04727 - GABAergicsynapse
+canFam2	cfa04728	cfa04728 - Dopaminergicsynapse
+canFam2	cfa04730	cfa04730 - Long-termdepression
+canFam2	cfa04740	cfa04740 - Olfactorytransduction
+canFam2	cfa04742	cfa04742 - Tastetransduction
+canFam2	cfa04744	cfa04744 - Phototransduction
+canFam2	cfa04810	cfa04810 - Regulationof actin cytoskeleton
+canFam2	cfa04910	cfa04910 - Insulinsignaling pathway
+canFam2	cfa04912	cfa04912 - GnRHsignaling pathway
+canFam2	cfa04914	cfa04914 - Progesterone-mediatedoocyte maturation
+canFam2	cfa04916	cfa04916 - Melanogenesis
+canFam2	cfa04920	cfa04920 - Adipocytokinesignaling pathway
+canFam2	cfa04930	cfa04930 - TypeII diabetes mellitus
+canFam2	cfa04940	cfa04940 - TypeI diabetes mellitus
+canFam2	cfa04950	cfa04950 - Maturityonset diabetes of the young
+canFam2	cfa04960	cfa04960 - Aldosterone-regulatedsodium reabsorption
+canFam2	cfa04961	cfa04961 - Endocrineand other factor-regulated calcium reabsorption
+canFam2	cfa04962	cfa04962 - Vasopressin-regulatedwater reabsorption
+canFam2	cfa04964	cfa04964 - Proximaltubule bicarbonate reclamation
+canFam2	cfa04966	cfa04966 - Collectingduct acid secretion
+canFam2	cfa04970	cfa04970 - Salivarysecretion
+canFam2	cfa04971	cfa04971 - Gastricacid secretion
+canFam2	cfa04972	cfa04972 - Pancreaticsecretion
+canFam2	cfa04973	cfa04973 - Carbohydratedigestion and absorption
+canFam2	cfa04974	cfa04974 - Proteindigestion and absorption
+canFam2	cfa04975	cfa04975 - Fatdigestion and absorption
+canFam2	cfa04976	cfa04976 - Bilesecretion
+canFam2	cfa04977	cfa04977 - Vitamindigestion and absorption
+canFam2	cfa04978	cfa04978 - Mineralabsorption
+canFam2	cfa05010	cfa05010 - Alzheimer'sdisease
+canFam2	cfa05012	cfa05012 - Parkinson'sdisease
+canFam2	cfa05014	cfa05014 - Amyotrophiclateral sclerosis (ALS)
+canFam2	cfa05016	cfa05016 - Huntington'sdisease
+canFam2	cfa05020	cfa05020 - Priondiseases
+canFam2	cfa05100	cfa05100 - Bacterialinvasion of epithelial cells
+canFam2	cfa05132	cfa05132 - Salmonellainfection
+canFam2	cfa05133	cfa05133 - Pertussis
+canFam2	cfa05134	cfa05134 - Legionellosis
+canFam2	cfa05140	cfa05140 - Leishmaniasis
+canFam2	cfa05142	cfa05142 - Chagasdisease (American trypanosomiasis)
+canFam2	cfa05143	cfa05143 - Africantrypanosomiasis
+canFam2	cfa05144	cfa05144 - Malaria
+canFam2	cfa05145	cfa05145 - Toxoplasmosis
+canFam2	cfa05146	cfa05146 - Amoebiasis
+canFam2	cfa05150	cfa05150 - Staphylococcusaureus infection
+canFam2	cfa05152	cfa05152 - Tuberculosis
+canFam2	cfa05160	cfa05160 - HepatitisC
+canFam2	cfa05162	cfa05162 - Measles
+canFam2	cfa05164	cfa05164 - InfluenzaA
+canFam2	cfa05166	cfa05166 - HTLV-Iinfection
+canFam2	cfa05168	cfa05168 - Herpessimplex infection
+canFam2	cfa05200	cfa05200 - Pathwaysin cancer
+canFam2	cfa05210	cfa05210 - Colorectalcancer
+canFam2	cfa05211	cfa05211 - Renalcell carcinoma
+canFam2	cfa05212	cfa05212 - Pancreaticcancer
+canFam2	cfa05213	cfa05213 - Endometrialcancer
+canFam2	cfa05214	cfa05214 - Glioma
+canFam2	cfa05215	cfa05215 - Prostatecancer
+canFam2	cfa05216	cfa05216 - Thyroidcancer
+canFam2	cfa05217	cfa05217 - Basalcell carcinoma
+canFam2	cfa05218	cfa05218 - Melanoma
+canFam2	cfa05219	cfa05219 - Bladdercancer
+canFam2	cfa05220	cfa05220 - Chronicmyeloid leukemia
+canFam2	cfa05221	cfa05221 - Acutemyeloid leukemia
+canFam2	cfa05222	cfa05222 - Smallcell lung cancer
+canFam2	cfa05223	cfa05223 - Non-smallcell lung cancer
+canFam2	cfa05310	cfa05310 - Asthma
+canFam2	cfa05320	cfa05320 - Autoimmunethyroid disease
+canFam2	cfa05322	cfa05322 - Systemiclupus erythematosus
+canFam2	cfa05323	cfa05323 - Rheumatoidarthritis
+canFam2	cfa05330	cfa05330 - Allograftrejection
+canFam2	cfa05332	cfa05332 - Graft-versus-hostdisease
+canFam2	cfa05340	cfa05340 - Primaryimmunodeficiency
+canFam2	cfa05410	cfa05410 - Hypertrophiccardiomyopathy (HCM)
+canFam2	cfa05412	cfa05412 - Arrhythmogenicright ventricular cardiomyopathy (ARVC)
+canFam2	cfa05414	cfa05414 - Dilatedcardiomyopathy
+canFam2	cfa05416	cfa05416 - Viralmyocarditis
+bosTau4	bta00010	bta00010 - Glycolysis/ Gluconeogenesis
+bosTau4	bta00020	bta00020 - Citratecycle (TCA cycle)
+bosTau4	bta00030	bta00030 - Pentosephosphate pathway
+bosTau4	bta00040	bta00040 - Pentoseand glucuronate interconversions
+bosTau4	bta00051	bta00051 - Fructoseand mannose metabolism
+bosTau4	bta00052	bta00052 - Galactosemetabolism
+bosTau4	bta00053	bta00053 - Ascorbateand aldarate metabolism
+bosTau4	bta00061	bta00061 - Fattyacid biosynthesis
+bosTau4	bta00062	bta00062 - Fattyacid elongation
+bosTau4	bta00071	bta00071 - Fattyacid metabolism
+bosTau4	bta00072	bta00072 - Synthesisand degradation of ketone bodies
+bosTau4	bta00100	bta00100 - Steroidbiosynthesis
+bosTau4	bta00120	bta00120 - Primarybile acid biosynthesis
+bosTau4	bta00130	bta00130 - Ubiquinoneand other terpenoid-quinone biosynthesis
+bosTau4	bta00140	bta00140 - Steroidhormone biosynthesis
+bosTau4	bta00190	bta00190 - Oxidativephosphorylation
+bosTau4	bta00230	bta00230 - Purinemetabolism
+bosTau4	bta00232	bta00232 - Caffeinemetabolism
+bosTau4	bta00240	bta00240 - Pyrimidinemetabolism
+bosTau4	bta00250	bta00250 - Alanine,aspartate and glutamate metabolism
+bosTau4	bta00260	bta00260 - Glycine,serine and threonine metabolism
+bosTau4	bta00270	bta00270 - Cysteineand methionine metabolism
+bosTau4	bta00280	bta00280 - Valine,leucine and isoleucine degradation
+bosTau4	bta00290	bta00290 - Valine,leucine and isoleucine biosynthesis
+bosTau4	bta00300	bta00300 - Lysinebiosynthesis
+bosTau4	bta00310	bta00310 - Lysinedegradation
+bosTau4	bta00330	bta00330 - Arginineand proline metabolism
+bosTau4	bta00340	bta00340 - Histidinemetabolism
+bosTau4	bta00350	bta00350 - Tyrosinemetabolism
+bosTau4	bta00360	bta00360 - Phenylalaninemetabolism
+bosTau4	bta00380	bta00380 - Tryptophanmetabolism
+bosTau4	bta00400	bta00400 - Phenylalanine,tyrosine and tryptophan biosynthesis
+bosTau4	bta00410	bta00410 - beta-Alaninemetabolism
+bosTau4	bta00430	bta00430 - Taurineand hypotaurine metabolism
+bosTau4	bta00450	bta00450 - Selenocompoundmetabolism
+bosTau4	bta00460	bta00460 - Cyanoaminoacid metabolism
+bosTau4	bta00471	bta00471 - D-Glutamineand D-glutamate metabolism
+bosTau4	bta00472	bta00472 - D-Arginineand D-ornithine metabolism
+bosTau4	bta00480	bta00480 - Glutathionemetabolism
+bosTau4	bta00500	bta00500 - Starchand sucrose metabolism
+bosTau4	bta00510	bta00510 - N-Glycanbiosynthesis
+bosTau4	bta00511	bta00511 - Otherglycan degradation
+bosTau4	bta00512	bta00512 - Mucintype O-Glycan biosynthesis
+bosTau4	bta00514	bta00514 - Othertypes of O-glycan biosynthesis
+bosTau4	bta00520	bta00520 - Aminosugar and nucleotide sugar metabolism
+bosTau4	bta00524	bta00524 - Butirosinand neomycin biosynthesis
+bosTau4	bta00531	bta00531 - Glycosaminoglycandegradation
+bosTau4	bta00532	bta00532 - Glycosaminoglycanbiosynthesis - chondroitin sulfate
+bosTau4	bta00533	bta00533 - Glycosaminoglycanbiosynthesis - keratan sulfate
+bosTau4	bta00534	bta00534 - Glycosaminoglycanbiosynthesis - heparan sulfate
+bosTau4	bta00561	bta00561 - Glycerolipidmetabolism
+bosTau4	bta00562	bta00562 - Inositolphosphate metabolism
+bosTau4	bta00563	bta00563 - Glycosylphosphatidylinositol(GPI)-anchorbiosynthesis
+bosTau4	bta00564	bta00564 - Glycerophospholipidmetabolism
+bosTau4	bta00565	bta00565 - Etherlipid metabolism
+bosTau4	bta00590	bta00590 - Arachidonicacid metabolism
+bosTau4	bta00591	bta00591 - Linoleicacid metabolism
+bosTau4	bta00592	bta00592 - alpha-Linolenicacid metabolism
+bosTau4	bta00600	bta00600 - Sphingolipidmetabolism
+bosTau4	bta00601	bta00601 - Glycosphingolipidbiosynthesis - lacto and neolacto series
+bosTau4	bta00603	bta00603 - Glycosphingolipidbiosynthesis - globo series
+bosTau4	bta00604	bta00604 - Glycosphingolipidbiosynthesis - ganglio series
+bosTau4	bta00620	bta00620 - Pyruvatemetabolism
+bosTau4	bta00630	bta00630 - Glyoxylateand dicarboxylate metabolism
+bosTau4	bta00640	bta00640 - Propanoatemetabolism
+bosTau4	bta00650	bta00650 - Butanoatemetabolism
+bosTau4	bta00670	bta00670 - Onecarbon pool by folate
+bosTau4	bta00730	bta00730 - Thiaminemetabolism
+bosTau4	bta00740	bta00740 - Riboflavinmetabolism
+bosTau4	bta00750	bta00750 - VitaminB6 metabolism
+bosTau4	bta00760	bta00760 - Nicotinateand nicotinamide metabolism
+bosTau4	bta00770	bta00770 - Pantothenateand CoA biosynthesis
+bosTau4	bta00780	bta00780 - Biotinmetabolism
+bosTau4	bta00785	bta00785 - Lipoicacid metabolism
+bosTau4	bta00790	bta00790 - Folatebiosynthesis
+bosTau4	bta00830	bta00830 - Retinolmetabolism
+bosTau4	bta00860	bta00860 - Porphyrinand chlorophyll metabolism
+bosTau4	bta00900	bta00900 - Terpenoidbackbone biosynthesis
+bosTau4	bta00910	bta00910 - Nitrogenmetabolism
+bosTau4	bta00920	bta00920 - Sulfurmetabolism
+bosTau4	bta00970	bta00970 - Aminoacyl-tRNAbiosynthesis
+bosTau4	bta00980	bta00980 - Metabolismof xenobiotics by cytochrome P450
+bosTau4	bta00982	bta00982 - Drugmetabolism - cytochrome P450
+bosTau4	bta00983	bta00983 - Drugmetabolism - other enzymes
+bosTau4	bta01040	bta01040 - Biosynthesisof unsaturated fatty acids
+bosTau4	bta01100	bta01100 - Metabolicpathways
+bosTau4	bta02010	bta02010 - ABCtransporters
+bosTau4	bta03008	bta03008 - Ribosomebiogenesis in eukaryotes
+bosTau4	bta03010	bta03010 - Ribosome
+bosTau4	bta03013	bta03013 - RNAtransport
+bosTau4	bta03015	bta03015 - mRNAsurveillance pathway
+bosTau4	bta03018	bta03018 - RNAdegradation
+bosTau4	bta03020	bta03020 - RNApolymerase
+bosTau4	bta03022	bta03022 - Basaltranscription factors
+bosTau4	bta03030	bta03030 - DNAreplication
+bosTau4	bta03040	bta03040 - Spliceosome
+bosTau4	bta03050	bta03050 - Proteasome
+bosTau4	bta03060	bta03060 - Proteinexport
+bosTau4	bta03320	bta03320 - PPARsignaling pathway
+bosTau4	bta03410	bta03410 - Baseexcision repair
+bosTau4	bta03420	bta03420 - Nucleotideexcision repair
+bosTau4	bta03430	bta03430 - Mismatchrepair
+bosTau4	bta03440	bta03440 - Homologousrecombination
+bosTau4	bta03450	bta03450 - Non-homologousend-joining
+bosTau4	bta03460	bta03460 - Fanconianemia pathway
+bosTau4	bta04010	bta04010 - MAPKsignaling pathway
+bosTau4	bta04012	bta04012 - ErbBsignaling pathway
+bosTau4	bta04020	bta04020 - Calciumsignaling pathway
+bosTau4	bta04060	bta04060 - Cytokine-cytokinereceptor interaction
+bosTau4	bta04062	bta04062 - Chemokinesignaling pathway
+bosTau4	bta04070	bta04070 - Phosphatidylinositolsignaling system
+bosTau4	bta04080	bta04080 - Neuroactiveligand-receptor interaction
+bosTau4	bta04110	bta04110 - Cellcycle
+bosTau4	bta04114	bta04114 - Oocytemeiosis
+bosTau4	bta04115	bta04115 - p53signaling pathway
+bosTau4	bta04120	bta04120 - Ubiquitinmediated proteolysis
+bosTau4	bta04122	bta04122 - Sulfurrelay system
+bosTau4	bta04130	bta04130 - SNAREinteractions in vesicular transport
+bosTau4	bta04140	bta04140 - Regulationof autophagy
+bosTau4	bta04141	bta04141 - Proteinprocessing in endoplasmic reticulum
+bosTau4	bta04142	bta04142 - Lysosome
+bosTau4	bta04144	bta04144 - Endocytosis
+bosTau4	bta04145	bta04145 - Phagosome
+bosTau4	bta04146	bta04146 - Peroxisome
+bosTau4	bta04150	bta04150 - mTORsignaling pathway
+bosTau4	bta04210	bta04210 - Apoptosis
+bosTau4	bta04260	bta04260 - Cardiacmuscle contraction
+bosTau4	bta04270	bta04270 - Vascularsmooth muscle contraction
+bosTau4	bta04310	bta04310 - Wntsignaling pathway
+bosTau4	bta04320	bta04320 - Dorso-ventralaxis formation
+bosTau4	bta04330	bta04330 - Notchsignaling pathway
+bosTau4	bta04340	bta04340 - Hedgehogsignaling pathway
+bosTau4	bta04350	bta04350 - TGF-betasignaling pathway
+bosTau4	bta04360	bta04360 - Axonguidance
+bosTau4	bta04370	bta04370 - VEGFsignaling pathway
+bosTau4	bta04380	bta04380 - Osteoclastdifferentiation
+bosTau4	bta04510	bta04510 - Focaladhesion
+bosTau4	bta04512	bta04512 - ECM-receptorinteraction
+bosTau4	bta04514	bta04514 - Celladhesion molecules (CAMs)
+bosTau4	bta04520	bta04520 - Adherensjunction
+bosTau4	bta04530	bta04530 - Tightjunction
+bosTau4	bta04540	bta04540 - Gapjunction
+bosTau4	bta04610	bta04610 - Complementand coagulation cascades
+bosTau4	bta04612	bta04612 - Antigenprocessing and presentation
+bosTau4	bta04614	bta04614 - Renin-angiotensinsystem
+bosTau4	bta04620	bta04620 - Toll-likereceptor signaling pathway
+bosTau4	bta04621	bta04621 - NOD-likereceptor signaling pathway
+bosTau4	bta04622	bta04622 - RIG-I-likereceptor signaling pathway
+bosTau4	bta04623	bta04623 - CytosolicDNA-sensing pathway
+bosTau4	bta04630	bta04630 - Jak-STATsignaling pathway
+bosTau4	bta04640	bta04640 - Hematopoieticcell lineage
+bosTau4	bta04650	bta04650 - Naturalkiller cell mediated cytotoxicity
+bosTau4	bta04660	bta04660 - Tcell receptor signaling pathway
+bosTau4	bta04662	bta04662 - Bcell receptor signaling pathway
+bosTau4	bta04664	bta04664 - Fcepsilon RI signaling pathway
+bosTau4	bta04666	bta04666 - Fcgamma R-mediated phagocytosis
+bosTau4	bta04670	bta04670 - Leukocytetransendothelial migration
+bosTau4	bta04672	bta04672 - Intestinalimmune network for IgA production
+bosTau4	bta04710	bta04710 - Circadianrhythm - mammal
+bosTau4	bta04720	bta04720 - Long-termpotentiation
+bosTau4	bta04721	bta04721 - Synapticvesicle cycle
+bosTau4	bta04722	bta04722 - Neurotrophinsignaling pathway
+bosTau4	bta04724	bta04724 - Glutamatergicsynapse
+bosTau4	bta04725	bta04725 - Cholinergicsynapse
+bosTau4	bta04727	bta04727 - GABAergicsynapse
+bosTau4	bta04728	bta04728 - Dopaminergicsynapse
+bosTau4	bta04730	bta04730 - Long-termdepression
+bosTau4	bta04740	bta04740 - Olfactorytransduction
+bosTau4	bta04742	bta04742 - Tastetransduction
+bosTau4	bta04744	bta04744 - Phototransduction
+bosTau4	bta04810	bta04810 - Regulationof actin cytoskeleton
+bosTau4	bta04910	bta04910 - Insulinsignaling pathway
+bosTau4	bta04912	bta04912 - GnRHsignaling pathway
+bosTau4	bta04914	bta04914 - Progesterone-mediatedoocyte maturation
+bosTau4	bta04916	bta04916 - Melanogenesis
+bosTau4	bta04920	bta04920 - Adipocytokinesignaling pathway
+bosTau4	bta04930	bta04930 - TypeII diabetes mellitus
+bosTau4	bta04940	bta04940 - TypeI diabetes mellitus
+bosTau4	bta04950	bta04950 - Maturityonset diabetes of the young
+bosTau4	bta04960	bta04960 - Aldosterone-regulatedsodium reabsorption
+bosTau4	bta04961	bta04961 - Endocrineand other factor-regulated calcium reabsorption
+bosTau4	bta04962	bta04962 - Vasopressin-regulatedwater reabsorption
+bosTau4	bta04964	bta04964 - Proximaltubule bicarbonate reclamation
+bosTau4	bta04966	bta04966 - Collectingduct acid secretion
+bosTau4	bta04970	bta04970 - Salivarysecretion
+bosTau4	bta04971	bta04971 - Gastricacid secretion
+bosTau4	bta04972	bta04972 - Pancreaticsecretion
+bosTau4	bta04973	bta04973 - Carbohydratedigestion and absorption
+bosTau4	bta04974	bta04974 - Proteindigestion and absorption
+bosTau4	bta04975	bta04975 - Fatdigestion and absorption
+bosTau4	bta04976	bta04976 - Bilesecretion
+bosTau4	bta04977	bta04977 - Vitamindigestion and absorption
+bosTau4	bta04978	bta04978 - Mineralabsorption
+bosTau4	bta05010	bta05010 - Alzheimer'sdisease
+bosTau4	bta05012	bta05012 - Parkinson'sdisease
+bosTau4	bta05014	bta05014 - Amyotrophiclateral sclerosis (ALS)
+bosTau4	bta05016	bta05016 - Huntington'sdisease
+bosTau4	bta05020	bta05020 - Priondiseases
+bosTau4	bta05100	bta05100 - Bacterialinvasion of epithelial cells
+bosTau4	bta05132	bta05132 - Salmonellainfection
+bosTau4	bta05133	bta05133 - Pertussis
+bosTau4	bta05134	bta05134 - Legionellosis
+bosTau4	bta05140	bta05140 - Leishmaniasis
+bosTau4	bta05142	bta05142 - Chagasdisease (American trypanosomiasis)
+bosTau4	bta05143	bta05143 - Africantrypanosomiasis
+bosTau4	bta05144	bta05144 - Malaria
+bosTau4	bta05145	bta05145 - Toxoplasmosis
+bosTau4	bta05146	bta05146 - Amoebiasis
+bosTau4	bta05150	bta05150 - Staphylococcusaureus infection
+bosTau4	bta05152	bta05152 - Tuberculosis
+bosTau4	bta05160	bta05160 - HepatitisC
+bosTau4	bta05162	bta05162 - Measles
+bosTau4	bta05164	bta05164 - InfluenzaA
+bosTau4	bta05166	bta05166 - HTLV-Iinfection
+bosTau4	bta05168	bta05168 - Herpessimplex infection
+bosTau4	bta05200	bta05200 - Pathwaysin cancer
+bosTau4	bta05202	bta05202 - Transcriptionalmisregulation in cancers
+bosTau4	bta05210	bta05210 - Colorectalcancer
+bosTau4	bta05211	bta05211 - Renalcell carcinoma
+bosTau4	bta05212	bta05212 - Pancreaticcancer
+bosTau4	bta05213	bta05213 - Endometrialcancer
+bosTau4	bta05214	bta05214 - Glioma
+bosTau4	bta05215	bta05215 - Prostatecancer
+bosTau4	bta05216	bta05216 - Thyroidcancer
+bosTau4	bta05217	bta05217 - Basalcell carcinoma
+bosTau4	bta05218	bta05218 - Melanoma
+bosTau4	bta05219	bta05219 - Bladdercancer
+bosTau4	bta05220	bta05220 - Chronicmyeloid leukemia
+bosTau4	bta05221	bta05221 - Acutemyeloid leukemia
+bosTau4	bta05222	bta05222 - Smallcell lung cancer
+bosTau4	bta05223	bta05223 - Non-smallcell lung cancer
+bosTau4	bta05310	bta05310 - Asthma
+bosTau4	bta05320	bta05320 - Autoimmunethyroid disease
+bosTau4	bta05322	bta05322 - Systemiclupus erythematosus
+bosTau4	bta05323	bta05323 - Rheumatoidarthritis
+bosTau4	bta05330	bta05330 - Allograftrejection
+bosTau4	bta05332	bta05332 - Graft-versus-hostdisease
+bosTau4	bta05340	bta05340 - Primaryimmunodeficiency
+bosTau4	bta05410	bta05410 - Hypertrophiccardiomyopathy (HCM)
+bosTau4	bta05412	bta05412 - Arrhythmogenicright ventricular cardiomyopathy (ARVC)
+bosTau4	bta05414	bta05414 - Dilatedcardiomyopathy
+bosTau4	bta05416	bta05416 - Viralmyocarditis
