@@ -1,0 +1,149 @@
+<tool id="gd_gd_snp2vcf" name="gd_snp to VCF" version="1.1.0" force_history_refresh="True">
+  <description>: Convert from gd_snp or gd_genotype to VCF format, for submission to dbSNP</description>
+  <command interpreter="perl">
+    gd_snp2vcf.pl "$input" -handle=$hand -batch=$batch -ref=$ref -metaOut=$output2
+    #if $individuals.choice == '0':
+      #set $geno = ''
+      #for $individual_col in $input.dataset.metadata.individual_columns
+        ##need to check to number of cols per individual
+        #if $input.ext == "gd_snp":
+           #set $t = $individual_col + 2
+        #else if $input.ext == "gd_genotype":
+           #set $t = $individual_col
+        #else:
+           #set $t = $individual_col
+        #end if
+        #set $geno += "%d," % ($t)
+      #end for
+      #if $individuals.pall_id != '':
+        -population=$individuals.pall_id
+      #end if
+    #else if $individuals.choice == '1':
+      #set $geno = ''
+      #set $pop = ''
+      #if $input.ext == "gd_snp":
+         -off=2
+      #else if $input.ext == "gd_genotype":
+         -off=0
+      #else:
+         -off=2
+      #end if
+      #for $population in $individuals.populations
+        #set $geno += "%s," % ($population.p1_input)
+        #set $pop += "%s," % ($population.p1_id)
+      #end for
+      -population=$pop
+    #else if $individuals.choice == '2':
+      #set $geno = $individuals.geno
+    #end if
+    -geno=$geno
+    #if $bioproj.value != '':
+       -bioproj=$bioproj
+    #end if
+    #if $biosamp.value != '':
+       -biosamp=$biosamp
+    #end if
+    > $output
+  </command>
+  <inputs>
+    <param name="input" type="data" format="gd_snp,gd_genotype" label="SNP dataset" />
+    <conditional name="individuals">
+      <param name="choice" type="select" label="Generate dataset for">
+        <option value="0" selected="true">All individuals</option>
+        <option value="1">Individuals in populations</option>
+        <option value="2">A single individual</option>
+      </param>
+      <when value="0">
+        <param name="pall_id" type="text" size="20" label="ID for this population" help="Leaving this blank will omit allele counts from the output" />
+      </when>
+      <when value="1">
+        <repeat name="populations" title="Population" min="1">
+        <param name="p1_input" type="data" format="gd_indivs" label="Population individuals" />
+        <param name="p1_id" type="text" size="20" label="ID for this population" help="Leaving this blank will omit allele counts from the output" />
+        </repeat>
+      </when>
+      <when value="2">
+        <param name="geno" type="data_column" data_ref="input" label="Column containing genotype" value="8" />
+      </when>
+    </conditional> 
+    <param name="hand" type="text" size="20" label="dbSNP handle" help="If you do not have a handle, request one at http://www.ncbi.nlm.nih.gov/projects/SNP/handle.html" />
+    <param name="batch" type="text" size="20" label="Batch ID" help="ID used to tie dbSNP metadata to the VCF submission" />
+    <param name="ref" type="text" size="20" label="Reference sequence ID" help="The RefSeq assembly accession.version on which the SNP positions are based (see http://www.ncbi.nlm.nih.gov/assembly/)" />
+    <param name="bioproj" type="text" size="20" label="Optional: Registered BioProject ID" />
+    <param name="biosamp" type="text" size="20" label="Optional: Comma-separated list of registered BioSample IDs" />
+  </inputs>
+
+  <outputs>
+    <data name="output" format="vcf" />
+    <data name="output2" format="text" />
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="sample.gd_snp" ftype="gd_snp" />
+      <param name="choice" value="2" />
+      <param name="geno" value="11" />
+      <param name="hand" value="MyHandle" />
+      <param name="batch" value="Test1" />
+      <param name="ref" value="pb_000001.1" />
+      <output name="output" file="snpsForSubmission.vcf" ftype="vcf" compare="diff" />
+      <output name="output2" file="snpsForSubmission.text" ftype="text" compare="diff" />
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The input dataset is in gd_snp_ or gd_genotype_ format.
+The output consists of two datasets needed for submitting SNPs:
+a VCF_ file in the specific format required by dbSNP, and a partially
+completed text_ file for the associated dbSNP metadata.
+(`Dataset missing?`_)
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _VCF: ./static/formatHelp.html#vcf
+.. _text: ./static/formatHelp.html#text
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+This tool converts a dataset in gd_snp or gd_genotype format to a VCF file formatted
+for submission to the dbSNP database at NCBI.  It also creates a partially
+filled-in template to assist you in preparing the required "metadata" file
+describing the SNP submission.
+
+-----
+
+**Example**
+
+- input::
+
+    #{"column_names":["scaf","pos","A","B","qual","ref","rpos","rnuc","1A","1B","1G","1Q","2A","2B","2G","2Q","3A","3B","3G","3Q","4A","4B","4G","4Q","5A","5B","5G","5Q","6A","6B","6G","6Q","pair","dist",
+    #"prim","rflp"],"dbkey":"canFam2","individuals":[["PB1",9],["PB2",13],["PB3",17],["PB4",21],["PB6",25],["PB8",29]],"pos":2,"rPos":7,"ref":6,"scaffold":1,"species":"bear"}
+    Contig161  115    C      T      73.5    chr1    4641382   C      6      0      2      45     8      0      2      51     15     0      2      72     5      0      2      42     6      0      2      45     10     0      2      57     Y      54     0.323   0
+    Contig48   11     A      G      94.3    chr1    10150264  A      1      0      2      30     1      0      2      30     1      0      2      30     3      0      2      36     1      0      2      30     1      0      2      30     Y      22     +99.    0
+    Contig20   66     C      T      54.0    chr1    21313534  C      4      0      2      39     4      0      2      39     5      0      2      42     4      0      2      39     4      0      2      39     5      0      2      42     N      1      +99.    0
+    etc.
+
+- VCF output (for all individuals, and giving a population ID)::
+
+    #CHROM     POS    ID               REF    ALT    QUAL    FILTER  INFO    FORMAT  PB
+    Contig161  115    Contig161;115    C      T      73.5    .       VRT=6   NA:AC   8:0
+    Contig48   11     Contig48;11      A      G      94.3    .       VRT=6   NA:AC   8:0
+    Contig     66     Contig20;66      C      T      54.0    .       VRT=6   NA:AC   8:0
+    etc.
+
+Note:  This excerpt from the output does not show all of the headers.  Also,
+if the population ID had not been given, then the last two columns would not
+appear in the output.
+
+-----
+
+**Reference**
+
+Sherry ST, Ward MH, Kholodov M, Baker J, Phan L, Smigielski EM, Sirotkin K.
+dbSNP: the NCBI database of genetic variation. Nucleic Acids Res. 2001
+Jan 1;29(1):308-11.
+  </help>
+</tool>
