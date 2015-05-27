@@ -1,0 +1,828 @@
+<project name="galaxy_genome_diversity" default="" basedir=".">
+    <description>
+        A build file for generating Galaxy packages for individual tools.
+    </description>
+    <!-- Global properties for build -->
+    <property name="build.dir" location="./build"/>
+    <property name="dependencies.dir" location="./dependencies"/>
+    <property name="data.managers.dir" location="./data_managers"/>
+    <property name="datatypes.dir" location="./datatypes"/>
+    <property name="test-data.dir" location="./test-data"/>
+    <property name="tool-data.dir" location="./tool-data"/>
+    <property name="tools.dir" location="./tools"/>
+
+    <target name="init">
+        <!-- Create time stamp -->
+        <tstamp/>
+        <!-- Check build dir -->
+        <available file="./${build.dir}" type="dir" property="build.found"/>
+    </target>
+
+    <target name="build" unless="build.found">
+        <mkdir dir="${build.dir}"/>
+    </target>
+
+    <target name="package_atlas_3_10" depends="build">
+        <mkdir dir="${build.dir}/package_atlas_3_10"/>
+        <copy todir="${build.dir}/package_atlas_3_10">
+            <fileset dir="${dependencies.dir}/package_atlas_3_10"/>
+        </copy>
+        <tar destfile="${build.dir}/package_atlas_3_10.tar" basedir="${build.dir}/package_atlas_3_10"/>
+        <gzip destfile="${build.dir}/package_atlas_3_10.tar.gz" src="${build.dir}/package_atlas_3_10.tar"/>
+        <delete file="${build.dir}/package_atlas_3_10.tar"/>
+    </target>
+
+    <target name="package_beautifulsoup_3_2_1" depends="build">
+        <mkdir dir="${build.dir}/package_beautifulsoup_3_2_1"/>
+        <copy todir="${build.dir}/package_beautifulsoup_3_2_1">
+            <fileset dir="${dependencies.dir}/package_beautifulsoup_3_2_1"/>
+        </copy>
+        <tar destfile="${build.dir}/package_beautifulsoup_3_2_1.tar" basedir="${build.dir}/package_beautifulsoup_3_2_1"/>
+        <gzip destfile="${build.dir}/package_beautifulsoup_3_2_1.tar.gz" src="${build.dir}/package_beautifulsoup_3_2_1.tar"/>
+        <delete file="${build.dir}/package_beautifulsoup_3_2_1.tar"/>
+    </target>
+
+    <target name="package_clapack_3_2_1" depends="build">
+        <mkdir dir="${build.dir}/package_clapack_3_2_1"/>
+        <copy todir="${build.dir}/package_clapack_3_2_1">
+            <fileset dir="${dependencies.dir}/package_clapack_3_2_1"/>
+        </copy>
+        <tar destfile="${build.dir}/package_clapack_3_2_1.tar" basedir="${build.dir}/package_clapack_3_2_1"/>
+        <gzip destfile="${build.dir}/package_clapack_3_2_1.tar.gz" src="${build.dir}/package_clapack_3_2_1.tar"/>
+        <delete file="${build.dir}/package_clapack_3_2_1.tar"/>
+    </target>
+
+    <target name="package_eigensoft_5_0_1" depends="build">
+        <mkdir dir="${build.dir}/package_eigensoft_5_0_1"/>
+        <copy todir="${build.dir}/package_eigensoft_5_0_1">
+            <fileset dir="${dependencies.dir}/package_eigensoft_5_0_1"/>
+        </copy>
+        <tar destfile="${build.dir}/package_eigensoft_5_0_1.tar" basedir="${build.dir}/package_eigensoft_5_0_1"/>
+        <gzip destfile="${build.dir}/package_eigensoft_5_0_1.tar.gz" src="${build.dir}/package_eigensoft_5_0_1.tar"/>
+        <delete file="${build.dir}/package_eigensoft_5_0_1.tar"/>
+    </target>
+
+    <target name="package_fisher_0_1_4" depends="build">
+        <mkdir dir="${build.dir}/package_fisher_0_1_4"/>
+        <copy todir="${build.dir}/package_fisher_0_1_4">
+            <fileset dir="${dependencies.dir}/package_fisher_0_1_4"/>
+        </copy>
+        <tar destfile="${build.dir}/package_fisher_0_1_4.tar" basedir="${build.dir}/package_fisher_0_1_4"/>
+        <gzip destfile="${build.dir}/package_fisher_0_1_4.tar.gz" src="${build.dir}/package_fisher_0_1_4.tar"/>
+        <delete file="${build.dir}/package_fisher_0_1_4.tar"/>
+    </target>
+
+    <target name="package_freetype_2_4" depends="build">
+        <mkdir dir="${build.dir}/package_freetype_2_4"/>
+        <copy todir="${build.dir}/package_freetype_2_4">
+            <fileset dir="${dependencies.dir}/package_freetype_2_4"/>
+        </copy>
+        <tar destfile="${build.dir}/package_freetype_2_4.tar" basedir="${build.dir}/package_freetype_2_4"/>
+        <gzip destfile="${build.dir}/package_freetype_2_4.tar.gz" src="${build.dir}/package_freetype_2_4.tar"/>
+        <delete file="${build.dir}/package_freetype_2_4.tar"/>
+    </target>
+
+    <target name="package_gd_c_tools_0_1" depends="build">
+        <mkdir dir="${build.dir}/package_gd_c_tools_0_1"/>
+        <copy todir="${build.dir}/package_gd_c_tools_0_1">
+            <fileset dir="${dependencies.dir}/package_gd_c_tools_0_1"/>
+        </copy>
+        <tar destfile="${build.dir}/package_gd_c_tools_0_1.tar" basedir="${build.dir}/package_gd_c_tools_0_1"/>
+        <gzip destfile="${build.dir}/package_gd_c_tools_0_1.tar.gz" src="${build.dir}/package_gd_c_tools_0_1.tar"/>
+        <delete file="${build.dir}/package_gd_c_tools_0_1.tar"/>
+    </target>
+
+    <target name="package_imaging_1_1_7" depends="build">
+        <mkdir dir="${build.dir}/package_imaging_1_1_7"/>
+        <copy todir="${build.dir}/package_imaging_1_1_7">
+            <fileset dir="${dependencies.dir}/package_imaging_1_1_7"/>
+        </copy>
+        <tar destfile="${build.dir}/package_imaging_1_1_7.tar" basedir="${build.dir}/package_imaging_1_1_7"/>
+        <gzip destfile="${build.dir}/package_imaging_1_1_7.tar.gz" src="${build.dir}/package_imaging_1_1_7.tar"/>
+        <delete file="${build.dir}/package_imaging_1_1_7.tar"/>
+    </target>
+
+    <target name="package_libpng_1_6_7" depends="build">
+        <mkdir dir="${build.dir}/package_libpng_1_6_7"/>
+        <copy todir="${build.dir}/package_libpng_1_6_7">
+            <fileset dir="${dependencies.dir}/package_libpng_1_6_7"/>
+        </copy>
+        <tar destfile="${build.dir}/package_libpng_1_6_7.tar" basedir="${build.dir}/package_libpng_1_6_7"/>
+        <gzip destfile="${build.dir}/package_libpng_1_6_7.tar.gz" src="${build.dir}/package_libpng_1_6_7.tar"/>
+        <delete file="${build.dir}/package_libpng_1_6_7.tar"/>
+    </target>
+
+    <target name="package_matplotlib_1_2" depends="build">
+        <mkdir dir="${build.dir}/package_matplotlib_1_2"/>
+        <copy todir="${build.dir}/package_matplotlib_1_2">
+            <fileset dir="${dependencies.dir}/package_matplotlib_1_2"/>
+        </copy>
+        <tar destfile="${build.dir}/package_matplotlib_1_2.tar" basedir="${build.dir}/package_matplotlib_1_2"/>
+        <gzip destfile="${build.dir}/package_matplotlib_1_2.tar.gz" src="${build.dir}/package_matplotlib_1_2.tar"/>
+        <delete file="${build.dir}/package_matplotlib_1_2.tar"/>
+    </target>
+
+    <target name="package_mechanize_0_2_5" depends="build">
+        <mkdir dir="${build.dir}/package_mechanize_0_2_5"/>
+        <copy todir="${build.dir}/package_mechanize_0_2_5">
+            <fileset dir="${dependencies.dir}/package_mechanize_0_2_5"/>
+        </copy>
+        <tar destfile="${build.dir}/package_mechanize_0_2_5.tar" basedir="${build.dir}/package_mechanize_0_2_5"/>
+        <gzip destfile="${build.dir}/package_mechanize_0_2_5.tar.gz" src="${build.dir}/package_mechanize_0_2_5.tar"/>
+        <delete file="${build.dir}/package_mechanize_0_2_5.tar"/>
+    </target>
+
+    <target name="package_munkres_1_0_5_4" depends="build">
+        <mkdir dir="${build.dir}/package_munkres_1_0_5_4"/>
+        <copy todir="${build.dir}/package_munkres_1_0_5_4">
+            <fileset dir="${dependencies.dir}/package_munkres_1_0_5_4"/>
+        </copy>
+        <tar destfile="${build.dir}/package_munkres_1_0_5_4.tar" basedir="${build.dir}/package_munkres_1_0_5_4"/>
+        <gzip destfile="${build.dir}/package_munkres_1_0_5_4.tar.gz" src="${build.dir}/package_munkres_1_0_5_4.tar"/>
+        <delete file="${build.dir}/package_munkres_1_0_5_4.tar"/>
+    </target>
+
+    <target name="package_networkx_1_8_1" depends="build">
+        <mkdir dir="${build.dir}/package_networkx_1_8_1"/>
+        <copy todir="${build.dir}/package_networkx_1_8_1">
+            <fileset dir="${dependencies.dir}/package_networkx_1_8_1"/>
+        </copy>
+        <tar destfile="${build.dir}/package_networkx_1_8_1.tar" basedir="${build.dir}/package_networkx_1_8_1"/>
+        <gzip destfile="${build.dir}/package_networkx_1_8_1.tar.gz" src="${build.dir}/package_networkx_1_8_1.tar"/>
+        <delete file="${build.dir}/package_networkx_1_8_1.tar"/>
+    </target>
+
+    <target name="package_numpy_1_7" depends="build">
+        <mkdir dir="${build.dir}/package_numpy_1_7"/>
+        <copy todir="${build.dir}/package_numpy_1_7">
+            <fileset dir="${dependencies.dir}/package_numpy_1_7"/>
+        </copy>
+        <tar destfile="${build.dir}/package_numpy_1_7.tar" basedir="${build.dir}/package_numpy_1_7"/>
+        <gzip destfile="${build.dir}/package_numpy_1_7.tar.gz" src="${build.dir}/package_numpy_1_7.tar"/>
+        <delete file="${build.dir}/package_numpy_1_7.tar"/>
+    </target>
+
+    <target name="package_phast_1_3" depends="build">
+        <mkdir dir="${build.dir}/package_phast_1_3"/>
+        <copy todir="${build.dir}/package_phast_1_3">
+            <fileset dir="${dependencies.dir}/package_phast_1_3"/>
+        </copy>
+        <tar destfile="${build.dir}/package_phast_1_3.tar" basedir="${build.dir}/package_phast_1_3"/>
+        <gzip destfile="${build.dir}/package_phast_1_3.tar.gz" src="${build.dir}/package_phast_1_3.tar"/>
+        <delete file="${build.dir}/package_phast_1_3.tar"/>
+    </target>
+
+    <target name="package_quicktree_1_1" depends="build">
+        <mkdir dir="${build.dir}/package_quicktree_1_1"/>
+        <copy todir="${build.dir}/package_quicktree_1_1">
+            <fileset dir="${dependencies.dir}/package_quicktree_1_1"/>
+        </copy>
+        <tar destfile="${build.dir}/package_quicktree_1_1.tar" basedir="${build.dir}/package_quicktree_1_1"/>
+        <gzip destfile="${build.dir}/package_quicktree_1_1.tar.gz" src="${build.dir}/package_quicktree_1_1.tar"/>
+        <delete file="${build.dir}/package_quicktree_1_1.tar"/>
+    </target>
+
+    <target name="package_raxml_7_7_6" depends="build">
+        <mkdir dir="${build.dir}/package_raxml_7_7_6"/>
+        <copy todir="${build.dir}/package_raxml_7_7_6">
+            <fileset dir="${dependencies.dir}/package_raxml_7_7_6"/>
+        </copy>
+        <tar destfile="${build.dir}/package_raxml_7_7_6.tar" basedir="${build.dir}/package_raxml_7_7_6"/>
+        <gzip destfile="${build.dir}/package_raxml_7_7_6.tar.gz" src="${build.dir}/package_raxml_7_7_6.tar"/>
+        <delete file="${build.dir}/package_raxml_7_7_6.tar"/>
+    </target>
+
+    <target name="package_tiff_4_0_3" depends="build">
+        <mkdir dir="${build.dir}/package_tiff_4_0_3"/>
+        <copy todir="${build.dir}/package_tiff_4_0_3">
+            <fileset dir="${dependencies.dir}/package_tiff_4_0_3"/>
+        </copy>
+        <tar destfile="${build.dir}/package_tiff_4_0_3.tar" basedir="${build.dir}/package_tiff_4_0_3"/>
+        <gzip destfile="${build.dir}/package_tiff_4_0_3.tar.gz" src="${build.dir}/package_tiff_4_0_3.tar"/>
+        <delete file="${build.dir}/package_tiff_4_0_3.tar"/>
+    </target>
+
+    <target name="package_zlib_1_2_8" depends="build">
+        <mkdir dir="${build.dir}/package_zlib_1_2_8"/>
+        <copy todir="${build.dir}/package_zlib_1_2_8">
+            <fileset dir="${dependencies.dir}/package_zlib_1_2_8"/>
+        </copy>
+        <tar destfile="${build.dir}/package_zlib_1_2_8.tar" basedir="${build.dir}/package_zlib_1_2_8"/>
+        <gzip destfile="${build.dir}/package_zlib_1_2_8.tar.gz" src="${build.dir}/package_zlib_1_2_8.tar"/>
+        <delete file="${build.dir}/package_zlib_1_2_8.tar"/>
+    </target>
+
+    <target name="wsf_datatypes" depends="build">
+        <mkdir dir="${build.dir}/wsf_datatypes"/>
+        <copy todir="${build.dir}/wsf_datatypes">
+            <fileset dir="${datatypes.dir}/wsf_datatypes"/>
+        </copy>
+        <tar destfile="${build.dir}/wsf_datatypes.tar" basedir="${build.dir}/wsf_datatypes"/>
+        <gzip destfile="${build.dir}/wsf_datatypes.tar.gz" src="${build.dir}/wsf_datatypes.tar"/>
+        <delete file="${build.dir}/wsf_datatypes.tar"/>
+    </target>
+
+    <target name="add_fst_column" depends="build">
+        <mkdir dir="${build.dir}/add_fst_column"/>
+        <copy todir="${build.dir}/add_fst_column">
+            <fileset dir="${tools.dir}/add_fst_column"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/add_fst_column"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/add_fst_column"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/add_fst_column"/>
+
+        <mkdir dir="${build.dir}/add_fst_column/test-data"/>
+        <mkdir dir="${build.dir}/add_fst_column/test-data/test_in"/>
+        <mkdir dir="${build.dir}/add_fst_column/test-data/test_out"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/add_fst_column/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/a.gd_indivs" todir="${build.dir}/add_fst_column/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/b.gd_indivs" todir="${build.dir}/add_fst_column/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/add_fst_column/add_fst_column.gd_snp" todir="${build.dir}/add_fst_column/test-data/test_out"/>
+
+        <tar destfile="${build.dir}/add_fst_column.tar" basedir="${build.dir}/add_fst_column"/>
+        <gzip destfile="${build.dir}/add_fst_column.tar.gz" src="${build.dir}/add_fst_column.tar"/>
+        <delete file="${build.dir}/add_fst_column.tar"/>
+    </target>
+
+    <target name="aggregate_gd_indivs" depends="build">
+        <mkdir dir="${build.dir}/aggregate_gd_indivs"/>
+        <copy todir="${build.dir}/aggregate_gd_indivs">
+            <fileset dir="${tools.dir}/aggregate_gd_indivs"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/aggregate_gd_indivs"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/aggregate_gd_indivs"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/aggregate_gd_indivs"/>
+
+        <mkdir dir="${build.dir}/aggregate_gd_indivs/test-data"/>
+        <mkdir dir="${build.dir}/aggregate_gd_indivs/test-data/test_in"/>
+        <mkdir dir="${build.dir}/aggregate_gd_indivs/test-data/test_out"/>
+        <mkdir dir="${build.dir}/aggregate_gd_indivs/test-data/test_out/modify_snp_table"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/aggregate_gd_indivs/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/a.gd_indivs" todir="${build.dir}/aggregate_gd_indivs/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/modify_snp_table/modify.gd_snp" todir="${build.dir}/aggregate_gd_indivs/test-data/test_out/modify_snp_table"/>
+
+        <tar destfile="${build.dir}/aggregate_gd_indivs.tar" basedir="${build.dir}/aggregate_gd_indivs"/>
+        <gzip destfile="${build.dir}/aggregate_gd_indivs.tar.gz" src="${build.dir}/aggregate_gd_indivs.tar"/>
+        <delete file="${build.dir}/aggregate_gd_indivs.tar"/>
+    </target>
+
+    <target name="assignment_of_optimal_breeding_pairs" depends="build">
+        <mkdir dir="${build.dir}/assignment_of_optimal_breeding_pairs"/>
+        <copy todir="${build.dir}/assignment_of_optimal_breeding_pairs">
+            <fileset dir="${tools.dir}/assignment_of_optimal_breeding_pairs"/>
+        </copy>
+
+        <tar destfile="${build.dir}/assignment_of_optimal_breeding_pairs.tar" basedir="${build.dir}/assignment_of_optimal_breeding_pairs"/>
+        <gzip destfile="${build.dir}/assignment_of_optimal_breeding_pairs.tar.gz" src="${build.dir}/assignment_of_optimal_breeding_pairs.tar"/>
+        <delete file="${build.dir}/assignment_of_optimal_breeding_pairs.tar"/>
+    </target>
+
+    <target name="average_fst" depends="build">
+        <mkdir dir="${build.dir}/average_fst"/>
+        <copy todir="${build.dir}/average_fst">
+            <fileset dir="${tools.dir}/average_fst"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/average_fst"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/average_fst"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/average_fst"/>
+
+        <mkdir dir="${build.dir}/average_fst/test-data"/>
+        <mkdir dir="${build.dir}/average_fst/test-data/test_in"/>
+        <mkdir dir="${build.dir}/average_fst/test-data/test_out"/>
+        <mkdir dir="${build.dir}/average_fst/test-data/test_out/average_fst"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/average_fst/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/a.gd_indivs" todir="${build.dir}/average_fst/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/b.gd_indivs" todir="${build.dir}/average_fst/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/average_fst/average_fst.txt" todir="${build.dir}/average_fst/test-data/test_out/average_fst"/>
+
+        <tar destfile="${build.dir}/average_fst.tar" basedir="${build.dir}/average_fst"/>
+        <gzip destfile="${build.dir}/average_fst.tar.gz" src="${build.dir}/average_fst.tar"/>
+        <delete file="${build.dir}/average_fst.tar"/>
+    </target>
+
+    <target name="cluster_kegg" depends="build">
+        <mkdir dir="${build.dir}/cluster_kegg"/>
+        <copy todir="${build.dir}/cluster_kegg">
+            <fileset dir="${tools.dir}/cluster_kegg"/>
+        </copy>
+
+        <tar destfile="${build.dir}/cluster_kegg.tar" basedir="${build.dir}/cluster_kegg"/>
+        <gzip destfile="${build.dir}/cluster_kegg.tar.gz" src="${build.dir}/cluster_kegg.tar"/>
+        <delete file="${build.dir}/cluster_kegg.tar"/>
+    </target>
+
+    <target name="coverage_distributions" depends="build">
+        <mkdir dir="${build.dir}/coverage_distributions"/>
+        <copy todir="${build.dir}/coverage_distributions">
+            <fileset dir="${tools.dir}/coverage_distributions"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/coverage_distributions"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/coverage_distributions"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/coverage_distributions"/>
+
+        <mkdir dir="${build.dir}/coverage_distributions/test-data"/>
+        <mkdir dir="${build.dir}/coverage_distributions/test-data/test_in"/>
+        <mkdir dir="${build.dir}/coverage_distributions/test-data/test_out"/>
+        <mkdir dir="${build.dir}/coverage_distributions/test-data/test_out/coverage_distributions"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/coverage_distributions/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/coverage_distributions/coverage.html" todir="${build.dir}/coverage_distributions/test-data/test_out/coverage_distributions"/>
+        <copy file="${test-data.dir}/test_out/coverage_distributions/coverage.pdf" todir="${build.dir}/coverage_distributions/test-data/test_out/coverage_distributions"/>
+        <copy file="${test-data.dir}/test_out/coverage_distributions/coverage.txt" todir="${build.dir}/coverage_distributions/test-data/test_out/coverage_distributions"/>
+
+        <tar destfile="${build.dir}/coverage_distributions.tar" basedir="${build.dir}/coverage_distributions"/>
+        <gzip destfile="${build.dir}/coverage_distributions.tar.gz" src="${build.dir}/coverage_distributions.tar"/>
+        <delete file="${build.dir}/coverage_distributions.tar"/>
+    </target>
+
+    <target name="discover_familial_relationships" depends="build">
+        <mkdir dir="${build.dir}/discover_familial_relationships"/>
+        <copy todir="${build.dir}/discover_familial_relationships">
+            <fileset dir="${tools.dir}/discover_familial_relationships"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/discover_familial_relationships"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/discover_familial_relationships"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/discover_familial_relationships"/>
+
+        <tar destfile="${build.dir}/discover_familial_relationships.tar" basedir="${build.dir}/discover_familial_relationships"/>
+        <gzip destfile="${build.dir}/discover_familial_relationships.tar.gz" src="${build.dir}/discover_familial_relationships.tar"/>
+        <delete file="${build.dir}/discover_familial_relationships.tar"/>
+    </target>
+
+    <target name="diversity_pi" depends="build">
+        <mkdir dir="${build.dir}/diversity_pi"/>
+        <copy todir="${build.dir}/diversity_pi">
+            <fileset dir="${tools.dir}/diversity_pi"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/diversity_pi"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/diversity_pi"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/diversity_pi"/>
+
+        <tar destfile="${build.dir}/diversity_pi.tar" basedir="${build.dir}/diversity_pi"/>
+        <gzip destfile="${build.dir}/diversity_pi.tar.gz" src="${build.dir}/diversity_pi.tar"/>
+        <delete file="${build.dir}/diversity_pi.tar"/>
+    </target>
+
+    <target name="dpmix" depends="build">
+        <mkdir dir="${build.dir}/dpmix"/>
+        <copy todir="${build.dir}/dpmix">
+            <fileset dir="${tools.dir}/dpmix"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/dpmix"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/dpmix"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/dpmix"/>
+        <copy file="${tools.dir}/gd_composite.py" todir="${build.dir}/dpmix"/>
+        <copy file="${tools.dir}/gd_composite_template.html" todir="${build.dir}/dpmix"/>
+
+        <mkdir dir="${build.dir}/dpmix/test-data"/>
+        <mkdir dir="${build.dir}/dpmix/test-data/test_in"/>
+        <mkdir dir="${build.dir}/dpmix/test-data/test_out"/>
+        <mkdir dir="${build.dir}/dpmix/test-data/test_out/dpmix"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/dpmix/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/a.gd_indivs" todir="${build.dir}/dpmix/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/b.gd_indivs" todir="${build.dir}/dpmix/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/c.gd_indivs" todir="${build.dir}/dpmix/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/dpmix/dpmix.tabular" todir="${build.dir}/dpmix/test-data/test_out/dpmix"/>
+
+        <tar destfile="${build.dir}/dpmix.tar" basedir="${build.dir}/dpmix"/>
+        <gzip destfile="${build.dir}/dpmix.tar.gz" src="${build.dir}/dpmix.tar"/>
+        <delete file="${build.dir}/dpmix.tar"/>
+    </target>
+
+    <target name="draw_variants" depends="build">
+        <mkdir dir="${build.dir}/draw_variants"/>
+        <copy todir="${build.dir}/draw_variants">
+            <fileset dir="${tools.dir}/draw_variants"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/draw_variants"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/draw_variants"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/draw_variants"/>
+
+        <tar destfile="${build.dir}/draw_variants.tar" basedir="${build.dir}/draw_variants"/>
+        <gzip destfile="${build.dir}/draw_variants.tar.gz" src="${build.dir}/draw_variants.tar"/>
+        <delete file="${build.dir}/draw_variants.tar"/>
+    </target>
+
+    <target name="evaluate_population_numbers" depends="build">
+        <mkdir dir="${build.dir}/evaluate_population_numbers"/>
+        <copy todir="${build.dir}/evaluate_population_numbers">
+            <fileset dir="${tools.dir}/evaluate_population_numbers"/>
+        </copy>
+
+        <tar destfile="${build.dir}/evaluate_population_numbers.tar" basedir="${build.dir}/evaluate_population_numbers"/>
+        <gzip destfile="${build.dir}/evaluate_population_numbers.tar.gz" src="${build.dir}/evaluate_population_numbers.tar"/>
+        <delete file="${build.dir}/evaluate_population_numbers.tar"/>
+    </target>
+
+    <target name="extract_flanking_dna" depends="build">
+        <mkdir dir="${build.dir}/extract_flanking_dna"/>
+        <copy todir="${build.dir}/extract_flanking_dna">
+            <fileset dir="${tools.dir}/extract_flanking_dna"/>
+        </copy>
+        <copy file="${tools.dir}/genome_diversity.py" todir="${build.dir}/extract_flanking_dna"/>
+        <copy file="${tools.dir}/cdblib.py" todir="${build.dir}/extract_flanking_dna"/>
+
+        <tar destfile="${build.dir}/extract_flanking_dna.tar" basedir="${build.dir}/extract_flanking_dna"/>
+        <gzip destfile="${build.dir}/extract_flanking_dna.tar.gz" src="${build.dir}/extract_flanking_dna.tar"/>
+        <delete file="${build.dir}/extract_flanking_dna.tar"/>
+    </target>
+
+    <target name="extract_primers" depends="build">
+        <mkdir dir="${build.dir}/extract_primers"/>
+        <copy todir="${build.dir}/extract_primers">
+            <fileset dir="${tools.dir}/extract_primers"/>
+        </copy>
+        <copy file="${tools.dir}/genome_diversity.py" todir="${build.dir}/extract_primers"/>
+        <copy file="${tools.dir}/cdblib.py" todir="${build.dir}/extract_primers"/>
+
+        <mkdir dir="${build.dir}/extract_primers/test-data"/>
+        <mkdir dir="${build.dir}/extract_primers/test-data/test_in"/>
+        <mkdir dir="${build.dir}/extract_primers/test-data/test_out"/>
+        <mkdir dir="${build.dir}/extract_primers/test-data/test_out/select_snps"/>
+        <mkdir dir="${build.dir}/extract_primers/test-data/test_out/extract_primers"/>
+        <copy file="${test-data.dir}/test_out/select_snps/select_snps.gd_snp" todir="${build.dir}/extract_primers/test-data/test_out/select_snps"/>
+        <copy file="${test-data.dir}/test_out/extract_primers/extract_primers.txt" todir="${build.dir}/extract_primers/test-data/test_out/extract_primers"/>
+
+        <tar destfile="${build.dir}/extract_primers.tar" basedir="${build.dir}/extract_primers"/>
+        <gzip destfile="${build.dir}/extract_primers.tar.gz" src="${build.dir}/extract_primers.tar"/>
+        <delete file="${build.dir}/extract_primers.tar"/>
+    </target>
+
+    <target name="filter_gd_snp" depends="build">
+        <mkdir dir="${build.dir}/filter_gd_snp"/>
+        <copy todir="${build.dir}/filter_gd_snp">
+            <fileset dir="${tools.dir}/filter_gd_snp"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/filter_gd_snp"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/filter_gd_snp"/>
+
+        <mkdir dir="${build.dir}/filter_gd_snp/test-data"/>
+        <mkdir dir="${build.dir}/filter_gd_snp/test-data/test_in"/>
+        <mkdir dir="${build.dir}/filter_gd_snp/test-data/test_out"/>
+        <mkdir dir="${build.dir}/filter_gd_snp/test-data/test_out/modify_snp_table"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/filter_gd_snp/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/a.gd_indivs" todir="${build.dir}/filter_gd_snp/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/modify_snp_table/modify.gd_snp" todir="${build.dir}/filter_gd_snp/test-data/test_out/modify_snp_table"/>
+
+        <tar destfile="${build.dir}/filter_gd_snp.tar" basedir="${build.dir}/filter_gd_snp"/>
+        <gzip destfile="${build.dir}/filter_gd_snp.tar.gz" src="${build.dir}/filter_gd_snp.tar"/>
+        <delete file="${build.dir}/filter_gd_snp.tar"/>
+    </target>
+
+    <target name="find_intervals" depends="build">
+        <mkdir dir="${build.dir}/find_intervals"/>
+        <copy todir="${build.dir}/find_intervals">
+            <fileset dir="${tools.dir}/find_intervals"/>
+        </copy>
+
+        <mkdir dir="${build.dir}/find_intervals/test-data"/>
+        <mkdir dir="${build.dir}/find_intervals/test-data/test_in"/>
+        <mkdir dir="${build.dir}/find_intervals/test-data/test_out"/>
+        <mkdir dir="${build.dir}/find_intervals/test-data/test_out/find_intervals"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/find_intervals/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/find_intervals/find_intervals.interval" todir="${build.dir}/find_intervals/test-data/test_out/find_intervals"/>
+
+        <tar destfile="${build.dir}/find_intervals.tar" basedir="${build.dir}/find_intervals"/>
+        <gzip destfile="${build.dir}/find_intervals.tar.gz" src="${build.dir}/find_intervals.tar"/>
+        <delete file="${build.dir}/find_intervals.tar"/>
+    </target>
+
+    <target name="inbreeding_and_kinship" depends="build">
+        <mkdir dir="${build.dir}/inbreeding_and_kinship"/>
+        <copy todir="${build.dir}/inbreeding_and_kinship">
+            <fileset dir="${tools.dir}/inbreeding_and_kinship"/>
+        </copy>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/inbreeding_and_kinship"/>
+
+        <tar destfile="${build.dir}/inbreeding_and_kinship.tar" basedir="${build.dir}/inbreeding_and_kinship"/>
+        <gzip destfile="${build.dir}/inbreeding_and_kinship.tar.gz" src="${build.dir}/inbreeding_and_kinship.tar"/>
+        <delete file="${build.dir}/inbreeding_and_kinship.tar"/>
+    </target>
+
+    <target name="make_gd_file" depends="build">
+        <mkdir dir="${build.dir}/make_gd_file"/>
+        <copy todir="${build.dir}/make_gd_file">
+            <fileset dir="${tools.dir}/make_gd_file"/>
+        </copy>
+
+        <tar destfile="${build.dir}/make_gd_file.tar" basedir="${build.dir}/make_gd_file"/>
+        <gzip destfile="${build.dir}/make_gd_file.tar.gz" src="${build.dir}/make_gd_file.tar"/>
+        <delete file="${build.dir}/make_gd_file.tar"/>
+    </target>
+
+    <target name="make_phylip" depends="build">
+        <mkdir dir="${build.dir}/make_phylip"/>
+        <copy todir="${build.dir}/make_phylip">
+            <fileset dir="${tools.dir}/make_phylip"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/make_phylip"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/make_phylip"/>
+
+        <tar destfile="${build.dir}/make_phylip.tar" basedir="${build.dir}/make_phylip"/>
+        <gzip destfile="${build.dir}/make_phylip.tar.gz" src="${build.dir}/make_phylip.tar"/>
+        <delete file="${build.dir}/make_phylip.tar"/>
+    </target>
+
+    <target name="map_ensembl_transcripts" depends="build">
+        <mkdir dir="${build.dir}/map_ensembl_transcripts"/>
+        <copy todir="${build.dir}/map_ensembl_transcripts">
+            <fileset dir="${tools.dir}/map_ensembl_transcripts"/>
+        </copy>
+
+        <tar destfile="${build.dir}/map_ensembl_transcripts.tar" basedir="${build.dir}/map_ensembl_transcripts"/>
+        <gzip destfile="${build.dir}/map_ensembl_transcripts.tar.gz" src="${build.dir}/map_ensembl_transcripts.tar"/>
+        <delete file="${build.dir}/map_ensembl_transcripts.tar"/>
+    </target>
+
+    <target name="multiple_to_gd_genotype" depends="build">
+        <mkdir dir="${build.dir}/multiple_to_gd_genotype"/>
+        <copy todir="${build.dir}/multiple_to_gd_genotype">
+            <fileset dir="${tools.dir}/multiple_to_gd_genotype"/>
+        </copy>
+
+        <tar destfile="${build.dir}/multiple_to_gd_genotype.tar" basedir="${build.dir}/multiple_to_gd_genotype"/>
+        <gzip destfile="${build.dir}/multiple_to_gd_genotype.tar.gz" src="${build.dir}/multiple_to_gd_genotype.tar"/>
+        <delete file="${build.dir}/multiple_to_gd_genotype.tar"/>
+    </target>
+
+    <target name="nucleotide_diversity_pi" depends="build">
+        <mkdir dir="${build.dir}/nucleotide_diversity_pi"/>
+        <copy todir="${build.dir}/nucleotide_diversity_pi">
+            <fileset dir="${tools.dir}/nucleotide_diversity_pi"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/nucleotide_diversity_pi"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/nucleotide_diversity_pi"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/nucleotide_diversity_pi"/>
+
+        <tar destfile="${build.dir}/nucleotide_diversity_pi.tar" basedir="${build.dir}/nucleotide_diversity_pi"/>
+        <gzip destfile="${build.dir}/nucleotide_diversity_pi.tar.gz" src="${build.dir}/nucleotide_diversity_pi.tar"/>
+        <delete file="${build.dir}/nucleotide_diversity_pi.tar"/>
+    </target>
+
+    <target name="offspring_heterozygosity" depends="build">
+        <mkdir dir="${build.dir}/offspring_heterozygosity"/>
+        <copy todir="${build.dir}/offspring_heterozygosity">
+            <fileset dir="${tools.dir}/offspring_heterozygosity"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/offspring_heterozygosity"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/offspring_heterozygosity"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/offspring_heterozygosity"/>
+
+        <tar destfile="${build.dir}/offspring_heterozygosity.tar" basedir="${build.dir}/offspring_heterozygosity"/>
+        <gzip destfile="${build.dir}/offspring_heterozygosity.tar.gz" src="${build.dir}/offspring_heterozygosity.tar"/>
+        <delete file="${build.dir}/offspring_heterozygosity.tar"/>
+    </target>
+
+    <target name="offspring_heterozygosity_pedigree" depends="build">
+        <mkdir dir="${build.dir}/offspring_heterozygosity_pedigree"/>
+        <copy todir="${build.dir}/offspring_heterozygosity_pedigree">
+            <fileset dir="${tools.dir}/offspring_heterozygosity_pedigree"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/offspring_heterozygosity_pedigree"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/offspring_heterozygosity_pedigree"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/offspring_heterozygosity_pedigree"/>
+
+        <tar destfile="${build.dir}/offspring_heterozygosity_pedigree.tar" basedir="${build.dir}/offspring_heterozygosity_pedigree"/>
+        <gzip destfile="${build.dir}/offspring_heterozygosity_pedigree.tar.gz" src="${build.dir}/offspring_heterozygosity_pedigree.tar"/>
+        <delete file="${build.dir}/offspring_heterozygosity_pedigree.tar"/>
+    </target>
+
+    <target name="pathway_image" depends="build">
+        <mkdir dir="${build.dir}/pathway_image"/>
+        <copy todir="${build.dir}/pathway_image">
+            <fileset dir="${tools.dir}/pathway_image"/>
+        </copy>
+
+        <mkdir dir="${build.dir}/pathway_image/test-data"/>
+        <mkdir dir="${build.dir}/pathway_image/test-data/test_in"/>
+        <mkdir dir="${build.dir}/pathway_image/test-data/test_out"/>
+        <mkdir dir="${build.dir}/pathway_image/test-data/test_out/pathway_image"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/pathway_image/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/pathway_image/pathway_image.png" todir="${build.dir}/pathway_image/test-data/test_out/pathway_image/"/>
+
+        <tar destfile="${build.dir}/pathway_image.tar" basedir="${build.dir}/pathway_image"/>
+        <gzip destfile="${build.dir}/pathway_image.tar.gz" src="${build.dir}/pathway_image.tar"/>
+        <delete file="${build.dir}/pathway_image.tar"/>
+    </target>
+
+    <target name="pca" depends="build">
+        <mkdir dir="${build.dir}/pca"/>
+        <copy todir="${build.dir}/pca">
+            <fileset dir="${tools.dir}/pca"/>
+        </copy>
+        <copy file="${tools.dir}/BeautifulSoup.py" todir="${build.dir}/pca"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/pca"/>
+        <copy file="${tools.dir}/gd_composite.py" todir="${build.dir}/pca"/>
+        <copy file="${tools.dir}/gd_composite_template.html" todir="${build.dir}/pca"/>
+
+        <tar destfile="${build.dir}/pca.tar" basedir="${build.dir}/pca"/>
+        <gzip destfile="${build.dir}/pca.tar.gz" src="${build.dir}/pca.tar"/>
+        <delete file="${build.dir}/pca.tar"/>
+    </target>
+
+    <target name="phylogenetic_tree" depends="build">
+        <mkdir dir="${build.dir}/phylogenetic_tree"/>
+        <copy todir="${build.dir}/phylogenetic_tree">
+            <fileset dir="${tools.dir}/phylogenetic_tree"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/phylogenetic_tree"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/phylogenetic_tree"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/phylogenetic_tree"/>
+        <copy file="${tools.dir}/gd_composite.py" todir="${build.dir}/phylogenetic_tree"/>
+        <copy file="${tools.dir}/gd_composite_template.html" todir="${build.dir}/phylogenetic_tree"/>
+
+        <mkdir dir="${build.dir}/phylogenetic_tree/test-data"/>
+        <mkdir dir="${build.dir}/phylogenetic_tree/test-data/test_in"/>
+        <mkdir dir="${build.dir}/phylogenetic_tree/test-data/test_out"/>
+        <mkdir dir="${build.dir}/phylogenetic_tree/test-data/test_out/phylogenetic_tree"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/phylogenetic_tree/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/phylogenetic_tree/phylogenetic_tree.html" todir="${build.dir}/phylogenetic_tree/test-data/test_out/phylogenetic_tree"/>
+        <copy file="${test-data.dir}/test_out/phylogenetic_tree/distance_matrix.phylip" todir="${build.dir}/phylogenetic_tree/test-data/test_out/phylogenetic_tree"/>
+        <copy file="${test-data.dir}/test_out/phylogenetic_tree/informative_snps.txt" todir="${build.dir}/phylogenetic_tree/test-data/test_out/phylogenetic_tree"/>
+        <copy file="${test-data.dir}/test_out/phylogenetic_tree/mega_distance_matrix.txt" todir="${build.dir}/phylogenetic_tree/test-data/test_out/phylogenetic_tree"/>
+        <copy file="${test-data.dir}/test_out/phylogenetic_tree/phylogenetic_tree.newick" todir="${build.dir}/phylogenetic_tree/test-data/test_out/phylogenetic_tree"/>
+        <copy file="${test-data.dir}/test_out/phylogenetic_tree/tree.pdf" todir="${build.dir}/phylogenetic_tree/test-data/test_out/phylogenetic_tree"/>
+
+        <tar destfile="${build.dir}/phylogenetic_tree.tar" basedir="${build.dir}/phylogenetic_tree"/>
+        <gzip destfile="${build.dir}/phylogenetic_tree.tar.gz" src="${build.dir}/phylogenetic_tree.tar"/>
+        <delete file="${build.dir}/phylogenetic_tree.tar"/>
+    </target>
+
+    <target name="population_structure" depends="build">
+        <mkdir dir="${build.dir}/population_structure"/>
+        <copy todir="${build.dir}/population_structure">
+            <fileset dir="${tools.dir}/population_structure"/>
+        </copy>
+        <copy file="${tools.dir}/BeautifulSoup.py" todir="${build.dir}/population_structure"/>
+        <copy file="${tools.dir}/gd_composite.py" todir="${build.dir}/population_structure"/>
+        <copy file="${tools.dir}/gd_composite_template.html" todir="${build.dir}/population_structure"/>
+
+        <tar destfile="${build.dir}/population_structure.tar" basedir="${build.dir}/population_structure"/>
+        <gzip destfile="${build.dir}/population_structure.tar.gz" src="${build.dir}/population_structure.tar"/>
+        <delete file="${build.dir}/population_structure.tar"/>
+    </target>
+
+    <target name="prepare_population_structure" depends="build">
+        <mkdir dir="${build.dir}/prepare_population_structure"/>
+        <copy todir="${build.dir}/prepare_population_structure">
+            <fileset dir="${tools.dir}/prepare_population_structure"/>
+        </copy>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/prepare_population_structure"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/prepare_population_structure"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/prepare_population_structure"/>
+        <copy file="${tools.dir}/gd_composite.py" todir="${build.dir}/prepare_population_structure"/>
+        <copy file="${tools.dir}/gd_composite_template.html" todir="${build.dir}/prepare_population_structure"/>
+
+        <mkdir dir="${build.dir}/prepare_population_structure/test-data"/>
+        <mkdir dir="${build.dir}/prepare_population_structure/test-data/test_in"/>
+        <mkdir dir="${build.dir}/prepare_population_structure/test-data/test_out"/>
+        <mkdir dir="${build.dir}/prepare_population_structure/test-data/test_out/prepare_population_structure"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/prepare_population_structure/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/prepare_population_structure/prepare_population_structure.html" todir="${build.dir}/prepare_population_structure/test-data/test_out/prepare_population_structure"/>
+        <copy file="${test-data.dir}/test_out/prepare_population_structure/admix.map" todir="${build.dir}/prepare_population_structure/test-data/test_out/prepare_population_structure"/>
+        <copy file="${test-data.dir}/test_out/prepare_population_structure/admix.ped" todir="${build.dir}/prepare_population_structure/test-data/test_out/prepare_population_structure"/>
+
+        <tar destfile="${build.dir}/prepare_population_structure.tar" basedir="${build.dir}/prepare_population_structure"/>
+        <gzip destfile="${build.dir}/prepare_population_structure.tar.gz" src="${build.dir}/prepare_population_structure.tar"/>
+        <delete file="${build.dir}/prepare_population_structure.tar"/>
+    </target>
+
+    <target name="rank_pathways" depends="build">
+        <mkdir dir="${build.dir}/rank_pathways"/>
+        <copy todir="${build.dir}/rank_pathways">
+            <fileset dir="${tools.dir}/rank_pathways"/>
+        </copy>
+
+        <tar destfile="${build.dir}/rank_pathways.tar" basedir="${build.dir}/rank_pathways"/>
+        <gzip destfile="${build.dir}/rank_pathways.tar.gz" src="${build.dir}/rank_pathways.tar"/>
+        <delete file="${build.dir}/rank_pathways.tar"/>
+    </target>
+
+    <target name="rank_terms" depends="build">
+        <mkdir dir="${build.dir}/rank_terms"/>
+        <copy todir="${build.dir}/rank_terms">
+            <fileset dir="${tools.dir}/rank_terms"/>
+        </copy>
+
+        <tar destfile="${build.dir}/rank_terms.tar" basedir="${build.dir}/rank_terms"/>
+        <gzip destfile="${build.dir}/rank_terms.tar.gz" src="${build.dir}/rank_terms.tar"/>
+        <delete file="${build.dir}/rank_terms.tar"/>
+    </target>
+
+    <target name="raxml" depends="build">
+        <mkdir dir="${build.dir}/raxml"/>
+        <copy todir="${build.dir}/raxml">
+            <fileset dir="${tools.dir}/raxml"/>
+        </copy>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/raxml"/>
+
+        <tar destfile="${build.dir}/raxml.tar" basedir="${build.dir}/raxml"/>
+        <gzip destfile="${build.dir}/raxml.tar.gz" src="${build.dir}/raxml.tar"/>
+        <delete file="${build.dir}/raxml.tar"/>
+    </target>
+
+    <target name="reorder" depends="build">
+        <mkdir dir="${build.dir}/reorder"/>
+        <copy todir="${build.dir}/reorder">
+            <fileset dir="${tools.dir}/reorder"/>
+        </copy>
+
+        <tar destfile="${build.dir}/reorder.tar" basedir="${build.dir}/reorder"/>
+        <gzip destfile="${build.dir}/reorder.tar.gz" src="${build.dir}/reorder.tar"/>
+        <delete file="${build.dir}/reorder.tar"/>
+    </target>
+
+    <target name="restore_attributes" depends="build">
+        <mkdir dir="${build.dir}/restore_attributes"/>
+        <copy todir="${build.dir}/restore_attributes">
+            <fileset dir="${tools.dir}/restore_attributes"/>
+        </copy>
+
+        <tar destfile="${build.dir}/restore_attributes.tar" basedir="${build.dir}/restore_attributes"/>
+        <gzip destfile="${build.dir}/restore_attributes.tar.gz" src="${build.dir}/restore_attributes.tar"/>
+        <delete file="${build.dir}/restore_attributes.tar"/>
+    </target>
+
+    <target name="select_snps" depends="build">
+        <mkdir dir="${build.dir}/select_snps"/>
+        <copy todir="${build.dir}/select_snps">
+            <fileset dir="${tools.dir}/select_snps"/>
+        </copy>
+        <copy file="${tools.dir}/cdblib.py" todir="${build.dir}/select_snps"/>
+        <copy file="${tools.dir}/genome_diversity.py" todir="${build.dir}/select_snps"/>
+
+        <mkdir dir="${build.dir}/select_snps/test-data"/>
+        <mkdir dir="${build.dir}/select_snps/test-data/test_in"/>
+        <mkdir dir="${build.dir}/select_snps/test-data/test_out"/>
+        <mkdir dir="${build.dir}/select_snps/test-data/test_out/select_snps"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/select_snps/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/select_snps/select_snps.gd_snp" todir="${build.dir}/select_snps/test-data/test_out/select_snps"/>
+
+        <tar destfile="${build.dir}/select_snps.tar" basedir="${build.dir}/select_snps"/>
+        <gzip destfile="${build.dir}/select_snps.tar.gz" src="${build.dir}/select_snps.tar"/>
+        <delete file="${build.dir}/select_snps.tar"/>
+    </target>
+
+    <target name="snp2vcf" depends="build">
+        <mkdir dir="${build.dir}/snp2vcf"/>
+        <copy todir="${build.dir}/snp2vcf">
+            <fileset dir="${tools.dir}/snp2vcf"/>
+        </copy>
+
+        <mkdir dir="${build.dir}/snp2vcf/test-data"/>
+        <mkdir dir="${build.dir}/snp2vcf/test-data/test_in"/>
+        <mkdir dir="${build.dir}/snp2vcf/test-data/test_out"/>
+        <mkdir dir="${build.dir}/snp2vcf/test-data/test_out/snp2vcf"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/snp2vcf/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_out/snp2vcf/snp2vcf.gd_snp" todir="${build.dir}/snp2vcf/test-data/test_out/snp2vcf"/>
+
+        <tar destfile="${build.dir}/snp2vcf.tar" basedir="${build.dir}/snp2vcf"/>
+        <gzip destfile="${build.dir}/snp2vcf.tar.gz" src="${build.dir}/snp2vcf.tar"/>
+        <delete file="${build.dir}/snp2vcf.tar"/>
+    </target>
+
+    <target name="specify" depends="build">
+        <mkdir dir="${build.dir}/specify"/>
+        <copy todir="${build.dir}/specify">
+            <fileset dir="${tools.dir}/specify"/>
+        </copy>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/specify"/>
+        <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/specify"/>
+        <copy file="${tools.dir}/Population.py" todir="${build.dir}/specify"/>
+
+        <mkdir dir="${build.dir}/specify/test-data"/>
+        <mkdir dir="${build.dir}/specify/test-data/test_in"/>
+        <mkdir dir="${build.dir}/specify/test-data/test_out"/>
+        <mkdir dir="${build.dir}/specify/test-data/test_out/specify"/>
+        <copy file="${test-data.dir}/test_in/sample.gd_snp" todir="${build.dir}/specify/test-data/test_in"/>
+        <copy file="${test-data.dir}/test_in/a.gd_indivs" todir="${build.dir}/specify/test-data/test_in"/>
+
+        <tar destfile="${build.dir}/specify.tar" basedir="${build.dir}/specify"/>
+        <gzip destfile="${build.dir}/specify.tar.gz" src="${build.dir}/specify.tar"/>
+        <delete file="${build.dir}/specify.tar"/>
+    </target>
+
+    <target name="specify_restriction_enzymes" depends="build">
+        <mkdir dir="${build.dir}/specify_restriction_enzymes"/>
+        <copy todir="${build.dir}/specify_restriction_enzymes">
+            <fileset dir="${tools.dir}/specify_restriction_enzymes"/>
+        </copy>
+        <copy file="${tools.dir}/cdblib.py" todir="${build.dir}/specify_restriction_enzymes"/>
+        <copy file="${tools.dir}/genome_diversity.py" todir="${build.dir}/specify_restriction_enzymes"/>
+
+        <mkdir dir="${build.dir}/specify_restriction_enzymes/test-data"/>
+        <mkdir dir="${build.dir}/specify_restriction_enzymes/test-data/test_in"/>
+        <mkdir dir="${build.dir}/specify_restriction_enzymes/test-data/test_out"/>
+        <mkdir dir="${build.dir}/specify_restriction_enzymes/test-data/test_out/specify_restriction_enzymes"/>
+        <copy file="${test-data.dir}/test_out/select_snps/select_snps.gd_snp" todir="${build.dir}/specify_restriction_enzymes/test-data/test_out"/>
+        <copy file="${test-data.dir}/test_out/specify_restriction_enzymes/specify_restriction_enzymes.gd_snp" todir="${build.dir}/specify_restriction_enzymes/test-data/test_out/specify_restriction_enzymes"/>
+
+        <tar destfile="${build.dir}/specify_restriction_enzymes.tar" basedir="${build.dir}/specify_restriction_enzymes"/>
+        <gzip destfile="${build.dir}/specify_restriction_enzymes.tar.gz" src="${build.dir}/specify_restriction_enzymes.tar"/>
+        <delete file="${build.dir}/specify_restriction_enzymes.tar"/>
+    </target>
+
+    <target name="clean" description="clean up">
+        <!-- Delete build directory -->
+        <delete dir="${build.dir}"/>
+    </target>
+</project>
