@@ -1,0 +1,160 @@
+<tool id="gd_calc_freq" name="Rank Pathways" version="1.2.0">
+  <description>: Assess the impact of a gene set on KEGG pathways</description>
+  <requirements>
+    <requirement type="package" version="0.2.5">mechanize</requirement>
+    <requirement type="package" version="1.8.1">networkx</requirement>
+    <requirement type="package" version="0.1.4">fisher</requirement>
+  </requirements>
+  <command interpreter="python">
+    #if $rank_by.choice == 'pct'
+      rank_pathways_pct.py
+      --input '$rank_by.input1'
+      --columnENSEMBLT '$rank_by.t_col1'
+      --inBckgrndfile '$rank_by.input2'
+      --columnENSEMBLTBckgrnd '$rank_by.t_col2'
+      --columnKEGGBckgrnd '$rank_by.k_col2'
+      --statsTest '$rank_by.stat'
+      --output '$output'
+    #else if $rank_by.choice == 'paths'
+      calclenchange.py
+      '--loc_file=${GALAXY_DATA_INDEX_DIR}/gd.rank.loc'
+      '--species=${rank_by.input.metadata.dbkey}'
+      '--input=${rank_by.input}'
+      '--output=${output}'
+      '--posKEGGclmn=${rank_by.kpath}'
+      '--KEGGgeneposcolmn=${rank_by.kgene}'
+    #end if
+  </command>
+  <inputs>
+    <conditional name="rank_by">
+      <param name="choice" type="select" label="Rank by">
+        <option value="pct" selected="true">percentage of genes affected</option>
+        <option value="paths">change in length and number of paths</option>
+      </param>
+      <when value="pct">
+        <!-- using fields similar to the Rank Terms tool -->
+        <param name="input1" type="data" format="tabular" label="Query dataset" />
+        <param name="t_col1" type="data_column" data_ref="input1" label="Column with ENSEMBL transcript codes" />
+        <param name="input2" type="data" format="tabular" label="Background dataset" />
+        <param name="t_col2" type="data_column" data_ref="input2" label="Column with ENSEMBL transcript codes" />
+        <param name="k_col2" type="data_column" data_ref="input2" label="Column with KEGG pathways" />
+        <param name="stat" type="select" label="Statistic for determining enrichment/depletion">
+          <option value="fisher" selected="true">two-tailed Fisher's exact test</option>
+          <option value="hypergeometric">hypergeometric test</option>
+          <option value="binomial">binomial probability</option>
+        </param>
+      </when>
+      <when value="paths">
+        <param name="input" type="data" format="tabular" label="Dataset" />
+        <param name="kgene" type="data_column" data_ref="input" label="Column with KEGG gene ID" />
+        <param name="kpath" type="data_column" data_ref="input" numerical="false" label="Column with KEGG pathways" />
+      </when>
+    </conditional>
+  </inputs>
+  <outputs>
+    <data name="output" format="tabular" />
+  </outputs>
+  <tests>
+    <test>
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The query dataset has a column containing ENSEMBL transcript codes for
+the gene set of interest, while the background dataset has one column
+with ENSEMBL transcript codes and another with KEGG pathways, for some larger
+universe of genes.
+
+All of the input and output datasets are in tabular_ format.  The input
+dataset (i.e. query) to rank by "percentage of genes affected" has a
+column containing ENSEMBL transcript codes for the gene set of interest,
+while the background dataset has one column with ENSEMBL transcript
+codes and another with KEGG pathways, for some larger universe of genes.
+The input dataset to rank by "change in length and number of paths"
+must have columns with KEGG gene ID and pathways.  The output datasets
+are described below.  (`Dataset missing?`_)
+
+.. _tabular: ./static/formatHelp.html#tab
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+Given a query set of genes from a larger background dataset, this tool
+evaluates the over- or under-representation of KEGG pathways in the query
+set, using the specified statistical test.  Alternatively, the tool ranks
+the pathways based on the change in length and number of paths connecting
+sources and sinks.  This change is calculated between graphs representing
+pathways with and without excluding the nodes that represent the genes
+in an input list.  Sources are all the nodes representing the initial
+reactants/products in the pathway.  Sinks are all the nodes representing
+the final reactants/products in the pathway.
+
+If pathways are ranked by percentage of genes affected, the output
+contains a row for each KEGG pathway, with the following columns:
+
+1. count: the number of genes in the query set that are in this pathway
+2. representation: the percentage of this pathway's genes (from the background dataset) that appear in the query set
+3. ranking of this pathway, based on its representation ("1" is highest)
+4. probability of depletion of this pathway in the query dataset
+5. probability of enrichment of this pathway in the query dataset
+6. name of the pathway
+
+If pathways are ranked by change in length and number of paths, the
+output is a tabular dataset with the following columns:
+
+1. change in the mean length of paths between sources and sinks
+2. mean length of paths between sources and sinks in the pathway including the genes in the input dataset. If the pathway do not have sources/sinks, the length is assumed to be infinite (I)
+3. mean length of paths between sources and sinks in the pathway excluding the genes in the input dataset. If the pathway do not have sources/sinks, the length is assumed to be infinite (I)
+4. rank of the change in the mean length of paths between sources and sinks (from high change to low change)
+5. change in the number of paths between sources and sinks
+6. number of paths between sources and sinks in the pathway including the genes in the input dataset. If the pathway do not have sources/sinks, it is assumed to be a circuit (C)
+7. number of paths between sources and sinks in the pathway excluding the genes in the input dataset. If the pathway do not have sources/sinks, it is assumed to be a circuit (C)
+8. rank of the change in the number of paths between sources and sinks (from high change to low change)
+9. name of the pathway
+
+-----
+
+**Examples**
+
+Rank by percentage of genes affected:
+
+- input background dataset (column 5 for ENSEMBL transcript, column 12 for KEGG pathways, two-tailed Fisher's exact test for statistic)::
+
+   Contig39_chr1_3261104_3261850   414  chr1  3261546  ENSCAFT00000000001   ENSCAFP00000000001   S    667   F    476153  probably damaging    cfa00230=Purine metabolism.cfa00500=Starch and sucrose metabolism.cfa00740=Riboflavin metabolism.cfa00760=Nicotinate and nicotinamide metabolism.cfa00770=Pantothenate and CoA biosynthesis.cfa01100=Metabolic pathways
+   Contig62_chr1_19011969_19012646 265  chr1  19012240 ENSCAFT00000000144   ENSCAFP00000000125   *    161   R    483960  probably damaging    N
+   etc.
+
+- input query dataset (column 5 for ENSEMBL transcript)::
+
+   Contig12_chr20_101969_112646    265  chr20 9822141  ENSCAFT00000001234   ENSCAFP00000021123   T    101   R    476153  probably damaging
+   Contig39_chr1_3261104_3261850   414  chr1  3261546  ENSCAFT00000000001   ENSCAFP00000000001   S    667   F    476153  probably damaging
+   etc.
+
+- output::
+
+   3   0.20    1   1.0 0.0065  cfa03450=Non-homologous end-joining
+   1   0.067   2   1.0 0.019   cfa00750=Vitamin B6 metabolism
+   2   0.062   3   1.0 0.021   cfa00290=Valine, leucine and isoleucine biosynthesis
+   1   0.037   4   1.0 0.035   cfa00770=Pantothenate and CoA biosynthesis
+   etc.
+
+Rank by change in length and number of paths:
+
+- input (column 10 for KEGG gene ID, column 12 for KEGG pathways)::
+
+   Contig39_chr1_3261104_3261850   414  chr1  3261546  ENSCAFT00000000001   ENSCAFP00000000001   S    667   F    476153  probably damaging    cfa00230=Purine metabolism.cfa00500=Starch and sucrose metabolism.cfa00740=Riboflavin metabolism.cfa00760=Nicotinate and nicotinamide metabolism.cfa00770=Pantothenate and CoA biosynthesis.cfa01100=Metabolic pathways
+   Contig62_chr1_19011969_19012646 265  chr1  19012240 ENSCAFT00000000144   ENSCAFP00000000125   *    161   R    483960  probably damaging    N
+   etc.
+
+- output::
+
+   3.64   8.44   4.8     2   4    9    5   1   cfa00260=Glycine, serine and threonine metabolism
+   7.6    9.6    2       1   3    5    2   2   cfa00240=Pyrimidine metabolism
+   0.05   2.67   2.62    6   1   30   29   3   cfa00982=Drug metabolism - cytochrome P450
+   -0.08  8.33   8.41   84   1   30   29   3   cfa00564=Glycerophospholipid metabolism
+   etc.
+  </help>
+</tool>
