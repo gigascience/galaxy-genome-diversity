@@ -1,0 +1,176 @@
+<tool id="gd_make_phylip" name="Phylip" version="1.1.0" force_history_refresh="True">
+  <description>: prepare data for phylogenetic analysis</description>
+  <command interpreter="python">
+    #set $zero_based = 1
+    #set $gen_chrClmn = int($input.metadata.ref) - $zero_based
+    #set $gen_posClmn = int($input.metadata.rPos) - $zero_based
+    #set $gen_refClmn = int($input.metadata.pos) - $zero_based + 1
+    #set $gen_altrClmn = int($input.metadata.pos) - $zero_based + 2
+    make_phylip.py '--altrClmn=$gen_altrClmn' '--chrClmn=$gen_chrClmn' '--gd_indivs=$indivs_input' '--input=$input' '--input_type=$input.ext' '--output=$output1' '--output_id=$output1.id' '--posClmn=$gen_posClmn' '--refClmn=$gen_refClmn'
+    #if $input_type.choice == '0'
+      #set $cov_chrClmn = int($input_type.coverage_input.metadata.ref) - $zero_based
+      #set $cov_posClmn = int($input_type.coverage_input.metadata.rPos) - $zero_based
+      #set $cov_refClmn = int($input_type.coverage_input.metadata.pos) - $zero_based + 1
+      #set $cov_altrClmn = int($input_type.coverage_input.metadata.pos) - $zero_based + 2
+      '--altrClmnCvrg=$cov_altrClmn' '--chrClmnCvrg=$cov_chrClmn' '--cvrgTreshold=$input_type.coverage_threshold' '--gd_indivs_cover=$indivs_input' '--indvlsPrctTrshld=$input_type.indivs_threshold' '--inputCover=$input_type.coverage_input' '--inputCover_type=$input_type.coverage_input.ext' '--posClmnCvrg=$cov_posClmn' '--refClmnCvrg=$cov_refClmn'
+    #else if $input_type.choice == '1'
+      #set $fchrClmn = int($input_type.annotation_input.metadata.chromCol) - $zero_based
+      #set $strandClmn = int($input_type.annotation_input.metadata.strandCol) - $zero_based
+      #set $geneNameClmn = int($input_type.annotation_input.metadata.nameCol) - $zero_based
+      #set $txStartClmn = int(str($input_type.tx_start_col)) - $zero_based
+      #set $txEndClmn = int(str($input_type.tx_end_col)) - $zero_based
+      #set $cdsStartClmn = int(str($input_type.cds_start_col)) - $zero_based
+      #set $cdsEndClmn = int(str($input_type.cds_end_col)) - $zero_based
+      #set $startExsClmn = int(str($input_type.exs_start_col)) - $zero_based
+      #set $endExsClmn = int(str($input_type.exs_end_col)) - $zero_based
+      '--cdsEndClmn=$cdsEndClmn' '--cdsStartClmn=$cdsStartClmn' '--endExsClmn=$endExsClmn' '--fchrClmn=$fchrClmn' '--geneNameClmn=$geneNameClmn' '--gene_info=$input_type.annotation_input' '--sequence=$input_type.fasta_input' '--startExsClmn=$startExsClmn' '--strandClmn=$strandClmn' '--txEndClmn=$txEndClmn' '--txStartClmn=$txStartClmn'
+    #end if
+  </command>
+  <code file="make_phylip_hooks.py" />
+  <inputs>
+    <param name="input" type="data" format="gd_genotype,gd_snp" label="Genotype/SNP dataset">
+      <validator type="metadata" check="scaffold" message="scaffold missing" />
+      <validator type="metadata" check="pos" message="pos missing" />
+    </param>
+    <param name="indivs_input" type="data" format="gd_indivs" label="Individuals dataset" />
+    <conditional name="input_type">
+      <param name="choice" type="select" format="integer" label="Input type">
+        <option value="0" selected="true">Coverage</option>
+        <option value="1">Genes</option>
+      </param>
+      <when value="0">
+        <param name="coverage_input" type="data" format="gd_genotype,gd_snp" label="Coverage dataset">
+          <validator type="metadata" check="scaffold" message="scaffold missing" />
+          <validator type="metadata" check="pos" message="pos missing" />
+        </param>
+        <param name="coverage_threshold" type="integer" min="1" value="1" label="Coverage threshold" />
+        <param name="indivs_threshold" type="float" value="0.5" min="0.0" max="1.0" label="Individuals genotype percentage threshold" />
+      </when>
+      <when value="1">
+        <param name="annotation_input" type="data" format="interval" label="Genes dataset">
+          <validator type="metadata" check="chromCol" message="chromCol missing" />
+          <validator type="metadata" check="strandCol" message="strandCol missing" />
+          <validator type="metadata" check="nameCol" message="nameCol missing" />
+        </param>
+        <param name="tx_start_col" type="data_column" data_ref="input" label="Genes transcript start column" />
+        <param name="tx_end_col" type="data_column" data_ref="input" label="Genes transcript end column" />
+        <param name="cds_start_col" type="data_column" data_ref="input" label="Genes coding sequence start column" />
+        <param name="cds_end_col" type="data_column" data_ref="input" label="Genes coding sequence end column" />
+        <param name="exs_start_col" type="data_column" data_ref="input" label="Genes exon starts column" />
+        <param name="exs_end_col" type="data_column" data_ref="input" label="Genes exon ends column" />
+        <param name="fasta_input" type="data" format="fasta" label="FASTA dataset" />
+      </when>
+    </conditional>
+  </inputs>
+  <outputs>
+    <data name="output1" format="txt" />
+  </outputs>
+
+  <help>
+**What it does**
+
+This tool creates phylip formatted files from two different input types:
+coverage and genes.
+
+If the coverage option is selected the inputs for the program are:
+
+   1. a gd_indivs table
+   2. a gd_genotype file with the coverage information for individuals in the gd_indivs table
+   3. a gd_genotype file with the genotype information for individuals in the gd_indivs table
+   4. a coverage threshold (optional)
+   5. a percentage of individuals (threshold).
+
+The program produces a phylip formatted file using the sequence in the
+genotype file as a template.  In this sequence nucleotides for each
+sequence that are below the coverage threshold, or the positions with
+a percentage of individuals below the selected value are replaced by "N".
+
+If the gene option is selected the inputs for the program are:
+
+   1. a gd_indivs table
+   2. a gene dataset table with a gene name in the first column
+   3. the column with transcript start in the gene dataset table
+   4. the column with transcript end in the gene dataset table
+   5. the column with coding start in the gene dataset table
+   6. the column with coding end in the gene dataset table
+   7. the column with exon starts (comma-separated) in the gene dataset table
+   8. the column with exon ends (comma-separated) in the gene dataset table
+   9. a FASTA formatted file for all the genes of interest with their names as headers (NOTE: these names should be the same in the input gene dataset table).
+   
+The program produces as output one phylip formatted file for each gene
+in the gene dataset table.
+
+-----
+
+**Example**
+
+In a case were the option coverage is selected, for the inputs:
+
+- gd_indivs::
+
+   7       W_Java
+   10      E_Java
+   16      Pen_Ma
+   ...
+
+- Genotype table::
+
+   chrM 15 T C -1 -1 2 -1 -1 2 -1 -1 -1 -1 -1 2 -1 -1 -1 -1 0 -1 -1
+   chrM 18 G A -1 -1 0 -1 -1 0 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 0 -1 -1
+   chrM 20 C T -1 -1 0 -1 -1 2 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 0 -1 -1
+   ...
+
+- Coverage table::
+
+   chrM 0 G G 0 0 0 0 0 0 0 0 0 0 0 0 0
+   chrM 1 T T 0 0 3 0 0 50 0 0 0 0 0 2 0
+   chrM 2 T T 0 0 5 0 0 50 0 0 0 0 0 2 0
+   ...
+
+- Coverage threshold = 0
+
+- Percentage of individuals = 0.0
+
+- The output is::
+
+   4 19 15428
+   W_Java  GTTCATCATGTTCATCGAAT
+   E_Java  GTTCATCATGTTCATCGAAC
+   Pen_Ma  GTTCATCATGTTCATCGAAT
+
+In a case were option genotype is selected with the inputs:
+
+- Gene dataset table input::
+
+   1 ENSLAFT00000017123 chrM + 1002 1061 1002 1061 1 1002, 1061, 0 ENSLAFG00000017122 cmpl incmpl 0, BTRC ENSLAFT00000017123 ENSLAFP00000014355
+   1 ENSLAFT00000037164 chrM - 1058 1092 1062 1073 1 1062,1068 1065,1073 0 ENSLAFG00000007680 cmpl cmpl 0, MYOF ENSLAFT00000037164 ENSLAFP00000025175 26509
+   1 ENSLAFT00000008925 chrM + 990 1000 990 1000 1 990, 1000, 0 ENSLAFG00000008924 incmpl incmpl 0, PRKG1 ENSLAFT00000008925 ENSLAFP00000007492
+   ...
+
+In this table:
+
+   column with transcript start = 5
+   column with transcript end = 6
+   column with coding start = 7
+   column with coding end = 8
+   column with exon starts = 10
+   column with exon ends = 11
+
+- gd_indivs::
+
+   7       W_Java
+   10      E_Java
+   16      Pen_Ma
+   ...
+
+- Genotype table::
+
+   chrM 1005 T C -1 -1 2 -1 -1 2 -1 -1 -1 -1 -1 2 -1 -1 -1 -1 0 -1 -1
+   chrM 1060 G A -1 -1 0 -1 -1 0 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 0 -1 -1
+   chrM 991 C T -1 -1 0 -1 -1 2 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 0 -1 -1
+   ...
+
+The outputs are going to one file for each sequence in the input gene
+dataset table (as long as they are included in the input FASTA file).
+  </help>
+</tool>
