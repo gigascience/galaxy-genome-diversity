@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<toolbox>
+    <label id="genome_diversity" text="Genome Diversity"/>
+    <section id="basic_analyses" name="Basic Analyses">
+        <tool file="genome_diversity/make_gd_file.xml"/>
+        <tool file="genome_diversity/multiple_to_gd_genotype.xml"/>
+        <tool file="genome_diversity/specify.xml"/>
+        <tool file="genome_diversity/phylogenetic_tree.xml"/>
+        <tool file="genome_diversity/filter_gd_snp.xml"/>
+        <tool file="genome_diversity/make_phylip.xml"/>
+        <tool file="genome_diversity/aggregate_gd_indivs.xml"/>
+        <tool file="genome_diversity/coverage_distributions.xml"/>
+        <tool file="genome_diversity/restore_attributes.xml"/>
+        <tool file="genome_diversity/gd_snp2vcf.xml"/>
+        <tool file="genome_diversity/prepare_population_structure.xml"/>
+        <tool file="genome_diversity/nucleotide_diversity_pi.xml"/>
+        <tool file="genome_diversity/dpmix.xml"/>
+    </section>
+    <section id="kinship" name="Kinship">
+        <tool file="genome_diversity/discover_familial_relationships.xml"/>
+        <tool file="genome_diversity/offspring_heterozygosity.xml"/>
+        <tool file="genome_diversity/offspring_heterozygosity_pedigree.xml"/>
+        <tool file="genome_diversity/assignment_of_optimal_breeding_pairs.xml"/>
+        <tool file="genome_diversity/inbreeding_and_kinship.xml"/>
+        <tool file="genome_diversity/average_fst.xml"/>
+        <tool file="genome_diversity/rank_pathways.xml"/>
+        <tool file="genome_diversity/add_fst_column.xml"/>
+        <tool file="genome_diversity/cluster_kegg.xml"/>
+        <tool file="genome_diversity/rank_terms.xml"/>
+        <tool file="genome_diversity/pca.xml"/>
+        <tool file="genome_diversity/evaluate_population_numbers.xml"/>
+        <tool file="genome_diversity/population_structure.xml"/>
+    </section>
+    <section id="mitochondria" name="Mitochondria">
+        <tool file="genome_diversity/diversity_pi.xml"/>
+        <tool file="genome_diversity/draw_variants.xml"/>
+        <tool file="genome_diversity/reorder.xml.xml"/>
+        <tool file="genome_diversity/raxml.xml"/>
+        <tool file="genome_diversity/pathway_image.xml"/>
+    </section>
+    <section id="fst_sweeps" name="FST and Selective Sweeps">
+        <tool file="genome_diversity/find_intervals.xml"/>
+    </section>
+    <section id="kegg_go" name="KEGG and GO">
+        <tool file="genome_diversity/map_ensembl_transcripts.xml"/>
+    </section>
+    <section id="design_genotyping" name="Design Genotyping Studies">
+        <tool file="genome_diversity/select_snps.xml"/>
+        <tool file="genome_diversity/specify_restriction_enzymes.xml"/>
+        <tool file="genome_diversity/extract_flanking_dna.xml"/>
+        <tool file="genome_diversity/extract_primers.xml"/>
+    </section>
+</toolbox>
