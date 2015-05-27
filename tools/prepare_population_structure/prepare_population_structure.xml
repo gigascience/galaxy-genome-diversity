@@ -1,0 +1,154 @@
+<tool id="gd_prepare_population_structure" name="Prepare Input" version="1.2.0">
+  <description>: Filter and convert to the format needed for these tools</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    prepare_population_structure.py '$input'
+    #if $input_type.choice == '0'
+      'gd_snp' '$input_type.min_reads' '$input_type.min_qual'
+    #else if $input_type.choice == '1'
+      'gd_genotype' '0' '0'
+    #end if
+    '0' '$output' '$output.files_path' '$ind_arg'
+    #if $individuals.choice == '0'
+        'all_individuals'
+    #else if $individuals.choice == '1'
+        #for $population in $individuals.populations
+          #set $pop_arg = 'population:%s:%s' % (str($population.p_input), str($population.p_input.name))
+          '$pop_arg'
+        #end for
+    #end if
+  </command>
+  <inputs>
+    <conditional name="input_type">
+      <param name="choice" type="select" format="integer" label="Input format">
+        <option value="0" selected="true">gd_snp</option>
+        <option value="1">gd_genotype</option>
+      </param>
+      <when value="0">
+        <param name="input" type="data" format="gd_snp" label="SNP dataset" />
+        <param name="min_reads" type="integer" min="0" value="0" label="Minimum SNP coverage" />
+        <param name="min_qual" type="integer" min="0" value="0" label="Minimum SNP quality" />
+      </when>
+      <when value="1">
+        <param name="input" type="data" format="gd_genotype" label="Genotype dataset" />
+      </when>
+    </conditional>
+    <conditional name="individuals">
+      <param name="choice" type="select" label="Individuals">
+        <option value="0" selected="true">All individuals</option>
+        <option value="1">Specified populations</option>
+      </param>
+      <when value="0" />
+      <when value="1">
+        <repeat name="populations" title="Population" min="1">
+          <param name="p_input" type="data" format="gd_indivs" label="Individuals" />
+        </repeat>
+      </when>
+    </conditional>
+    <!--
+    <param name="min_spacing" type="integer" min="0" value="0" label="Minimum spacing between SNPs" />
+    "$min_spacing" "$output" "$output.files_path"
+    -->
+  </inputs>
+  <outputs>
+    <data name="output" format="gd_ped">
+      <actions>
+        <action type="metadata" name="base_name" default="admix" />
+      </actions>
+    </data>
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp" />
+      <param name="min_reads" value="3" />
+      <param name="min_qual" value="30" />
+      <param name="min_spacing" value="0" />
+      <param name="choice" value="0" />
+      <output name="output" file="test_out/prepare_population_structure/prepare_population_structure.html" ftype="html" compare="diff" lines_diff="2">
+        <extra_files type="file" name="admix.map" value="test_out/prepare_population_structure/admix.map" />
+        <extra_files type="file" name="admix.ped" value="test_out/prepare_population_structure/admix.ped" />
+      </output>
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The input datasets are in gd_snp_, gd_genotype_, and gd_indivs_ formats.
+The output dataset is in gd_ped_ format.  (`Dataset missing?`_)
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+.. _gd_ped: ./static/formatHelp.html#gd_ped
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+This tool converts a gd_snp dataset into the format needed for estimating
+the population structure.  You can select the individuals to be included,
+by using "population" datasets created via the Specify Individuals tool.
+(It is important for these population datasets to have distinguishable names,
+since they will be stored in the output's metadata so that subsequent tools
+can use them as labels.  If necessary, rename the datasets to give them
+distinct and meaningful names before running this tool.)
+
+You can also filter the SNPs, based on criteria such as minimum coverage
+(a qualifying SNP must have at least this many reads for every included
+individual), minimum quality score (for every included individual), and/or
+minimum spacing (SNPs that are too close together on the same chromosome or
+scaffold are discarded).  In addition to producing the filtered and formatted
+.map and .ped files for subsequent analysis, the tool reports the number of
+SNPs meeting these conditions, which can be seen by clicking on the eye icon
+in the history panel after the program runs.
+
+-----
+
+**Example**
+
+- input::
+
+    Contig161_chr1_4641264_4641879   115  C  T  73.5   chr1   4641382  C   6  0  2  45   8  0  2  51   15  0  2  72   5  0  2  42   6  0  2  45  10  0  2  57   Y  54  0.323  0
+    Contig48_chr1_10150253_10151311   11  A  G  94.3   chr1  10150264  A   1  0  2  30   1  0  2  30    1  0  2  30   3  0  2  36   1  0  2  30   1  0  2  30   Y  22  +99.   0
+    Contig20_chr1_21313469_21313570   66  C  T  54.0   chr1  21313534  C   4  0  2  39   4  0  2  39    5  0  2  42   4  0  2  39   4  0  2  39   5  0  2  42   N   1  +99.   0
+    etc.
+
+- output cover page::
+
+    Prepare to look for population structure Galaxy Composite Dataset
+    Output completed: 2012-10-01 04:09:36 PM
+
+    Outputs
+        * admix.ped (link)
+        * admix.map (link)
+        * Using 222 of 400 SNPs
+
+    Inputs
+        * Minimum reads covering a SNP, per individual: 6
+        * Minimum quality value, per individual: 0
+        * Minimum spacing between SNPs on the same scaffold: 0
+
+    Populations
+        * Pop. A
+             1. PB1
+             2. PB2
+        * Pop. B
+             1. PB3
+             2. PB4
+        * Pop. C
+             1. PB6
+             2. PB8
+  </help>
+</tool>
