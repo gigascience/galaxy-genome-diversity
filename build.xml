@@ -152,14 +152,14 @@
         <delete file="${build.dir}/package_networkx_1_8_1.tar"/>
     </target>
 
-    <target name="package_numpy_1_7" depends="build">
-        <mkdir dir="${build.dir}/package_numpy_1_7"/>
-        <copy todir="${build.dir}/package_numpy_1_7">
-            <fileset dir="${dependencies.dir}/package_numpy_1_7"/>
+    <target name="package_numpy_1_7_1" depends="build">
+        <mkdir dir="${build.dir}/package_numpy_1_7_1"/>
+        <copy todir="${build.dir}/package_numpy_1_7_1">
+            <fileset dir="${dependencies.dir}/package_numpy_1_7_1"/>
         </copy>
-        <tar destfile="${build.dir}/package_numpy_1_7.tar" basedir="${build.dir}/package_numpy_1_7"/>
-        <gzip destfile="${build.dir}/package_numpy_1_7.tar.gz" src="${build.dir}/package_numpy_1_7.tar"/>
-        <delete file="${build.dir}/package_numpy_1_7.tar"/>
+        <tar destfile="${build.dir}/package_numpy_1_7_1.tar" basedir="${build.dir}/package_numpy_1_7_1"/>
+        <gzip destfile="${build.dir}/package_numpy_1_7_1.tar.gz" src="${build.dir}/package_numpy_1_7_1.tar"/>
+        <delete file="${build.dir}/package_numpy_1_7_1.tar"/>
     </target>
 
     <target name="package_phast_1_3" depends="build">
