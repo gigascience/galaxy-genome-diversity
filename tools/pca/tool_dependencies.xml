@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="eigensoft" version="5.0.1">
+        <repository  changeset_revision="" name="package_eigensoft_5_0_1" owner="peterli" toolshed="http://gigatoolshed.net" />
+    </package>
+    <package name="gd_c_tools" version="0.1">
+        <repository  changeset_revision="" name="package_gd_c_tools_0_1" owner="peterli" toolshed="http://gigatoolshed.net" />
+    </package>
+</tool_dependency>
