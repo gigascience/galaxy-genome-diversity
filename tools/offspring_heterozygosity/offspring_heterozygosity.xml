@@ -1,0 +1,61 @@
+<tool id="gd_offspring_heterozygosity" name="Pairs sequenced" version="1.0.0">
+  <description>: Offspring estimated heterozygosity of sequenced pairs</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    offspring_heterozygosity.py '$input' '$input.ext' '$ind_arg' '$p1_input' '$p2_input' '$output'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="gd_snp,gd_genotype" label="SNP dataset" />
+    <param name="p1_input" type="data" format="gd_indivs" label="First individuals dataset" />
+    <param name="p2_input" type="data" format="gd_indivs" label="Second individuals dataset" />
+  </inputs>
+  <outputs>
+    <data name="output" format="txt" />
+  </outputs>
+  <!--
+  <tests>
+  </tests>
+  -->
+  <help>
+**Dataset formats**
+
+The input datasets are in gd_snp_, gd_genotype_, and gd_indivs_ formats.
+The output dataset is in text_ format.
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+.. _text: ./static/formatHelp.html#text
+
+-----
+
+**What it does**
+
+For each pair of individuals, one from each specified set, the program
+computes the expected heterozygosity of any offspring of the pair, i.e.,
+the probability that the offspring has distinct nucleotides at a randomly
+chosen autosomal SNP.  In other words, we add the following numbers for
+each autosomal SNP where both genotypes are defined, then divide by the
+number of those SNPs:
+
+0 if the individuals are homozygous for the same nucleotide
+
+1 if the individuals are homozygous for different nucleotides
+
+1/2 otherwise (i.e., if one or both individuals are heterozygous) 
+
+A SNP is ignored if one or both individuals have an undefined genotype
+(designated as -1).
+  </help>
+</tool>
