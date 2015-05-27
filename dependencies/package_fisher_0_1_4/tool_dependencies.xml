@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <tool_dependency>
   <package name="numpy" version="1.7.1">
-    <repository prior_installation_required="True" toolshed="http://gigatoolshed.net" owner="peterli" name="package_numpy_1_7" changeset_revision="" />
+    <repository prior_installation_required="True" toolshed="http://gigatoolshed.net" owner="peterli" name="package_numpy_1_7_1" changeset_revision="" />
   </package>
 
   <package name="fisher" version="0.1.4">
@@ -12,7 +12,7 @@
 
         <!-- Get PYTHONPATH_NUMPY from numpy package -->
         <action type="set_environment_for_install">
-          <repository toolshed="http://gigatoolshed.net" owner="peterli" name="package_numpy_1_7" changeset_revision="">
+          <repository toolshed="http://gigatoolshed.net" owner="peterli" name="package_numpy_1_7_1" changeset_revision="">
             <package name="numpy" version="1.7.1" />
           </repository>
         </action>
