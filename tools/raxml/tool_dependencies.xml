@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="raxml" version="7.7.6">
+        <repository  changeset_revision="" name="package_raxml_7_7_6" owner="peterli" toolshed="http://gigatoolshed.net" />
+    </package>
+</tool_dependency>

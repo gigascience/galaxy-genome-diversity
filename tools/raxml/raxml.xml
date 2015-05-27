@@ -1,0 +1,30 @@
+<tool id="gd_raxml" name="RAxML" version="1.0.0">
+  <description>: construct a maximum-likelihood phylogenetic tree</description>
+  <requirements>
+    <requirement type="package" version="7.7.6">raxml</requirement>
+  </requirements>
+  <command interpreter="python">
+    raxml.py '$input' '$output'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="txt" label="PHYLIP dataset" />
+  </inputs>
+  <outputs>
+    <data name="output" format="nhx" />
+  </outputs>
+  <help>
+**What it does**
+
+This tool runs RAxML on a phylip formatted file and returns a maximum
+likelihood phylogram supported by a desired number of bootstraps.
+
+This program takes as input a phylip formatted file and optionally a
+number of parameters (for further information consult the manual_),
+and returns a Newick formatted tree that can be explored with Phyloviz.
+
+By default the program runs 1,000 fast bootstraps on the best likelihood
+tree constructed with the GRT + gamma model.
+
+.. _manual: http://sco.h-its.org/exelixis/oldPage/RAxML-Manual.7.0.4.pdf
+  </help>
+</tool>
