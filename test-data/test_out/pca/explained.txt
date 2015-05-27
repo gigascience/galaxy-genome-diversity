@@ -1,0 +1,4 @@
+Percentage explained by eigenvectors:
+1: 64.9%
+2: 22.1%
+3: 13.1%

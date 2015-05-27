@@ -1,0 +1,1265 @@
+> Contig161_chr1_4641264_4641879 115 C T 0.323016
+
+  1 TCCGAACCGCTAAATCCTGACGACTGTTCAGTGAGAACGGGnTTCCAGCTCAGTGGAGAC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ACTCAGAGCTTATGTGATGCACCGTCGTGCCCGTGTCTGACTAAATGTGTTGCCAGAGAA
+                                                            <<<<
+
+121 CAAAACGAAAGCCCCTATT
+    <<<<<<<<<<<<<<<<   
+
+> Contig86_chr1_30984450_30985684 670 C T 0.031427
+
+  1 TAATTCATGACGACTGCAGAAGGGCACTCAGAGGCAATTCTACTTGAGGATATTGTCTGG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TATACTCTGTCCTTGCTCAGGACATCAGTGAGAACATAGAAACATTCACnTCCCCACACC
+                                                                
+
+121 GAAAGCGTCTGTAGACCGGCCCACGGGCCGAAGTCTTTGCATTTCCTCTTGCCATGCACG
+                                                                
+
+181 AGCATTCCCAGTGGCAATCAGGGGCCAGCCCTTCTGTTTGGCCTCTGCAAGCTTGTATCC
+                                            <<<<<<<<<<<<<<<<<<<<
+
+241 TTG
+       
+
+> Contig21_chr1_60697952_60699446 307 G A 0.507396
+
+  1 TCTGGGGCCATGTTTCTGAAGTAAGGCTGTTTCTGCAGCCTTGCGGGCTGTGTCTTGCTC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 nCACCCCTTAATTCTTACCTGTAGGTGGTATTTGGTAGAGTGGAGTAAAACTGGAAACTG
+                                                              <<
+
+121 GTTCTCTGTGTTCCTGCATCT
+    <<<<<<<<<<<<<<<<<<   
+
+> Contig64_chr1_87343284_87345672 163 T A 0.038702
+ VspI
+  1 ATGGCCAATTCTGGTTTAcGCATCATTGTTAACAACTCTTCCATTCATTCTCAGAATTTT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CCCAATTCACATGATAAATTGTATGGTCACCTACcTACAACTAAACACTTAGTTTATTTC
+                                                                
+
+121 TATTATTATTATTATTATTATTATTATTATTAnTAtTATTATTGAAATACATTTTTTTTT
+                                                                
+
+181 CATAAACCGTTCACcCTTGTGAGAAC
+       <<<<<<<<<<<<<<<<<<<<   
+
+> Contig20_chr1_110679280_110679687 181 C T 0.659726
+
+  1 GAGCACTCAATGAGGGGTTCGACCCTTTGCAGACACAGCATGTAGGAGGAAGAAATGCAA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 cGGGGCACCCCTGCGGGGGCAGGCTTCCAGTTCAAACTGATCnGGTCTGGTCCTGGGGCC
+                                                                
+
+121 GGGCCAAAGTTGTGGTTTCcCGCACTCAAGTCTCCAC
+                  <<<<<<<<<<<<<<<<<<<<   
+
+> Contig222_chr2_9817738_9818143 220 C T 0.092668
+ SpeI
+  1 AGATTTAGCTGGAGCATGCCTTTGCCCTTTTTAGCCTTTCCCTTTTACCTTTATCCTTCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TATTCTTGAAATGTTGAAATAGATGGAAGTATAGCAGCTATCTTGTCCCATAATGATGAA
+                                                                
+
+121 AACCAGGTACAAAGTTGGTGAAAACTAAAAGAGAGGAGGAGCCTGGGTTCTTGGTGGCAT
+                                                                
+
+181 CATGAACACCTGCACnAGTCTAGCATGGTCTGTGCAAAATCTCCTGATCCAAGAAAAATA
+                                                                
+
+241 TAAACATCCTTCTGTAGGGTTTTATTgCCTGAAGCAAAA
+                    <<<<<<<<<<<<<<<<<<<<   
+
+> Contig47_chr2_25470778_25471576 126 G A 0.289103
+ Bsp1286I
+  1 GCCAGGCGTCCCTCTTTTTGAGTTCtAATTGTGTACATCCAATCCCCATCTCAACAAATA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GCTGAACCAGCTTCCTaTTTATTTGGTAGGTnAGCACTCTAGAAATTTGCTACACTGAAC
+                                                                
+
+121 TCACCAAATTTATAATGTaAATTATGACCATTCTTTGCCATAATAATTTGGGGTAGGTCA
+                                                                
+
+181 GATTTGGTTTTGGGGGCAGAAGAAATCATCATATCACAAGCATGTGACAGCTTCCAGCCC
+                                                             <<<
+
+241 CATCTCAACTCCAAGAAATT
+    <<<<<<<<<<<<<<<<<   
+
+> Contig6_chr2_56859179_56859956 671 T C 5.308026
+ MspA1I
+  1 TATCCCAAAGACGTGTGTCTCAAAGCCCTGAGGTTTACAGCCAAACATGATGGACTGCCC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ATGACAAcGGATACAAATGCTAGCgTGGGTTTAATTATGCTAGAATTTTTATGATAATTA
+                                                                
+
+121 TAATGATATTGTTATGAAGTATGCTAGGCTTTnAGCGGCTAGTCTCTAAACCTATTTTCC
+                                                                
+
+181 tTATAAATCCTTTTATTTTTAGTGCACTATTTTATAGAATAAGAGGTTTTTCAGGAACAC
+                                                <<<<<<<<<<<<<<<<
+
+241 ATATATTGCATT
+    <<<<<<<<<   
+
+> Contig163_chr2_76402959_76404830 221 C T 0.178077
+
+  1 GCCCCTTCGAGTCCATCTTaCGCgCAGCAGCAGGAGGGATGGTCCCAACCACAAACCTAC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CCGCTGCCTGAACGCTTnAAGTGCCCTCCGAAGAAAGCCCAACTCCACAGCCTGGCAACT
+                                                                
+
+121 GAGGTCCTTGTGATCTTAGCTTCCTCTGCCCCACTCCACAGCTCAGCCTCACCgGACTCC
+                                                                
+
+181 CGAGCTCCTTAAAGGAGCCCCCGAGCCCCCGCACATGCTGTTCCCTGTAACCGGGTACTC
+                                                                
+
+241 CACGGCTCGTCTGTCCTTGGAGGCTCAGCTG
+            <<<<<<<<<<<<<<<<<<<<   
+
+> Contig56_chr3_17326225_17327548 387 G C 0.224947
+ AgeI,HpaII,MspI
+  1 CAAAGGCAGTGATATGGGAGTGGAATGGAGAGGATGGGTGCCCCAGACTGGGTGCAGATC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TGTTCTATCTGGTGTTTGGTGGCTGACCATACnGGTGAGAAGAAGTGTcCAGGTTTCTGG
+                                                                
+
+121 CTTGATGATGCCGACAGTTATGGCAGGAAATGCTGAAGGGGTGCACATGAGCTCCTGTTC
+                                                                
+
+181 ATTCTTCACTCTTCCTCTTCTACCTCCAACCTTGCTACCTGTGTGTACCCGACTC
+                                    <<<<<<<<<<<<<<<<<<<<   
+
+> Contig108_chr3_46210055_46210874 367 A G 0.027845
+
+  1 TTCACTCACCTGCTTCCCTGCTAACTGTCACCGCCCTCCCAATGCCTTAAACCAGCTTAG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 AAACACAAAATTTAAAAAACATTATGTTGAGACAAAAATATGTATAACCTGGAATATTGA
+                                                                
+
+121 ATAACAAAATGAAAGGGAAAATGATTCAAGAACACTTGGATAAGGAAAACTACAAATATT
+                                                                
+
+181 nAAGATGTACCTTTGAACTTCCTATCACTGAAAGCAACCATGGAACCAGTACAATGTAGA
+                                                                
+
+241 CCTTCTGATCTGACTTTCTTTTGTCTCTTGCTGCTGGGAAGTAGAATGCCCC
+                                 <<<<<<<<<<<<<<<<<<<<   
+
+> Contig1_chr3_51588422_51589409 926 A G 1.147200
+
+  1 AGATTATGGCCTGTGTTTACcCCAGCCTcGCAGAACATTTTACTGGGGACACCTGCCAGG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TGGCAGATCAGAAGCCCGTGAGGCAGCCAGCCAATGGGAtGGCCAAAACCTAGGGCTTCG
+                                                                
+
+121 TAnGGGAGGGAGATGTTTTCCTCgTCCCTCT
+            <<<<<<<<<<<<<<<<<<<<   
+
+> Contig65_chr3_80727952_80728283 39 T C 7.077725
+
+  1 CAAAGGCTTACTTTTTaGATCAACACTCTAAATTCTTAAnAAACAACAAAGCCAAATTTT
+    >>>>>>>>>>>>>>>>>>>>>>>>>>                                  
+
+ 61 CCTATATCATTGAGTAGTTGATACGTCTTTGGTTTTGCGCTAGCAGT
+                            <<<<<<<<<<<<<<<<<<<<   
+
+> Contig134_chr4_12145648_12148225 1326 C T 0.079565
+ BalI
+  1 AACCCAGAtCAGAAACGTCCCATGGCTAGTCATCTTCCTACACAGACTTCTgAGAGCCAA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GCATCGTCAAcCGGCCAtTCTnGGCCATTCTCCCGAGCAGATGCTGCCGGGATAATCTGC
+                                                                
+
+121 AGCATGAAGCCCTCCCTCGGGGGAGACCCGACcgGGTCCACACAGGTCTGTcTAGC
+                                     <<<<<<<<<<<<<<<<<<<<   
+
+> Contig19_chr4_26233601_26233991 146 G C 0.163005
+ DpnI,MboI,Sau3AI
+  1 AATTTGGCTTCCTCTGGAGTtGTCCCTTAATGCTAGGTATCAAGTGCTGACAGGCCACAG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ATnAGGGTAACACATGATTACAGGGCAACACACTGTAACACGTATTCCCTTGCCTTGTCT
+                                          <<<<<<<<<<<<<<<<<<<<  
+
+121 T
+     
+
+> Contig17_chr4_61310346_61311158 267 C T 0.097708
+
+  1 TATTCCAGACCAACCAAAAGGTCTAAGGAATAATAGAAGCTTCACCCACAGACCTGCCAC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CCAACTTGAGAAACAGCACTTGCTTCCTCATAGAGTCGAAACGTCTTCGGTGGGTCCCCT
+                                                                
+
+121 CCTGAAGCATCACCGCTACCTTTCCTCTTGGGAGTCACTGCCACCCnGAACTTGTTGCTG
+                                                                
+
+181 CTTATTCTCTTTTATTTTTCTTGTTTTTGAAAGAACCCTGTCTTGGGTGTTAGGATAC
+                                       <<<<<<<<<<<<<<<<<<<<   
+
+> Contig31_chr5_4734956_4736547 1166 C T 0.020932
+
+  1 TGTTCTGCCATGCACACTTCTTCAACCCTTCAACCTGTGGGAGTCACCTCACATTCCCAC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 AGcGAATGGAATATCTATCTATCTgnCTTTAGGGATTTGTTACGTTTTCTTTTTCTTCCT
+                                                                
+
+121 TTTCCTTCCAATATCTTAATGGGCAATTTTGTGGACAGTTGATAGAGACAACGTCAGGAG
+                                                         <<<<<<<
+
+181 CTGTTGGCCTAGTAAA
+    <<<<<<<<<<<<<   
+
+> Contig6_chr5_26899813_26900498 97 A C 7.369943
+ AvaII,Sau96I,SinI
+  1 AACTGAAAGTGAGAATTCTTTGTATTTGCTAGTCAAAAGGATTTCTAAGTCAAAAAAGTA
+       >>>>>>>>>>>>>>>>>>>>>>>>>>                               
+
+ 61 ATTTGGGAnCATTAAGTCATATTTATAGACTAAAATTTCATTCCTAAAGACAATTTAGTA
+                                                                
+
+121 AAAATGCTAGGCTTTCTAGAAATTTAACCTAACATAAAAAATTACAGTAAGTTTGCTAAA
+                                                                
+
+181 GAATCACAGAGTTGACTGACAGTTTCCCAGGTTA
+               <<<<<<<<<<<<<<<<<<<<   
+
+> Contig45_chr5_50892738_50892968 169 C A 0.496871
+
+  1 TGAAAGGGGCACTGGGAATTATCAGAACCTTCTGGGTAATTAAACTGGGGAAAGCATAAT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ACCATTTAGAAAAAGTTCAAGTGAGTCTTTTCCTTATTCTCCCnTGTACCCAGAAAAACC
+                                                     <<<<<<<<<<<
+
+121 TGGACATGGTAC
+    <<<<<<<<<   
+
+> Contig45_chr5_76133561_76134403 388 A G 0.038045
+
+  1 CATGAGCATGCTGTCTGCACAAtGGGAGCACCCGTGATGTGAGAGTAGCCAGGCCACCCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GGCTTGAGTGCTTTGTCCAAAAGGCACAATGGGAACTACACAGAAACAATCAGATTCACT
+                                                                
+
+121 GCCTTCGAGGGTTTGAAGAAGACAGCTGAAGAGTAGGAGGTAGAAnCAAAAAGGCATGAG
+                                                                
+
+181 AGGGGGAAGCAGAGGCTGCAAGACATGAGCTGGGCAGTACTGACgGGCCACACAGAGCAC
+                                                               <
+
+241 TGGAGACAAGGTCAGGAGCCCT
+    <<<<<<<<<<<<<<<<<<<   
+
+> Contig111_chr6_5821219_5822519 1060 A G 0.230765
+ AvaI
+  1 CGTCAGAGCTGTCTTCCCTCCAGCCAGAGGGGCCCTGAGAAGGAAGGGGGCTGAACCCAG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GCgCCAGCCCAAGCTGCAGCGTGATCTGGGGGTGAGGCCCCCCGCTGCACAGGGGGCACG
+                                                                
+
+121 GGGGTTCGGGCAGAGATCGGCTACCCATGGCCGGCGAGGCCACAgTGGCAATGGGCAGCC
+                                                                
+
+181 AGCCTCCGACCAGCcGCCCCCnAGCTGCCTATTTAAGTCAGGAGCTTCTCCTTCCCgTGG
+                                                         <<<<<<<
+
+241 AAGTAGAGGACAAATT
+    <<<<<<<<<<<<<   
+
+> Contig102_chr6_30271329_30271577 39 T G 1.158547
+
+  1 TCTTCCTTTATGCATCAGGGCAGCACCCTGGGGAGAAGnGGGGGGGACAcGTGTGTCCTG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GGGAAAGGGGTGTTCCCACTCCCTGCAATGCCTTCCCCCGCCCAGACCAGCAGTTCTCAG
+                                                                
+
+121 TCTTGACTGCATGGACTCTCCTGGAAGGCTTTAAAAAATGTGGAGGCCGAGGCTTACCCA
+                                                                
+
+181 tGACGGTTCTGACTGAATTGCTCTGGAGTAGGGCTTAGGCACTG
+                         <<<<<<<<<<<<<<<<<<<<   
+
+> Contig112_chr6_51024554_51024851 100 A G 4.286925
+
+  1 CTTCATCATACCTATCATTGCCTATCGTTATACTATAGAGGTATTGTTCATTCTTTTTTA
+       >>>>>>>>>>>>>>>>>>>>>>>>                                 
+
+ 61 TAGACTCATTGAGTAAAACTCAGGnCATGAGGGAAGGAACTTTGTCTCTTGTGCAATTCC
+                                                                
+
+121 CTATCCTCAGTCCTTAAATATATGTATGCTAcCCAATAGGCACCAAATAT
+                               <<<<<<<<<<<<<<<<<<<<   
+
+> Contig84_chr7_6648683_6650255 1297 G A 0.165637
+
+  1 GTTAGTTGTGAACACTCCCCAGGTAAACTGGTGTAACTCTTGGGGCAAAGCATGGAGTCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ACCCAAAAATGTAGAATTCTGCAGAGACAGCTGTTTCTTGGTTGGGTTTCTAGACCAGAA
+                                                                
+
+121 AATAGAAGATTATAATTATGGGTGGGAAATATATGTGCAAAAAAGTATAAAAGAAGAGGA
+                                                                
+
+181 ACAGAATAAAnGGAAATGGAAATGTTTGTAATTGATAGGGATGTGGATGTAAATGCCTGG
+                                                    <<<<<<<<<<<<
+
+241 CAGAGAGGAGG
+    <<<<<<<<   
+
+> Contig206_chr7_26281823_26282074 103 C A 0.947486
+ NheI
+  1 ATCCACATTCGCACAGCTCCTAATATAATATTTCATTGTTAAAATACTTCTGATTGGCCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 AGGACATATTTTTACAACTGCCTTGACTTCAATTGCTAGnAGTAGCTTGCCAAAGAgGTG
+                                                                
+
+121 CTTTAATAAAGGAAATTAACTTCTTTTAATATGTTGACTGATATACCAAGGTTTTAGTGC
+                                                                
+
+181 TATTAGTTTACCTTCCCCAAAAGTGCTTA
+          <<<<<<<<<<<<<<<<<<<<   
+
+> Contig38_chr7_50681997_50682600 42 T C 0.145997
+
+  1 TAGAGCTCTCAGCATCCAAGCAGAATCTACTGGGTCTGACTGnGTTCTGCTCTGTCACTG
+     >>>>>>>>>>>>>>>>>>>>                                       
+
+ 61 GAATGACATTTCATTGCAGAGTACTCCTGCAGTACAACCAGGGCACAGCCTTTAAATTGA
+                                                                
+
+121 CCATGTCCCCTGGTCTaCTCTGCTGAGCTaTGCACGGGTCCCTTCTGGTTCAAACACAGA
+                                                                
+
+181 CTGATACAGCTCAGATGGAAGGGAGGCAGTTGCAGAGAAACAAA
+                         <<<<<<<<<<<<<<<<<<<<   
+
+> Contig91_chr8_12804505_12805470 409 C A 0.175272
+
+  1 CTGTTTTCAGGGGCTACCTGCTATCTCCAGAACATGCCTGGCTCTCCTCCAAACACTGTT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CAAnCTGACCAAAGCAGAGAGCTGTATATGGACCACACATACCAAAAAAAAAAAAAAGAC
+                                                                
+
+121 AGTCCACACCCTCTGTATAATTATATGGTACAAATAATAGAGTTTTTGTTAACTACCAGC
+                                                                
+
+181 TCTTTTTACAAAGCCTATCAAgTATCATAGACAGTATAATGCTGTGATTGCATCTGTGAA
+                                           <<<<<<<<<<<<<<<<<<<< 
+
+241 CC
+      
+
+> Contig8_chr8_27811135_27812620 333 C T 0.272485
+
+  1 CTTCAAGGAAAGGAGGCAGTTTGGACAAGTCAAAAAAATCCCAAAACtTTGTACTATATA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 AATCTGGCATATTTGTTGATGACanAATTGAGTTAGAAGCAAGAGTCAGAAGCTGACTTT
+                                                                
+
+121 CATGCTGTTTTTCTGTTGTTTTCTGCGGCTCCCCTATGTACTAGTTCTCTTCCgGTGTGC
+                                                                
+
+181 TGACAACTTCCAACTTcTCATAcCCTCTGCATTTCACGTTCTGC
+                         <<<<<<<<<<<<<<<<<<<<   
+
+> Contig17_chr8_57490059_57490498 69 G T 0.522227
+ BglII,DpnI,MboI,Sau3AI,XhoII
+  1 CACCAGAAAACAGGCATGGAACAGATTCTTTCAnATCTTTAAGAACAAACCAGTCCTGCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GACACATAGATTTTTGGACTTTTGGCCTCTGTAACTGTGAGAATAAATTTCTATTTTAAG
+                                                                
+
+121 CCATCTACTTTGTAGTAATTTGTTATGGCAGCCCTGAGAAATTA
+                         <<<<<<<<<<<<<<<<<<<<   
+
+> Contig73_chr9_29451535_29452248 616 A G 0.448230
+ Eco47III,HaeII
+  1 ACCCAAGAGTCTGAGAGGCCCAGAGGCAGCTGGAGGCTGGAGGAGTCCCaCAGGCAAACC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CTCCATTCCATGCGCCCCAGGGAGGCCAGGAAATCAGCnCTCCCAGGAGCAGGGAAGCAG
+                                                                
+
+121 CAGTCCCTGGCATTGCCAGGGCAAGTGGCCACTCAGGGGAGAAAGGGGTGAGCTGGGGAG
+                                                                
+
+181 GGGGAAGAGGGGAGGGGAGGGAAGGCAGAGACGAAGAGAA
+                       <<<<<<<<<<<<<<<<<<<< 
+
+> Contig96_chr9_39008495_39009278 215 A C 0.426539
+ SspI
+  1 TGGCAAACTCCTTGTGAATGCCACTACACTTTCTGGTCTCTGTATGTAATGCTAGATATT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ACTGACACTTACcGCTACAAAGGCAAGACAAGCAAGACAACTGACATACACCCAgGTATG
+                                                                
+
+121 GATCTATGAAGGGAGCTCCTTCTGCTAGAAAACAATATGTAAnTATTTACaTAACACCTA
+                                                                
+
+181 CAATTCTAAATGGGTAGTTTCCCACATGTGAGATTACATCTTCAAGAGCCAAAGGACAAT
+                                                  <<<<<<<<<<<<<<
+
+241 TTGTGCATC
+    <<<<<<   
+
+> Contig22_chr10_15505382_15505589 172 T C 2.860867
+
+  1 CGCAGGCGCCCCAATTATTCTTAACTCCTTATCAAAAGTTTTCCTAATTGAAACTTAAGC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ATCACCTGTTTATTTCCTCTAAAATAAATGTATACATATAGAATTTCAGTAAGATAATGT
+                                                                
+
+121 CTCAAAGAAGATGATAGCCATGGGAGAGGCTTATATGTACTTCnTATAATAAACAACGTC
+                                                      <<<<<<<<<<
+
+181 CAGGTGTGATATT
+    <<<<<<<<<<   
+
+> Contig69_chr10_40547265_40548153 371 G A 0.137642
+ Bsp1286I,CfoI,HaeII,HhaI
+  1 AAGGGGAAGAACTGAAGCGAGTGAGAAGCACGGAAGGACTTTTAGGTTTACAGCTGGGGT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CACTGGTCTTCGCTATGGATGCCTCTCTTAAAGGAAAGACTAATTCTCTGTGGGTACTGA
+                                                                
+
+121 AGGTGgGAGATGAATGTAGATGGGCnCTCGCATGTGTCAATGCTGACGGCTTGGTGAGAG
+                                                                
+
+181 GTTTGGTGCGAGGCCAAAAAGGCgGGGATgAGAGAAGGATGACCTAGGGAGACTGCAGGG
+                                                                
+
+241 TATTTAAAAGTTTGGGTCCAATTTTTCTCAAAGTGTGGCCAGTGCAC
+                            <<<<<<<<<<<<<<<<<<<<   
+
+> Contig9_chr10_51475063_51476054 770 C T 0.393903
+
+  1 GTCTTCCTTCTAATCCCCaAGCcGTGAGAAGCTGTCTGAGCGCTCCTTGCTGGGCGTCCC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TGCATGCCTGTACTGGGGCACACCTACGCCCTGGGTCCTGCTnCTGAAACGGTGTCTCAT
+                                                                
+
+121 TTCTGTAATCGCTCCAAGCTTAATGGCTCTCAGCCTTGTGGGTTGCAGTGGAGAGAAAGC
+                                            <<<<<<<<<<<<<<<<<<<<
+
+181 ATT
+       
+
+> Contig72_chr11_7142765_7143772 146 G A 1.137400
+
+  1 GGTGTAGTGAGGCTTCCACGAGCAGCCAGGCTTACAAACTCATCCTTAGCCTAAAAACTC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CACnAAGTCAAGTATCTTGTGGGTGTTGAAAACTGTTCCACTCTGCAGAGCACCTCTATA
+                                                                
+
+121 TGAAGTAATAATCATGGTATAATGTCCTTCTTCACATACCTGCCAAGAT
+                             <<<<<<<<<<<<<<<<<<<<<   
+
+> Contig7_chr11_40017076_40017630 352 C T 0.336170
+
+  1 TCGGTCCTTCCTTGATCACATCTCCATGATCCTCCCACTGTTACTTGGAGGAGAATTGTT
+     >>>>>>>>>>>>>>>>>>>>                                       
+
+ 61 GCTTCCACAAATCAGATCTCTTTATTTTTCATTTATTCAACAAATGTGGACTGAGCTCTT
+                                                                
+
+121 TGtATAGTACATTCTGTGGGCACTATTCACTAGACACACTGTAAACACTTCTGCTTCCTG
+                                                                
+
+181 ACTTTGTTCAGATCTACCCCCnTGCCTGATCTGCCCTCCCCACCTGGTTTTCATCTCAGG
+                                                                
+
+241 CTTAGGTCAAGCCTCATtTGCACTTC
+       <<<<<<<<<<<<<<<<<<<<   
+
+> Contig16_chr11_53408448_53408790 187 A G 1.366749
+
+  1 ATATTGCCAGTTTTAATGGGTGATATTTAGTCCTCCAATTAGACCTCTTTAGTGCATTGG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ATACCAGTGAGCAATCATTCTGACAnAATTTCTGCTGCCTTGATTTTTGTGACAA
+                                    <<<<<<<<<<<<<<<<<<<<   
+
+> Contig21_chr12_18403415_18404381 586 G T 0.068025
+
+  1 AGTTCCAATGTCAGAGTCCCTCCCTCTACCTCCTATCCAACCcGCTACTTTTTTTnTTTT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GTTTTACAACAAAAATAAACCTTCTTGTAACAATTCCAACAATTACAAAATAGAGTAAAA
+                                                                
+
+121 TGTTTAAGTCTCTACCTAAACACACTCATCCTCAGAGAAACTCACAGGTAATTTCGGTtC
+                                                                
+
+181 GTATCTTCCCAGACCCTCTTCTCAGcTTTCACACATACTACATACACATGAACTTCGAGC
+                                                 <<<<<<<<<<<<<<<
+
+241 TGGCTGTT
+    <<<<<   
+
+> Contig41_chr12_25565452_25566993 475 G T 2.230501
+
+  1 TTACATAGCcAAGTGGGAAACAAAGcTACATTTTTnAATATTAATAAATCTGTTTTTTTA
+       >>>>>>>>>>>>>>>>>>>>>                                    
+
+ 61 AAGGGTTaTTATACAATATTATCAAACTTCTTGTGAATGTCAGAATCCAGAACAAACCTA
+                                                                
+
+121 AAATCAGTAATACTTGGGAAAGACGCAAATAGTCCCTCTTTCCACT
+                           <<<<<<<<<<<<<<<<<<<<   
+
+> Contig5_chr12_53880670_53882675 1221 A C 0.061001
+
+  1 AAGCCATCCATGTGTGTGCTTTCATAATATATTATGACAGGAGATTAAATTCTAAGTAAA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GATTAGTCCCCAGTACAGTAGTGTAAAATAGGACTTTTCTCCCTTTTTCTCTCCnCGATA
+                                                                
+
+121 TTCCAAATCAGAGTTTGGCCAAAAAgAAGTCAATAAGGACTTAcAAAAAAAAAATCTCCA
+                                                                
+
+181 TTCACTGAAAGTAGCTTGCTAGCATTTTCCTTTCTcCTGATGTTGCTCCATAACTTCAAC
+                                                                
+
+241 CCTTTTTAAAACTGTCTACTGTGGGGTAGACAGAAGGCGTGGTCGTGAGGTAAAGGTCAA
+                                         <<<<<<<<<<<<<<<<<<<<   
+
+> Contig107_chr13_26045881_26046290 341 C G 4.509990
+
+  1 CATAGATTGCCTTTTCCAGTCcAGAAGTTTAGAACAGACTGCCCTGAGATCATGGTGGGA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 AATATAATACTCATTAGGTTgTTGAAATTCTTGTAGGAATGGAAGAATTTCAGCTTAGGC
+                                                                
+
+121 ATTCTGCTnCTGTATTCCCAGATTACAGTGGGAACTGTATGAAA
+                     <<<<<<<<<<<<<<<<<<<<<<<<   
+
+> Contig251_chr13_28498333_28501066 864 T G 0.067573
+
+  1 GCCCTCTGGCTTCTGTTTGGGAGGTAGGGCGGGTGGGCAGGAAGGGAGGACGGTCGGGGT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ATTGGTTCnCCTCCTCCtGCTGGGTCCCAGATGGATACAGGCCAGGTCTG
+                               <<<<<<<<<<<<<<<<<<<<   
+
+> Contig55_chr13_53467708_53468101 221 T G 5.717222
+ HinfI
+  1 AATACGGTGAAGAGCAAATGAGAAACATTTCTTCAAACATTTGTAAAGTGAAAATATTTA
+       >>>>>>>>>>>>>>>>>>>>>                                    
+
+ 61 AAATGAAATAGATnCCAAATTTTTTCTTCCAAtGGATTATCTACTGGGTTCTGAATATCA
+                                                 <<<<<<<<<<<<<<<
+
+121 CAAAGACAAATG
+    <<<<<<<<<   
+
+> Contig48_chr14_11839435_11843272 3014 A G 0.907583
+
+  1 GTGCTTCCAGTCAAAGGGGAAAACTTGATAGACAAAAGTTTGGATTTTTTTTTTTTTCCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TCTCCTTGGGAGTATGTCTGAGTTACCGTTTTTAGTTTTGATCTGTGGAAAAAGTGATTA
+                                                                
+
+121 TATAGGTTCCAAATCTTACTTTTCCCTTTTTGTTTTCAATAGACTTTTTGTGATCATTTC
+                                                                
+
+181 AnCATAGTTTGTATTATTAAGTAGGGGTTTTtTTTTGTTTTGGTTTTTTTGTGGTTGTGC
+                                                 <<<<<<<<<<<<<<<
+
+241 GTTGTAAG
+    <<<<<   
+
+> Contig28_chr14_26905747_26909514 975 G C 0.116622
+ AluI
+  1 CTGGTACGTGCTTCTCCTCCTGCAGCCCACCGTTTACTTGGTAAGTCGCTGCCGATCCGG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CGCCCCCGCAATCCCACCCTCGTCGCGAGGACAGACAACCAGGGGCGCGCGGGAGGAGGG
+                                                                
+
+121 TGAGACCGCCAGTTCAGCGGAGCAGCGTTCCTAGCGACCGTGTTGGAACAACTTTGGCAA
+                                                                
+
+181 nCTGGTCTTTGGATCCCTGCGGGATTTTTCGGGTTTCCCACCCTCATTTCTTGCTT
+                                     <<<<<<<<<<<<<<<<<<<<   
+
+> Contig64_chr14_56768376_56768902 473 C T 8.281311
+
+  1 ATAAGAATCTCCTCAGTAGAGAGAAGCCTGATCTACCATGATTTTATTTGAGTAAAACCA
+       >>>>>>>>>>>>>>>>>>>>>>>>>                                
+
+ 61 TTGAAACAAACAnTTCAAGAAAGATGGTCAGAGAAGCAAAATGTAA
+                        <<<<<<<<<<<<<<<<<<<<<<<   
+
+> Contig60_chr15_18493036_18494316 150 G A 0.125024
+
+  1 CGCCTGGAATAGCATGGTGCCTTTAGGAAATTACATCTAACTCTCTAGGGCTGGAAGGAA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CACTGAGTnAACGTAAAGAATTGTGGGAGAGAAGCCTTTAGTTAGATCATGCAGGGCtCC
+                                                                
+
+121 GTGCTCCAAATGGGCTTTGTGTTTTG
+       <<<<<<<<<<<<<<<<<<<<   
+
+> Contig112_chr15_26772864_26773267 374 C T
+
+> Contig119_chr16_6160274_6160477 180 G A
+
+> Contig60_chr16_28079136_28080263 588 T G 5.998983
+ NsiI
+  1 TTAGAGAATTATTCACTCCCCCAAAAGTAATAAAAATATAAGAAACAAAGCATAATCATA
+       >>>>>>>>>>>>>>>>>>>>>>                                   
+
+ 61 ATGCAnTGGTTGAGTTAGTAGTAAATAACATTTTAGGGTCATAAATTAAAAACTGAATTG
+                                                                
+
+121 AGATTTAGCTGGAAATTGTGATATAAATGTCAGGATAAGAGAAGCAAGATTGAAAGAAAG
+                                                                
+
+181 ATGGATTAAAAATGCTAAATCCTTCTCTACTATTACAGGAAATTGATAAAAGAAGAGAGA
+                                                     <<<<<<<<<<<
+
+241 GGAAACAGCACATAT
+    <<<<<<<<<<<<   
+
+> Contig31_chr17_12128267_12129637 205 G A 0.246305
+
+  1 TGGAGGCAATGGAGGTGAATGAGCCCCAGTCCTGGACCTCgAAGCAGACTGGCCAGAGAC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ACCAGGATTTAAGGCATGTGATGAAGACACAGTTCAAAGTGACGAGCCCTGCAGACTCTT
+                                                                
+
+121 CnGGAGCAGAGgTAGAGTGATGACCCGTACCTGGAAGGTTTTAGGAAGGATAACAATGAA
+                                                               <
+
+181 TTTACCAGAAGGCAGGGGTAGA
+    <<<<<<<<<<<<<<<<<<<   
+
+> Contig99_chr17_26021506_26022200 505 C T 0.171977
+ RsaI
+  1 TGTTGCCATGTTGCCAGTATGTTTTTTTAAGTTTTCCTTTTTAATTTCATTTATGATATT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TTTTGGAGTAnaGAAGTTATCATTTCACATGATCAACTTTTCAGTCTTTTTCTTTATAAT
+                                                                
+
+121 TTTTAAcTTTGTTGTCATGTTTAGAAAGGTTAAATTTATACCTTGTAAAATAcCTTCgCA
+                                                                
+
+181 AATTTACATTTGGGAAATTATTAGTAGTATTATTTcAGGAAGTTaTTATTTTTAAGTGTT
+                                                     <<<<<<<<<<<
+
+241 GGGTTCCCGTGA
+    <<<<<<<<<   
+
+> Contig27_chr17_61713766_61716585 1056 G C 2.199527
+ Eco47III,HaeII
+  1 AAGAGGCGCAGGAAGGAGAGTCCGCCcGCCGCAGCCCGCCCGCCGGCTCCTCAGACAGCn
+       >>>>>>>>>>>>>>>>>>                                       
+
+ 61 CTCGCaGGTCCTCCAGCCTTCCAGCGAGAAGAAAGAAAGAGCGTCACCGGAAACCACCGA
+                                                          <<<<<<
+
+121 AACTCTGGGGTAGAGCG
+    <<<<<<<<<<<<<<   
+
+> Contig229_chr18_3706523_3708577 1076 A G 0.444778
+
+  1 TTTAAACTCCCGTGTCTGTGCTTGATTATGGCACCGTTAcTCTCGGACGTATTTAATTTT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CTGATTCTGATTCATTGGTCTATTACATGAGCAATTGGTGGnAAGTGATGTCTGTCTGTG
+                                                                
+
+121 GCCCTTACATTATTTATAATAAAACTCTCCTTCAAAGAACCTTTGGACGATGTCTCCACA
+                                                                
+
+181 ATTACAGAATGAGTACAAATTAGTTTTCTAAAACAGCAACTGGTGGTTAATTAAGTTTTG
+                                                                
+
+241 TCATGTTTTCTGGAGATGAGTGTCTCATGGTTTGGATACTATGAAGGCATTTCTGCAAGG
+                                            <<<<<<<<<<<<<<<<<<<<
+
+301 TT
+      
+
+> Contig82_chr18_27305489_27306229 566 C T 0.348750
+
+  1 CCTGAGAACTTCAAGCTCAGCGGAGGGCTGAAAGGGAGGTAACCACTTTTGTACTAAATT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GTCACCTCCTTGCTTATTTTCGTGAAGTTCTAAAGAACACAACTATCTCACTAACACAAc
+                                                                
+
+121 AGATTTATTATTGAGTTGTCAGAATCAGCAGCTTTTAGTCACngGTCACTTGTGTGCCTC
+                                                        <<<<<<<<
+
+181 CACTCCATCATAACT
+    <<<<<<<<<<<<   
+
+> Contig64_chr18_55979770_55980315 49 G A 2.123800
+
+  1 CCCCAAGGAGACAGGAGGGCAGGCTGTGTGGGTTTCCTGGCCCGCAAnCCCTGTGCAGGT
+       >>>>>>>>>>>>>>>>>>>                                      
+
+ 61 GCGgTTCTGCCAGGCCCGCAAATCTCGGTCTCACTTAACTGCGGCATCATTTATGCTAAT
+                                          <<<<<<<<<<<<<<<<<<<<  
+
+121 G
+     
+
+> Contig146_chr19_5221790_5223013 143 A G 0.869806
+
+  1 TTAGAATGGCTTTTTCACGGAAGGAGATGAGTTATAAAGTACGGgTGACATTTTTTTGTC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TTGnGTTTTTTTTTTTTGTCTTGTTTTTAACTGTTGTTTAAGTCAGCCAACAAGTACATA
+                                                                
+
+121 ATTTCTCAGCCCACATTTAAAAATTATCAACTCATTTTCACTTGGAGGTGTGGACATAAA
+                                                                
+
+181 GCCATAAATATAATTTGCATTCTGCTGACCTGTTTC
+                 <<<<<<<<<<<<<<<<<<<<   
+
+> Contig129_chr19_25541958_25542221 202 T C 2.550968
+ HinfI
+  1 AAGAATCAAGCATGCATTCTGCCTTCCCCATGTGAAAAGTACCAGGTGAGGATATGTACC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TCTTTATATCCATGTTCCAAGAACAACAACAACAACAAAAGAATGAGAGTnACCACTTTA
+                                                                
+
+121 CAACCCCCAAAGAATTAATGGATT
+    <<<<<<<<<<<<<<<<<<<<<   
+
+> Contig60_chr19_54013816_54014398 281 A G 1.271267
+
+  1 ATTTCTCTCGCCGATATTGAGGTTAAGTATCCCTCTAGGCTAAAAGACCAGCAGCTTTTC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TTAAACCTATTACAGGAATCCCAATAATGGAAAGAAACGAGGGGAGGCAGTGCTCATGTC
+                                                                
+
+121 ACATTCTTCCAGAAATCAAATATAnTGGGTTTTTTTGTTGACGTAAATACATAGGTTGGA
+                                                                
+
+181 AAAAAGGTAGGGGGAAAGGAAAA
+    <<<<<<<<<<<<<<<<<<<<   
+
+> Contig50_chr20_12138509_12141975 3206 C A 0.383804
+
+  1 TCACACCAGGCTCAAGGTTAAGGCAGAACACAAGATAAGAGAGCAAGCTGGCTTCCTGTC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CCCCAGCTGGCtTnCCCATGGGAGCAGAAGCTGGATGGGTGCAGCTGCTGGCTAGGGATC
+                                                                
+
+121 CTGTAAAAACTGAAGACCTCCaGTCTCCAGGGCTGGAGGaGGGATTCCTGCCCTGGGGGC
+                                                                
+
+181 AGGCCaGATGAGAGGGATGCGATAATGGCAGGTGTCTCCACAAGA
+                          <<<<<<<<<<<<<<<<<<<<   
+
+> Contig36_chr20_32631363_32632049 176 G A 1.149790
+
+  1 CTGCCCGAAACAAGTTCCTCATTGTTTCCTnCGTTCTGTGCTGTGGCGGTTTCTTCCTGG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ACCCAGAGTCCTTTTCcGAACATTAGCAACTCCATTATGCCACACAGAGATGAGATTTGA
+                                                                
+
+121 GAAAGGAAAATAAAGTTGTCTCGTGATATGGAGGGCAAAGCTGATAG
+                            <<<<<<<<<<<<<<<<<<<<   
+
+> Contig50_chr21_4178523_4178687 121 G A 0.483377
+
+  1 GTAGGAATCTCAAGCCCCAATCTACTTTTCAGGAAGCTGAGGCTCAGAGAAGTAAAGTAA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CATGCTCAAATTCACACCAGTAAGTGAGAGAGTTnTAAGTAACTATAGTAAGTGACAGAG
+                                                            <<<<
+
+121 CTGGGATTTGAACCCTCAT
+    <<<<<<<<<<<<<<<<   
+
+> Contig129_chr21_31045749_31046924 381 A G 0.028026
+ AcyI,Hsp92I
+  1 CAGCTGAAGCACCCTCTCTGACCAAACCTGATCTTTCTTTTGGGGATCCTTGACnTCTCA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TAAGTCTTTATGAACCATTTGTCCTTCCAGCCATCATTTCCTTCAAC
+                            <<<<<<<<<<<<<<<<<<<<   
+
+> Contig159_chr22_7896450_7896974 109 G C 0.465232
+
+  1 TAACTGAGTGATAGTGCTTGGcGCAAGACACTAGCAAnCCTGTACTCACCTTCCATTCAT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TTATGTCATAATAATAATTCTTTAAATATGGAAAGcGTAgAAACAAAATAGGAACACTGC
+                                                                
+
+121 TAAGTATTCATTTAGGTAATAAGTTTAGTGCTAGATGTGTGACAGGAATTATTTTcATTA
+                                                                
+
+181 ACCACAAGCAAACATTTATGGAATGTCCATTGCATGCTGAAATGTA
+                           <<<<<<<<<<<<<<<<<<<<   
+
+> Contig23_chr22_34612023_34612568 167 C G 0.409430
+
+  1 TATTCTACCACTCAAAGCCAGCCTGAAGGAAnCCTGGGcTCTTTCCATCAGCTATCTGAC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 AAGTTGATCTAAAcgTGTAGAAAGCATGCCTGGCTCCACACCTGATTTCATGTGGAGCCA
+                                                                
+
+121 TCAGCTCTCACACGATCACCTTG
+    <<<<<<<<<<<<<<<<<<<<   
+
+> Contig26_chr22_57817664_57819633 1453 A G 0.471213
+ RsaI
+  1 TGCcCACCCACATCAcTGAACAATTCAGAGAAGATTCCTTTAACATATGCATTCAATGTT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TAAGCCTCGCTAACATTTTTTAAGCACCGAACCTTTTTAAAAAGGGCTCTAAAAAATAAG
+                                                                
+
+121 CATGAAACTAAATCTCTCTAATACgTCACGTGACACACATGTAtATAACCCAGAAGGTnC
+                                                                
+
+181 ATCTAGGGAAACGCAAAAGGAATTATG
+        <<<<<<<<<<<<<<<<<<<<   
+
+> Contig133_chr23_3525134_3526502 1223 A G 1.358849
+
+  1 TCCTATTTTGTCCCCAAGTCCCAGGTTCAGGAGCTCCATTAAGTCACAGGTAATTCAGCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GAGAGCCTGCAAAATGGCAACCCCACCTGAGGCACTTTCTTTAAATCAACTGTATCAAGG
+                                                                
+
+121 TAACATTTACACAGAATAAnAAGCACTCATTTTAAAGAAATAGCTTGATGAGTTTAGTCT
+                                                                
+
+181 AATTGTATCTGTGTAGCCACcACACAGTCAAGATa
+               <<<<<<<<<<<<<<<<<<<<<   
+
+> Contig35_chr23_28447813_28449115 70 T A 0.163155
+ DdeI
+  1 CCTTTTCTCTCCATTCACACCCCATCCTTCTTnGTCCCTCCAAAACTCCTAGCTGTTTCC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CATTTTAGGGTCTCTGCATTTGCTGTTCCAAGCAAGCTCTGCCCCCAAATGATCTGGTGG
+                                                    <<<<<<<<<<<<
+
+121 CTTGTTCCCTC
+    <<<<<<<<   
+
+> Contig50_chr24_22515247_22516072 761 C T 0.190253
+
+  1 GGGGAGACCCTGATCCATCCTCATTCTACTGCTTCCCGATGTCCCAGGCCTGCtGTTCTA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CACGAAAGCCCATTCngTGCCTCCAAGTAGGGAGCAGAAGGGAAGAACACA
+                                <<<<<<<<<<<<<<<<<<<<   
+
+> Contig84_chr24_29196623_29199644 466 C T 0.214603
+
+  1 TAATTGGACaCTTTTGACTTGCGTTTCATGATTTTGCCCCATTTTTCTCTGCnGCAATTT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GGCCAGTGATTCCTGTCTTTCCCTCTATTATCCACTCTGATTAACTCAGCTGCACCTGCC
+                                                         <<<<<<<
+
+121 AGCCTTTATTCCTGCA
+    <<<<<<<<<<<<<   
+
+> Contig144_chr25_4011170_4013134 541 A G 0.086768
+
+  1 GGTGAGGtGGAGAGTGGCAAGAGCTGTTGGTGGGCGTGTGTGAGCCAGAGGGCAAGCGGG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GAGCTCCTAACTGCAAcATCCAGGGGCAGTCGATACTGCCTGGGAAGTAGGAACTGCTCT
+                                                                
+
+121 GGAGCATGAGTGGAATTAGCAGATGGATAACAAGGGAGnGCGAcaAGGGCATTTTATGAA
+                                                                
+
+181 GATGGAACACCTTGGAAAAGATCAGATTGCTGAAGCATCCGTTTGAGAAAGCACAGATAA
+                                                                
+
+241 CTTTTCAAATCTGAAGAGGAGGGACATGACGGGGAGATGAGACTAG
+                           <<<<<<<<<<<<<<<<<<<<   
+
+> Contig103_chr25_38891221_38892140 407 G A 0.166581
+ Alw44I,Bsp1286I,CfoI,HhaI
+  1 GTGGGATGCAGGTGCTGTGTCTACCCACTTCTTCCGGGGACCAGCCCCTCTCTGGCCACA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CCCACTTCCTCTCATCTTAACTGTCCAAATTTGCTGACTCAAAGGGATGTGTGTGCGTAT
+                                                                
+
+121 GTGTGTGTGTGCnCACATGTGCATGCATGTGTTTTGTGTCTTTCACTCTCAAAATTATTT
+                                                                
+
+181 AAGTTCCCATGGCCCTGCCCTGATTTATCTCCCAAAT
+                  <<<<<<<<<<<<<<<<<<<<   
+
+> Contig204_chr26_4311195_4311778 170 C T 0.085422
+
+  1 AACAGAAGCCTGTCCCAGCTACAGGAGGGAAACGGGCTCGGCAgCgTGGCACTGCCTCAC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 tGTCACCCCCAGGAGCCCGGGAAGCCGTCCCTTGAnTCCTCAGTGACGGTGACCATGACC
+                                                                
+
+121 AAGGGCAGTAACTCTGCCCGCGGGACACAGCgCTCCTGCTCCCgACgGAAGGTGTGCCGG
+                                                                
+
+181 CCACAGAGCGCACGTTGgGGCCgAGTTCAGGGGCAGAtAGGAAGACACAGGa
+                                 <<<<<<<<<<<<<<<<<<<<   
+
+> Contig146_chr26_26622638_26623906 574 G A 0.318381
+
+  1 TTTCTGAGATCACACAGCCAGGAAATGGGGAGCCAAGATTTGAACCCAAGCCTGTCTGAT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TCTGGAACCTGCACCAGAaCCACACCTCAgCCCTGCCTTCCCTTGGAAGGCTtACcnTTG
+                                                                
+
+121 TGCCTGGAACATAGTAAGTGCTCAAAAAATGGTcTAAATCATCATCGTGTaTTAGGAAGC
+                                                                
+
+181 CTGGGTCCACACCCCTTGGGCTGTGGAGTGTCTTGAG
+                  <<<<<<<<<<<<<<<<<<<<   
+
+> Contig135_chr27_6853874_6854079 158 C T 0.060201
+
+  1 AAAGGGTTCCAAGTTACGGGATTcATACGGGAAGGCTCCcGAAATAGAAATGATCGTTGT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 AACATGGGGAGATTTGTCAGGGACAgACAnGAACTGTCTTATAAAATGCAGCCCAGTTTT
+                                                   <<<<<<<<<<<<<
+
+121 CTTcTTGAGA
+    <<<<<<<   
+
+> Contig64_chr27_34654435_34654621 132 C A 0.296658
+ RsaI
+  1 AAATTGGTCAGTGACTGGGAACACGTTCCGAACCAGCTCCGTGGATTTACAAGTTTTCCA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GTAGAAACGGTCCTCCAAGCGTnCCTGAAGTGCTcATTCATTACCGCAAGGTG
+                                  <<<<<<<<<<<<<<<<<<<<   
+
+> Contig131_chr28_6481806_6483783 138 C T 0.387007
+
+  1 AGaCCCTCGAAATTCTCCAGTTGTCAAATTCTTCCCCAGTnTCTGCTTGAgAGATTTTCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CCTAGCTTCAGAGCCTTAACTACAGAATACTGAGTCTTTGCTCAAGCAGCGGCTCAACAC
+                                                                
+
+121 ATAACCCCTAAGCTGCCAAGGCTTTTCTCCCCCAAGACTTTGTTTCCTTCCACGAAACCT
+                                           <<<<<<<<<<<<<<<<<<<< 
+
+181 TC
+      
+
+> Contig60_chr28_30197166_30197364 92 T C 1.139483
+
+  1 AATCAGAAAGTCCCAGAGGTGGAGACTACAGCAAATTACCTGACATTTGTCTTTGATGCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 nTATGTAAAAACTCTGGGTGGCAGGAAAGCACTTAAATTTACCTTGTAGAGCTTTGCTAC
+                                                                
+
+121 CCAATAGAACATTCTGTGCTGATGGGAATG
+           <<<<<<<<<<<<<<<<<<<<   
+
+> Contig29_chr29_4726399_4727143 559 A T 3.113735
+
+  1 CTTTTTGTGGCCAAAAgTGACAACATAATTTTCAAAATGGGAAACGATGATTACAAATGA
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 GTGGAACACATGTTACAGTGGCAAGATGTGTGAGCAATGCTGATTCAGGGTATAATGGGT
+                                                                
+
+121 TGGTTGTAAAACAAATATGAGTTTCTAATATTCGGGCATATTAAACAATCTAAGTTnTAC
+                                                                
+
+181 AAAATCTCTCTTGTACTATTTATTGGGTAACTACTAGTAAAGGAAAGGCCTAATAGGCTG
+                                                            <<<<
+
+241 TTCCCATAAAAAGAAGCTAC
+    <<<<<<<<<<<<<<<<<   
+
+> Contig1_chr30_5992217_5993068 106 C T 1.078937
+
+  1 CTTGAGACAGCCATGGTGTTTGTTTCTACCTTTCCTCTAAGAAGACACCTGTATACAGAT
+       >>>>>>>>>>>>>>>>>>>>>                                    
+
+ 61 ATTCCnTGTGACTCACACTCATCCTCATAGACATCCCCAGTATCATTTCTGTGAAGCCTT
+                                                           <<<<<
+
+121 CCTTGACATTTTCCAACA
+    <<<<<<<<<<<<<<<   
+
+> Contig165_chr30_25804389_25804926 190 T C 0.328844
+
+  1 CCGCTTGTCCCGCTCTGTGATTTAGATGTTTCACGAGCGGGAAGGTGGGGGGATTGATTC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TCTnATTCGCGCTTCTCCGCCCAGGCTGCGCATTAGAATCACTTGGGGAGCTTTAAAACA
+                                               <<<<<<<<<<<<<<<<<
+
+121 TGCCAG
+    <<<   
+
+> Contig38_chr31_5164423_5166573 2074 C T
+
+> Contig17_chr31_26433828_26434459 498 T C 4.814134
+
+  1 CCATGCAATCTCATGCAATGGTTAAAAGCAATGAATTTGTTGTACTCAAAATACCTTGGT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TGGGTATTAAAAAGTTTTnAGTAAACATAATGAAAAAAATAGAAGTAGATAAGATCAACA
+                                                      <<<<<<<<<<
+
+121 CACCTACACGAATTA
+    <<<<<<<<<<<<   
+
+> Contig9_chr32_19479532_19479735 12 A G
+
+> Contig30_chr32_25902721_25905783 208 C G 0.322381
+ AluI,HindIII
+  1 TTCACAGTGTTCTCCCAAGGCACAAATAGAATGCTCAGTCATTGGTTATTTTACTTAGAT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ATTCCTTTCTAAATATAGACTTACCTGTTATTTTTTCCTATACTAATAACATTCAAATTA
+                                                                
+
+121 TCTATGTGTACAATAATAAACACTAGGCATAACTGTATCTCAGTACCAATTTCCTTAGAA
+                                                                
+
+181 GGTAAAnCTTATTTCAGTCAAGGTCTAGGCCAAGCATTGA
+                     <<<<<<<<<<<<<<<<<<<<   
+
+> Contig18_chr33_22207246_22209159 1363 G T 2.559961
+
+  1 ACGACTGCCCTTTTTCCCTCTGTCTCTATTTCTCCTACACACACACACACACACACACAC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ACACAgAGTGAGCTTTTAGCAACCTTGTTTAACATTTGGAAAGGAATAGCTGACACAACA
+                                                                
+
+121 GAGGGGGGnATAAGTAAATACATTGCATGGCTGTATATAATTGAACATTCTTCAAATTCT
+                                                                
+
+181 TTAAACAGAAATTTCAGTACCATGGAGATCCTTGAAAT
+                 <<<<<<<<<<<<<<<<<<<<<<   
+
+> Contig170_chr33_26189421_26189940 292 T C 0.307330
+
+  1 TTCAAGTTCCCCTTTTGTGCCTTCACACACTTGTnTTTATGGTCTCTATTTAAAAAAAAg
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 AGACAAAAACCTCTTAATAAATTTAGGAAGTAGTCCTCACTCTTTAAAGGAATTGTGCTT
+                                                                
+
+121 AAAGCAGCAGCTCTTCCTCACTCCTTG
+        <<<<<<<<<<<<<<<<<<<<   
+
+> Contig113_chr34_13341080_13341643 236 C T 0.412222
+ Hsp92II,NcoI,StyI
+  1 AAATGCTCATTTCCCAACATTCAGTGAAATGCCTGATGACTAATCCTTGCTCCaTGGATC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CTGGGGGTCCCGTGCACAGAAGAGGGTGAGGTCTCTGCCAnGGACTGTGTCCCTGGAAAT
+                                                  <<<<<<<<<<<<<<
+
+121 GACAGGGCA
+    <<<<<<   
+
+> Contig152_chr34_31794848_31795540 242 G A 2.779642
+
+  1 ATAGGAAATAAAACCCCAGCTCTCAGAGnAAAGCAAAATACTTTTAAAAAGATGAAAAAG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 CATCAGAGCTATGAGACACAGAAGATCTAGAGTATAATTGTGTTTTTGTATAGAAGGGAG
+                                                                
+
+121 AGAAGGAATGCTGCAGGAGCCACATTTCTCCATCTA
+                 <<<<<<<<<<<<<<<<<<<<   
+
+> Contig47_chr35_3666773_3667898 348 G T 0.234571
+
+  1 GCTGCCTCAGCAGTTATCTTGGGTTCTGTTAACTTTGACACACCTTTCACGAAGAAATTC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TTCATTGCAGTGCTTGAACAATCTGATTGTTCAATCTGATTnGATTCTATTTCTTGCTGA
+                                                                
+
+121 GATAATGTTCTAGCACCTTCTCTGTGGATCCCCTTAT
+                  <<<<<<<<<<<<<<<<<<<<   
+
+> Contig74_chr35_25394343_25394813 303 A T 4.297720
+
+  1 AGTTTCCCCAAATGTTCATGATTAACCAGGTAAACTGAAGATTAACCTTAAATATATATT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TCTTTGAGTCATTATAATTAAATTAACTAGGTTGTTTTCAAATATACTAATAATAGAAAC
+                                                                
+
+121 TGAAAAAATAATCCAAGTAATATaTCTGAATTGAAAAAAAAAGTAAGGCCATTGTATAAA
+                                                                
+
+181 ACAACTGAAAGTTTTTGGAnAAGGTACTATTTTTAATTTACAGTGCATTTTTTTAATCGG
+                                                                
+
+241 CATTTCAAATAATAACTTCAATCaCACACACAAAAATAAACCAAATCAACTGCATGTAAG
+                                             <<<<<<<<<<<<<<<<<<<
+
+301 GGaAGT
+    <<<   
+
+> Contig5_chr36_4562983_4563634 343 C T 1.168507
+
+  1 ATATGAATGGTGGTGATGGATTCAGCATCTTGACTCTTTTTCAACTATGTCAAGATTTGC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ACTGGATCTTGTCTAAAGTCACTCTTCTAGGGGAAGTCAAAGAGACTGGGTCaGTCCtCA
+                                                                
+
+121 AGATAcGATGTAAGCAGGTAAGATAGCACTATAGTAGGTCTTCTTGTCATGGTGAGTCAA
+                                                                
+
+181 TAACCATTCAATATTCTTTCnACCTACTCTTTACCTGCTCAATCAAGGTAGGGGTC
+                                     <<<<<<<<<<<<<<<<<<<<   
+
+> Contig133_chr36_32954045_32955409 136 A G 3.772017
+ TaqI
+  1 ATTAAATGAAAACAGTGTCAGGCAATAAGATGTATTAAGTACAGTATGCCTGAGGATATA
+       >>>>>>>>>>>>>>>>>>>>>>                                   
+
+ 61 ATATTAAACACAGATTCTGCTGTTACTATCnAAGTGGATATTAAAATAACAGTGCTACTT
+                                                                
+
+121 TGAGGGTAATGCTACTTTGGAGAATATTTTCTAATAAGCTCACCaTAAAATGACggATAA
+                                         <<<<<<<<<<<<<<<<<<<<   
+
+> Contig53_chr37_6665763_6665919 116 C T 10.874746
+ BstOI
+  1 AGTCCTCATGTTGTACTTTACCTCACCTGAATTTACTCATCtGATAGTTGGAAATTTGTA
+       >>>>>>>>>>>>>>>>>>>>>>>>                                 
+
+ 61 TCCATTGCCCATCtTCACCACCCCATGTCnCTGGAAACCAACAAtCTGTTCTCTGTATGa
+                                       <<<<<<<<<<<<<<<<<<<<<<<<<
+
+121 CTT
+       
+
+> Contig2_chr37_31197993_31198256 182 C T 0.594606
+
+  1 CTCTCACCACATGGAGAATCCTGTATGTTCAGCTGTATGACGTGGGGGGAACGTCAGAGC
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TCAGTTTCATAGCAGTCAGCTCCATGTTATGGGTTCAAgAnGAAAACAGGTGGCAGGCtT
+                                                                
+
+121 GCCACAGCCTCCCTCAGGGGTGgCCTTGACAGATAAAcGT
+                     <<<<<<<<<<<<<<<<<<<<   
+
+> Contig7_chr38_12217200_12218387 1163 A T
+
+> Contig265_chrX_2689247_2689484 114 C G 9.232233
+
+  1 CTTAGAGAATTCCCTGATTCACTGAGTTAAATTATTACCAAATCTGATAATAATAAAAGA
+       >>>>>>>>>>>>>>>>>>>>>>>                                  
+
+ 61 AGTAATTACAGATCAATAATTAATCTATATGTCTGAATACATTTTAATAAGTCCnAcTCA
+                                                                
+
+121 ACAATATGCTGACAAAACAATACATCTTGTCT
+          <<<<<<<<<<<<<<<<<<<<<<<   
+
+> Contig113_chrX_26287829_26288398 385 C T 0.077485
+
+  1 AAAGCCGTAACAGTCGCTAGGAGAATCATAATTTTAAGCTTTGTGTGTCCCGGGcTTGAG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 TCCCTCAGGAGTAGTTAGATGCGGCCTTAAATTCTCcCAGTAAATTCACnTTGACGGCCT
+                                                                
+
+121 ATTTTTGACCTGGGGGCACACGCTGCTATACACTCTAGCCACCTCTGATCCTCTGGCCTC
+                                                                
+
+181 CTCTGTTACAATGACAGAAACGACAGAAGCATTTCTTTAAAATAAGTCCCAGTACGTGCA
+                                                                
+
+241 CACAAACGTTCAGGGCAGCCTTCTCCATAAACGGCACGAAATGGC
+                          <<<<<<<<<<<<<<<<<<<<   
+
+> Contig90_chrX_57430715_57431566 548 C T 0.153995
+ EcoRV
+  1 CTCATTCCCAGCTACCTCCACCTCTATACCAACCCCTAGTTCCTGTACATCCCTGCTTCT
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ATAGGAAATCTTCCTGGTGTTGATATnATTCCCAAGGTCAGGCTGTCCTCCTAGCTCCCT
+                                                                
+
+121 CTCCTCATCTGCATCAAGTCCTCCAAACTGGGCAGTAGAC
+                     <<<<<<<<<<<<<<<<<<<<   
+
+> Contig133_chrX_84833782_84834125 182 G A 0.277794
+
+  1 CACCAGAGTGCAATCGAGAACCATCTGATCACAGAACCATAGAAAAGATTGCTGTACAAG
+       >>>>>>>>>>>>>>>>>>>>                                     
+
+ 61 ACTTAGGAACTCATTCTGTTCAGGATGGAGAAGCTGATGCCCAAAAAGGGAAAGGAACTT
+                                                                
+
+121 AACCAAAGTCCATACAnTATCAACTCTACACATAAAGGAAGGGAGTGGAGGGAGCAGTAA
+                                                                
+
+181 GACCAGAGATATAGACCCCAGTGAGGAGGCTGTGAGCTCCTG
+                       <<<<<<<<<<<<<<<<<<<<   
+

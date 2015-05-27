@@ -1,0 +1,7 @@
+           #eigvals:     3.243     1.103 
+                 PB1     0.1887      0.4703  All_Individuals
+                 PB2     0.0398      0.0455  All_Individuals
+                 PB3     0.1647     -0.6945  All_Individuals
+                 PB4    -0.8954     -0.0220  All_Individuals
+                 PB6     0.1887      0.4703  All_Individuals
+                 PB8     0.3135     -0.2696  All_Individuals

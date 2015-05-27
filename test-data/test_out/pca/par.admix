@@ -1,0 +1,7 @@
+genotypename: /scratch/galaxy/home/oocyte/galaxy_oocyte/database/files/000/dataset_260_files/admix.geno
+snpname: /scratch/galaxy/home/oocyte/galaxy_oocyte/database/files/000/dataset_260_files/admix.snp
+indivname: /scratch/galaxy/home/oocyte/galaxy_oocyte/database/files/000/dataset_260_files/admix.ind
+evecoutname: /scratch/galaxy/home/oocyte/galaxy_oocyte/database/files/000/dataset_260_files/coordinates.txt
+evaloutname: /scratch/galaxy/home/oocyte/galaxy_oocyte/database/files/000/dataset_260_files/admix.eval
+altnormstyle: NO
+numoutevec: 2

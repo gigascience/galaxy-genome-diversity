@@ -1,0 +1,1 @@
+average Fst is 0.16461, using 21 SNPs

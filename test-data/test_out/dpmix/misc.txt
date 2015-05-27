@@ -1,0 +1,11 @@
+state 2 agrees with: PB1 PB2
+state 0 agrees with: PB3 PB4
+
+PB6: 360 SNPs where state 2 is as likely as state 0
+PB6: 12 SNPs where state 0 is more likely than state 2
+
+PB8: 358 SNPs where state 2 is as likely as state 0
+PB8: 14 SNPs where state 0 is more likely than state 2
+
+PB6: 0 = 83.7%, 1 = 0.0%, 2 = 16.3%
+PB8: 0 = 87.6%, 1 = 0.0%, 2 = 12.4%
