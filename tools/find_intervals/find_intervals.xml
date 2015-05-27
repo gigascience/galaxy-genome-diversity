@@ -1,0 +1,164 @@
+<tool id="gd_find_intervals" name="Remarkable Intervals" version="1.1.0">
+    <description>: Find high-scoring runs of SNPs</description>
+    <requirements>
+        <requirement type="package" version="0.1">gd_c_tools</requirement>
+    </requirements>
+    <command interpreter="python">
+        find_intervals.py "$input" "$input.metadata.dbkey" "$output" "$output.files_path"
+
+        #if $override_metadata.choice == "0"
+          "$input.metadata.ref" "$input.metadata.rPos"
+        #else
+          "$override_metadata.ref_col" "$override_metadata.rpos_col"
+        #end if
+
+        "$score_col" "$shuffles"
+
+        #if $cutoff.type == 'percentage'
+          "$cutoff.cutoff_pct"
+        #else
+          "=$cutoff.cutoff_val"
+        #end if
+
+        "$out_format"
+    </command>
+    <inputs>
+        <param name="input" type="data" format="tabular" label="Dataset">
+            <validator type="unspecified_build"
+                       message="This dataset does not have a reference species and cannot be used with this tool"/>
+        </param>
+        <param name="score_col" type="data_column" data_ref="input"
+               numerical="true" label="Column with score"/>
+        <conditional name="cutoff">
+            <param name="type" type="select" label="Score-shift type">
+                <option value="percentage">percentage</option>
+                <option value="value">value</option>
+            </param>
+            <when value="percentage">
+                <param name="cutoff_pct" type="float" value="95" min="0"
+                       max="100" label="Percentage score-shift"/>
+            </when>
+            <when value="value">
+                <param name="cutoff_val" type="float" value="0.0"
+                       label="Value score-shift"/>
+            </when>
+        </conditional>
+        <param name="shuffles" type="integer" min="0" value="0"
+               label="Number of randomizations"/>
+        <param name="out_format" type="select" format="integer"
+               label="Report individual positions">
+            <option value="0" selected="true">no</option>
+            <option value="1">yes</option>
+        </param>
+        <conditional name="override_metadata">
+            <param name="choice" type="select" format="integer"
+                   label="Choose columns"
+                   help="Note: you must choose the columns if the input dataset is neither gd_snp nor gd_genotype.">
+                <option value="0" selected="true">no, get columns from
+                    metadata
+                </option>
+                <option value="1">yes, choose columns here</option>
+            </param>
+            <when value="0"/>
+            <when value="1">
+                <param name="ref_col" type="data_column" data_ref="input"
+                       numerical="false"
+                       label="Column with reference chromosome"
+                       help="Note: be sure this corresponds to the build recorded in the metadata."/>
+                <param name="rpos_col" type="data_column" data_ref="input"
+                       numerical="true" label="Column with reference position"
+                       help="Note: either zero-based or one-based positions will work."/>
+            </when>
+        </conditional>
+    </inputs>
+    <outputs>
+        <data name="output" format="interval">
+            <change_format>
+                <when input="out_format" value="1" format="bigwigpos"/>
+            </change_format>
+        </data>
+    </outputs>
+    <tests>
+        <test>
+            <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp"/>
+            <param name="score_col" value="5"/>
+            <param name="type" value="value"/>
+            <param name="cutoff_val" value="700.0"/>
+            <param name="shuffles" value="10"/>
+            <param name="out_format" value="0"/>
+            <param name="choice" value="0"/>
+            <output name="output"
+                    file="test_out/find_intervals/find_intervals.interval"/>
+        </test>
+    </tests>
+    <help>
+**Dataset formats**
+
+The input dataset is tabular_ (which includes gd_snp_ and gd_genotype_),
+with required columns of chromosome, position, and score (in any column).
+The output dataset is interval_. (`Dataset missing?`_)
+
+.. _tabular: ./static/formatHelp.html#tab
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _interval: ./static/formatHelp.html#interval
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+The user selects a tabular dataset (such as the SNV formats gd_snp and
+gd_genotype) and if the dataset is not in an SNV format, specifies the
+columns containing chromosome, position, and scores (such as an FST-value
+for the SNP).  With SNV formats, the metadata tells which columns hold the
+chromosome and position.  Other inputs include a percentage or raw score
+for the "score-shift" which should be greater than the average value
+for the scores column.  A higher value will give smaller intervals in
+the output.  If a percentage (e.g. 95%) is specified then that percentile
+of the scores is used as the shift; percentile may not work well if many
+rows or SNPs have the same score (in that case use a raw score).
+
+The program subtracts the shift from every score, then finds genomic
+intervals (i.e., consecutive runs of SNPs) whose total score cannot be
+increased by adding or subtracting one or more adjusted scores at the
+ends of the interval.  Another input is the number of times the data
+should be randomized (only intervals with score exceeding the maximum
+for the randomized data are reported).  If 100 shuffles are requested,
+then any interval reported by the tool has a score with probability
+less than 0.01 of being equaled or exceeded by chance, assuming that
+the scores vary independently by position.
+
+-----
+
+**Example**
+
+- Input (showing only the chromosome, position, and score columns)::
+
+    chr2      39      0.40
+    chr2     103      0.97
+    chr2     188      0.72
+    chr2     203      0.68
+    chr2     321      0.92
+    ...
+    chr2    1132      0.85
+    chr2    1321      0.34
+    ...
+
+- Suppose the user-specified score-shift is 0.75.  This value is subtracted from each score, giving::
+
+    chr2      39     -0.35
+    chr2     103      0.22
+    chr2     188     -0.03
+    chr2     203     -0.07
+    chr2     321      0.17
+    ...
+    chr2    1132      0.10
+    chr2    1321     -0.41
+    ...
+
+- The output, not reporting individual positions, might be (depending on the values not shown above)::
+
+    chr2    103    1132    1.42
+  </help>
+</tool>
