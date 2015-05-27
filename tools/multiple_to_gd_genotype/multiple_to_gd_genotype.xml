@@ -1,0 +1,162 @@
+<tool id="gd_multiple_to_gd_genotype" name="Convert" version="1.0.0">
+  <description>: CSV, FSTAT, Genepop or VCF to either gd_snp or gd_genotype</description>
+  <command interpreter="python">
+    #import base64
+    #set species_arg = base64.b64encode(str($species))
+    multiple_to_gd_genotype.py --input '$input' --output '$output' --dbkey '$dbkey' --species '$species_arg' --format '$input_format'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="txt" label="Input dataset" />
+    <param name="input_format" type="select" label="Input format">
+      <option value="csv" selected="true">CSV</option>
+      <option value="fstat">FSTAT</option>
+      <option value="genepop">Genepop</option>
+      <option value="vcf">VCF</option>
+    </param>
+    <param name="species" type="text" label="Focus species">
+      <sanitizer>
+        <valid initial="string.printable"/>
+      </sanitizer>
+    </param>
+    <param name="dbkey" type="genomebuild" label="Reference species" />
+  </inputs>
+  <outputs>
+    <data name="output" format="gd_genotype" />
+  </outputs>
+  <!--
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp" />
+      <param name="p1_input" value="test_in/a.gd_indivs" ftype="gd_indivs" />
+      <param name="lo_coverage" value="0" />
+      <param name="hi_coverage" value="1000" />
+      <param name="low_ind_cov" value="3" />
+      <param name="lo_quality" value="30" />
+      <output name="output" file="test_out/modify_snp_table/modify.gd_snp" />
+    </test>
+  </tests>
+  -->
+  <help>
+**Dataset formats**
+
+The input dataset is formated as VCF, FSTAT, Genepop, or CSV, and is of
+Galaxy datatype text_.  Additionally, the name of the focus species (from
+which the SNPs in the VCF file were obtained) and a reference species
+are required.  The output dataset is in gd_genotype_ or gd_snp_ format.
+
+For input datasets in Genepop, FSTAT, or CSV formats, the program ignores
+population structures as well as alleles other than those encoded by 0,
+1, and 2.  For input datasets in FSTAT format the program accepts up to
+9 digits and for Genepop files only 2 digits.  Chromosome and position
+for each SNPs must be separated by a space or a tab.  Ancestral loci must
+be encoded as 1, derived as 2 and missing as 0.  In all cases ancestral
+and derived SNPs are returned as N.  Alternatively, a dataset in CSV
+format can include nucleotides.  In this case the ancestral nucleotide
+is defined as the most common allele.
+
+.. _text: ./static/formatHelp.html#text
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+
+-----
+
+**What it does**
+
+This tool returns a gd_genotype dataset from VCF formatted files or three
+other conventional population genetics formats (i.e. FSTAT, Genepop,
+and CSV).  For VCF files that include the fields allelic depth, genotype
+quality and genotype ("AD", "GQ", and "GT" respectively in the "FORMAT"
+field) the input dataset can be converted into a gd_snp file.
+
+-----
+
+**Examples**
+
+- If the input format is VCF and includes the fields allelic depth, genotype quality and genotype ("AD", "GQ", and "GT" respectively in the "FORMAT" field).  Focus species name is "aye-aye" and reference species is "Human Feb. 2009 (GRCh37/hg19) (hg19)"::
+
+   #CHROM POS    ID          REF ALT QUAL    FILTER INFO FORMAT         19_F                    19.1_F             19.2_F
+   Chr21  382242 rs134033430 T   C   3296.97 .      .    GT:GQ:DP:PL:AD 1/1:75:26:943,75,0:0,26 1/1:3:1:30,3,0:0,1 ./.
+   Chr21  383680 rs137652597 T   C   2236.62 .      .    GT:GQ:DP:PL:AD 1/1:36:12:436,36,0:0,12 ./.                1/1:3:1:31,3,0:0,1
+   Chr21  387251 .           G   T   2407.88 .      .    GT:GQ:DP:PL:AD 1/1:30:12:394,30,0:0,10 ./.                ./.
+   etc.
+
+- output (gd_snp)::
+
+   #{"column_names":["chr","pos","A","B","Q","1A","1B","1G","1Q","2A","2B","2G","2Q","3A","3B","3G","3Q"],"dbkey":"aye-aye","individuals":[["19_F",6],["19.1_F",10],["19.2_F",14]],"pos":2,"rPos":2,"ref":1,
+   #"scaffold":1,"species":"hg19"}
+   Chr21   382242  T       C       3296.97 0       26      0       75      0       1       0       3       0       0       -1      -1
+   Chr21   383680  T       C       2236.62 0       12      0       36      0       0       -1      -1      0       1       0       3
+   Chr21   387251  G       T       2407.88 0       10      0       30      0       0       -1      -1      0       0       -1      -1
+   etc.
+
+- If the input format is VCF, focus species is "aye-aye" and reference species is "Human Feb. 2009 (GRCh37/hg19) (hg19)"::
+
+   #CHROM POS    ID          REF ALT QUAL    FILTER INFO FORMAT         19_F                    19.1_F             19.2_F
+   Chr21  382242 rs134033430 T   C   3296.97 .      .    GT:GQ:DP:PL    1/1:75:26:943,75,0      1/1:3:1:30,3,0:0,1 ./.
+   Chr21  383680 rs137652597 T   C   2236.62 .      .    GT:GQ:DP:PL    1/1:36:12:436,36,0      ./.                1/1:3:1:31,3,0:0,1
+   Chr21  387251 .           G   T   2407.88 .      .    GT:GQ:DP:PL    1/1:30:12:394,30,0      ./.                ./.
+   etc.
+
+- output (gd_genotype)::
+
+   #{"column_names":["chr","pos","A","B","1G","2G","3G"],"dbkey":"aye-aye","individuals":[["19_F",5],["19.1_F",6],["19.2_F",7]],"pos":2,"rPos":2,"ref":1,"scaffold":1,"species":"hg19"}
+   Chr21   382242  T       C       0       0       -1
+   Chr21   383680  T       C       0       -1      0
+   Chr21   387251  G       T       0       -1      -1
+   etc.
+
+- If the input format is Genepop::
+
+   Microsat on aye-aye from different locations
+        Chr21   382242, Chr21   383680, Chr21   387251
+   POP
+   19_F, 0202 0202 0202
+   Pop
+   19.1_F, 0202 0000 0000
+   19.2_F, 0000 0202 0000
+   etc.
+
+- or the input format is FSTAT::
+
+   300  3  2  1
+   Chr21   382242
+   Chr21   383680
+   Chr21   387251
+      19_F   22 22 22
+      19.1_F   22 00 00
+      19.2_F   00 22 00
+   etc.
+
+- or the input format is CSV::
+
+   ,19_F,19.1_F,19.2_F,...
+   Chr21   382242,22,22,00
+   Chr21   383680,22,00,22
+   Chr21   387251,22,00,00
+   etc.
+
+- output (gd_genotype)::
+
+   #{"column_names":["chr","pos","A","B","1G","2G","3G"],"dbkey":"aye-aye","individuals":[["19_F",5],["19.1_F",6],["19.2_F",7]],"pos":2,"rPos":2,"ref":1,"scaffold":1,"species":"hg19"}
+   Chr21   382242  N       N       0       0       -1
+   Chr21   383680  N       N       0       -1      0
+   Chr21   387251  N       N       0       -1      -1
+   etc.
+
+- if the input format is CSV::
+
+   ,19_F,19.1_F,19.2_F,...
+   Chr21   382242,C,C,N
+   Chr21   383680,C,N,C
+   Chr21   387251,T,N,N
+   etc.
+
+- output (gd_genotype)::
+
+   #{"column_names":["chr","pos","A","B","1G","2G","3G","4G"],"dbkey":"aye-aye","individuals":[["19_F",5],["19.1_F",6],["19.2_F",7],["...",8]],"pos":2,"rPos":2,"ref":1,"scaffold":1,"species":"hg19"}
+   Chr21   382242  C       N       2       2       -1
+   Chr21   383680  T       N       2       -1      2
+   Chr21   387251  T       N       2       -1      -1
+   etc.
+  </help>
+</tool>
