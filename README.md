@@ -1,10 +1,13 @@
 # galaxy-genome-diversity
 
+The code in this GitHub repository is
+associated with the following paper published in GigaScience:
+
+[Bedoya-Reina et al., (2013) Galaxy tools to study genome diversity. GigaScience 2:17](http://www.gigasciencejournal.com/content/2/1/17)
+
 This repository houses the Galaxy wrappers for the Genome Diversity set of
 tools developed by [Webb Miller's group](http://www.bx.psu.edu/miller_lab) at
-the Department of Biology at Penn State.
-
-Each Galaxy tool is dependent on one or more associated Tool Shed packages which
+the Department of Biology at Penn State. Each Galaxy tool is dependent on one or more associated Tool Shed packages which
 provides access to one or more specific binary executables.
 
 ## Folder structure
