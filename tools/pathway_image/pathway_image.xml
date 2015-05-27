@@ -1,0 +1,79 @@
+<tool id="gd_pathway_image" name="Pathway Image" version="1.1.0">
+  <description>: Draw a KEGG pathway, highlighting specified gene modules</description>
+  <requirements>
+    <requirement type="package" version="0.2.5">mechanize</requirement>
+  </requirements>
+  <command interpreter="python">
+    mkpthwpng.py
+      "--input=${input}"
+      "--output=${output}"
+      "--KEGGpath=${pathway}"
+      "--posKEGGclmn=${kpath}"
+      "--KEGGgeneposcolmn=${kgene}"
+  </command>
+  <inputs>
+    <param name="input" type="data" format="tabular" label="Dataset" />
+    <param name="kgene" type="data_column" data_ref="input" label="Column with KEGG gene ID"  />
+    <param name="kpath" type="data_column" data_ref="input" numerical="false" label="Column with KEGG pathways" />
+    <param name="pathway" label="Pathway" type="select">
+      <options from_file="gd.pathways.txt">
+        <column name="value" index="1"/>
+        <column name="name" index="2"/>
+        <filter type="data_meta" ref="input" key="dbkey" column="0" separator="\t" />
+      </options>
+    </param>
+  </inputs>
+  <outputs>
+    <data name="output" format="png" />
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_sap" ftype="gd_sap" />
+      <param name="kpath" value="10" />
+      <param name="kgene" value="12" />
+      <param name="pathway" value="cfa05214" />
+      <output name="output" file="test_out/pathway_image/pathway_image.png" compare="sim_size" delta = "10000" />
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The input and output datasets are in tabular_ format.
+The input dataset must have columns with KEGG gene ID and pathways.
+The output dataset is described below.
+(`Dataset missing?`_)
+
+.. _tabular: ./static/formatHelp.html#tab
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+This tool produces an image of a KEGG pathway, highlighting (in red) the
+modules representing genes in the input dataset.  Click here_ for help
+with reading the pathway map.
+
+NOTE:  a given gene can
+be assigned to multiple modules, and different genes can be assigned to
+the same module.
+
+.. _here: http://www.genome.jp/kegg/document/help_pathway.html
+
+-----
+
+**Example**
+
+- input::
+
+   476153  probably damaging       cfa00230=Purine metabolism.cfa00500=Starch and sucrose metabolism.cfa00740=Riboflavin metabolism.cfa00760=Nicotinate and nicotinamide metabolism.cfa00770=Pantothenate and CoA biosynthesis.cfa01100=Metabolic pathways
+   483960  probably damaging       N
+   610160  possibly damaging       N
+   403657  benign  cfa04010=MAPK signaling pathway.cfa04012=ErbB signaling pathway.cfa04060=Cytokine-cytokine receptor interaction.cfa04144=Endocytosis.cfa04510=Focal adhesion.cfa04540=Gap junction.cfa04810=Regulation of actin cytoskeleton.cfa05160=Hepatitis C.cfa05200=Pathways in cancer.cfa05212=Pancreatic cancer.cfa05213=Endometrial cancer.cfa05214=Glioma.cfa05215=Prostate cancer.cfa05218=Melanoma.cfa05219=Bladder cancer.cfa05223=Non-small cell lung cancer
+   etc.
+
+output showing pathway cfa05214:
+
+.. image:: $PATH_TO_IMAGES/gd_pathway_image.png
+  </help>
+</tool>

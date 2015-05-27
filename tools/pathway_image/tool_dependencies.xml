@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="mechanize" version="0.2.5">
+        <repository  changeset_revision="" name="package_mechanize_0_2_5" owner="peterli" toolshed="http://gigatoolshed.net" />
+    </package>
+</tool_dependency>
