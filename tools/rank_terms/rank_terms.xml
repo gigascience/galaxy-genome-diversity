@@ -1,0 +1,58 @@
+<tool id="gd_rank_terms" name="Rank Terms" version="1.1.0">
+  <description>: Assess the enrichment/depletion of a gene set for GO terms</description>
+  <requirements>
+    <requirement type="package" version="0.1.4">fisher</requirement>
+  </requirements>
+  <command interpreter="python">
+    #set $t_col1_0 = int(str($t_col1)) - 1
+    #set $t_col2_0 = int(str($t_col2)) - 1
+    #set $g_col2_0 = int(str($g_col2)) - 1
+    rank_terms.py --input "$input1" --columnENSEMBLT $t_col1_0 --inExtnddfile "$input2" --columnENSEMBLTExtndd $t_col2_0 --columnGOExtndd $g_col2_0 --statsTest "$stat" --output "$output"
+  </command>
+  <inputs>
+    <param name="input1" type="data" format="tabular" label="Query dataset" />
+    <param name="t_col1" type="data_column" data_ref="input1" label="Column with ENSEMBL transcript codes" />
+    <param name="input2" type="data" format="tabular" label="Background dataset" />
+    <param name="t_col2" type="data_column" data_ref="input2" label="Column with ENSEMBL transcript codes" />
+    <param name="g_col2" type="data_column" data_ref="input2" label="Column with GO terms" />
+    <param name="stat" type="select" label="Statistic for determining enrichment/depletion">
+      <option value="fisher" selected="true">two-tailed Fisher's exact test</option>
+      <option value="hypergeometric">hypergeometric test</option>
+      <option value="binomial">binomial probability</option>
+    </param>
+  </inputs>
+  <outputs>
+    <data name="output" format="tabular" />
+  </outputs>
+  <help>
+**Dataset formats**
+
+All of the input and output datasets are in tabular_ format.
+The query dataset has a column containing ENSEMBL transcript codes for
+the gene set of interest, while the background dataset has one column
+with ENSEMBL transcript codes and another with GO terms, for some
+larger universe of genes.
+The output dataset is described below.
+(`Dataset missing?`_)
+
+.. _tabular: ./static/formatHelp.html#tab
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+Given a query set of genes from a larger background dataset, this tool
+evaluates the over- or under-representation of Gene Ontology terms in the
+query set, using the specified statistical test.
+
+The output contains a row for each GO term, with the following columns:
+
+1. count: the number of genes in the query set that are in this GO category
+2. representation: the percentage of this category's genes (from the background dataset) that appear in the query set
+3. ranking of this term, based on its representation ("1" is highest)
+4. probability of depletion of this GO category in the query dataset
+5. probability of enrichment of this GO category in the query dataset
+6. GO term
+  </help>
+</tool>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="fisher" version="0.1.4">
+        <repository  changeset_revision="" name="package_fisher_0_1_4" owner="peterli" toolshed="http://gigatoolshed.net" />
+    </package>
+</tool_dependency>
