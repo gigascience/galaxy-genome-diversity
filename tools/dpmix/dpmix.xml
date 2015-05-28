@@ -1,0 +1,176 @@
+<tool id="gd_dpmix" name="Admixture" version="1.2.0">
+  <description>: Map genomic intervals resembling specified source populations</description>
+  <requirements>
+    <requirement type="package" version="0.1">gd_c_tools</requirement>
+    <requirement type="package" version="1.2">matplotlib</requirement>
+  </requirements>
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    dpmix.py '$input'
+    #if $input_type.choice == '0'
+      'gd_snp' '$input_type.data_source'
+    #else if $input_type.choice == '1'
+      'gd_genotype' '1'
+    #end if
+    #if $third_pop.choice == '0'
+      #set $ap3_arg = '/dev/null'
+      #set $ap3_name_arg = ''
+    #else if $third_pop.choice == '1'
+      #set $ap3_arg = $third_pop.ap3_input
+      #set $ap3_name_arg = $third_pop.ap3_input.name
+    #end if
+    #if $user_het.choice == '0'
+      #set $het_arg = 'use_installed'
+    #else if $user_het.choice == '1'
+      #set $het_arg = $user_het.het_file
+    #else if $user_het.choice == '2'
+      #set $het_arg = 'use_none'
+    #end if
+    '$switch_penalty'
+    #if $use_reference.choice == '0'
+      '$ap1_input' '$ap1_input.name'
+    #else if $use_reference.choice == '1'
+      '/dev/null' 'reference'
+    #end if
+    '$ap2_input' '$ap2_input.name' '$ap3_arg' '$ap3_name_arg' '$p_input' '$output' '$output2' '$output2.files_path' '$input.dataset.metadata.dbkey' '$input.dataset.metadata.ref' '$GALAXY_DATA_INDEX_DIR' 'gd.heterochromatic.loc' '$ind_arg' '$het_arg' '$add_logs'
+  </command>
+  <inputs>
+    <conditional name="input_type">
+      <param name="choice" type="select" format="integer" label="Input format">
+        <option value="0" selected="true">gd_snp</option>
+        <option value="1">gd_genotype</option>
+      </param>
+      <when value="0">
+        <param name="input" type="data" format="gd_snp" label="SNP dataset">
+          <validator type="unspecified_build" message="This dataset does not have a reference species and cannot be used with this tool" />
+        </param>
+        <param name="data_source" type="select" format="integer" label="Similarity metric">
+          <option value="0">sequence coverage</option>
+          <option value="1" selected="true">estimated genotype</option>
+        </param>
+      </when>
+      <when value="1">
+        <param name="input" type="data" format="gd_genotype" label="Genotype dataset">
+          <validator type="unspecified_build" message="This dataset does not have a reference species and cannot be used with this tool" />
+        </param>
+      </when>
+    </conditional>
+    <conditional name="use_reference">
+      <param name="choice" type="select" format="integer" label="History item or Reference sequence">
+        <option value="0" selected="true">History item</option>
+        <option value="1">Reference sequence</option>
+      </param>
+      <when value="0">
+        <param name="ap1_input" type="data" format="gd_indivs" label="Source population 1 individuals" />
+      </when>
+      <when value="1" />
+    </conditional>
+    <param name="ap2_input" type="data" format="gd_indivs" label="Source population 2 individuals" />
+    <conditional name="third_pop">
+      <param name="choice" type="select" format="integer" label="Include third source population">
+        <option value="0" selected="true">no</option>
+        <option value="1">yes</option>
+      </param>
+      <when value="0" />
+      <when value="1">
+        <param name="ap3_input" type="data" format="gd_indivs" label="Source population 3 individuals" />
+      </when>
+    </conditional>
+    <param name="p_input" type="data" format="gd_indivs" label="Potentially admixed individuals" />
+    <param name="switch_penalty" type="float" min="0" value="10" label="Genotype switch penalty" help="Note:  The best choice for the Genotype switch penalty depends on the density of SNPs and the age of the admixture events.  With 50,000 SNPs in a vertebrate genome, 10.0 might be appropriate, with millions of SNPs, 100.0 might work better.  We recommend experimenting with various thresholds on minimal spacing between SNVs (to increase independence), minimal FST between the source populations (to identify &quot;ancestry informative markers&quot;), and Genotype switch penalty, to reach conclusions that are robust to changes in analysis parameters."/>
+    <conditional name="user_het">
+      <param name="choice" type="select" format="integer" label="Heterochromatin info">
+        <option value="0" selected="true">use installed</option>
+        <option value="1">use your own</option>
+        <option value="2">use none</option>
+      </param>
+      <when value="0" />
+      <when value="1">
+        <param name="het_file" type="data" format="txt" label="Heterochromatin dataset" />
+      </when>
+    </conditional>
+    <param name="add_logs" type="select" format="integer" label="Probabilities">
+      <option value="1" selected="true">add logs of probabilities</option>
+      <option value="0">add probabilities</option>
+    </param>
+  </inputs>
+  <outputs>
+    <data name="output" format="tabular" />
+    <data name="output2" format="html" />
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="test_in/sample.gd_snp" ftype="gd_snp" />
+      <param name="ap1_input" value="test_in/a.gd_indivs" ftype="gd_indivs" />
+      <param name="ap2_input" value="test_in/b.gd_indivs" ftype="gd_indivs" />
+      <param name="p_input" value="test_in/c.gd_indivs" ftype="gd_indivs" />
+      <param name="data_source" value="0" />
+      <param name="switch_penalty" value="10" />
+      <output name="output" file="test_out/dpmix/dpmix.tabular" />
+      <output name="output2" file="test_out/dpmix/dpmix.html" ftype="html" compare="diff" lines_diff="2">
+        <extra_files type="file" name="dpmix.pdf" value="test_out/dpmix/dpmix.pdf" compare="sim_size" delta = "10000" />
+        <extra_files type="file" name="misc.txt" value="test_out/dpmix/misc.txt" />
+      </output>
+    </test>
+  </tests>
+  <help>
+**Dataset formats**
+
+The input datasets are in gd_snp_, gd_genotype_, and gd_indivs_ formats.  It is important for
+the Individuals datasets to have unique names and for there to be no overlap
+between the two populations.  Rename these datasets if
+needed to make them unique.  
+There are two output datasets, one tabular_ and one composite. (`Dataset missing?`_)
+
+.. _gd_snp: ./static/formatHelp.html#gd_snp
+.. _gd_genotype: ./static/formatHelp.html#gd_genotype
+.. _gd_indivs: ./static/formatHelp.html#gd_indivs
+.. _tabular: ./static/formatHelp.html#tab
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+The user specifies two or three source populations (i.e., sources
+for chromosomes) and a set of potentially admixed individuals, and
+chooses between the sequence coverage or the estimated genotypes to
+measure the similarity of genomic intervals in admixed individuals to
+the three classes of source chromosomes.  The user also specifies a
+"switch penalty", controlling the strength of evidence needed to switch
+between source populations as the the program scans along a chromosome.
+Choice of picksan appropriate value depends on the number of SNPs and, to
+a lesser extent, on the time since the admixture events.  With several
+million SNPs genome-wide, reasonable values might fall between 10
+and 100.  If there are 3 source populatons, then for each potentially
+admixed individual the program divides the genome into six "genotypes":
+
+1. homozygous for the first source population (i.e., both chromosomes from that population),
+2. homozygous for the second source population,
+3. homozygous for the third source population,
+4. heterozygous for the first and second populations (i.e., one chromosome from each),
+5. heterozygous for the first and third populations, or
+6. heterozygous for the second and third populations.
+
+Parts of a reference chromosome that are labeled as "heterochromatic"
+are given the "non-genotype" 0.  With two source populations, only
+"genotypes" 1, 2 and 3 are possible, where 3 now means heterozygous in
+the two source populations.
+
+There are two output datasets generated.  A tabular dataset with chromosome,
+start, stop, and pairs of columns containing the "genotypes" from above
+and label from the admixed individual.  The second dataset is a composite
+dataset with general information from the run and a link to a pdf which
+graphically shows the source population along each of the chromosomes.
+The second link is to a text file with summary information of the 
+"genotypes" over the whole genome.
+  </help>
+</tool>
