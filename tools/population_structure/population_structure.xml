@@ -1,5 +1,8 @@
 <tool id="gd_population_structure" name="Ancestry" version="1.0.0">
   <description>: Characterize ancestries w.r.t. inferred ancestral populations</description>
+  <requirements>
+    <requirement type="package" version="1.23">admixture</requirement>
+  </requirements>
   <command interpreter="python">
     population_structure.py "$input" "${input.extra_files_path}/admix.ped" "$output" "$output.files_path" "$populations"
   </command>
