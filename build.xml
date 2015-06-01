@@ -454,6 +454,7 @@
         </copy>
         <copy file="${tools.dir}/OrderedDict.py" todir="${build.dir}/filter_gd_snp"/>
         <copy file="${tools.dir}/Population.py" todir="${build.dir}/filter_gd_snp"/>
+        <copy file="${tools.dir}/gd_util.py" todir="${build.dir}/filter_gd_snp"/>
 
         <mkdir dir="${build.dir}/filter_gd_snp/test-data"/>
         <mkdir dir="${build.dir}/filter_gd_snp/test-data/test_in"/>
