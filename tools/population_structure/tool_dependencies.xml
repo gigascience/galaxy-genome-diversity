@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="admixture" version="1.23">
+        <repository  changeset_revision="" name="package_admixture_1_23" owner="peterli" toolshed="http://gigatoolshed.net" />
+    </package>
+</tool_dependency>
