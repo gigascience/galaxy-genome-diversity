@@ -22,6 +22,16 @@
         <mkdir dir="${build.dir}"/>
     </target>
 
+    <target name="package_admixture_1_23" depends="build">
+        <mkdir dir="${build.dir}/package_admixture_1_23"/>
+        <copy todir="${build.dir}/package_admixture_1_23">
+            <fileset dir="${dependencies.dir}/package_admixture_1_23"/>
+        </copy>
+        <tar destfile="${build.dir}/package_admixture_1_23.tar" basedir="${build.dir}/package_admixture_1_23"/>
+        <gzip destfile="${build.dir}/package_admixture_1_23.tar.gz" src="${build.dir}/package_admixture_1_23.tar"/>
+        <delete file="${build.dir}/package_admixture_1_23.tar"/>
+    </target>
+
     <target name="package_atlas_3_10" depends="build">
         <mkdir dir="${build.dir}/package_atlas_3_10"/>
         <copy todir="${build.dir}/package_atlas_3_10">
