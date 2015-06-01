@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <tool_dependency>
+    <package name="atlas" version="3.10">
+        <repository  changeset_revision="" name="package_atlas_3_10" owner="peterli" toolshed="http://gigatoolshed.net" />
+    </package>
     <package name="eigensoft" version="5.0.1">
         <repository  changeset_revision="" name="package_eigensoft_5_0_1" owner="peterli" toolshed="http://gigatoolshed.net" />
     </package>

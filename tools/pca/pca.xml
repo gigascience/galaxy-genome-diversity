@@ -1,6 +1,7 @@
 <tool id="gd_pca" name="PCA" version="1.0.0">
   <description>: Principal Components Analysis of genotype data</description>
   <requirements>
+    <requirement type="package" version="3.10">atlas</requirement>
     <requirement type="package" version="5.0.1">eigensoft</requirement>
     <requirement type="package" version="0.1">gd_c_tools</requirement>
     <!--
