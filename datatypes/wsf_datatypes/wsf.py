@@ -5,7 +5,7 @@ SnpFile datatype
 import galaxy.datatypes.data
 import tempfile
 import os
-import simplejson
+import json
 from galaxy import util
 from galaxy.datatypes.sniff import *
 from galaxy.datatypes.tabular import Tabular
