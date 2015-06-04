@@ -3,6 +3,9 @@
     <package name="gd_c_tools" version="0.1">
         <repository  changeset_revision="" name="package_gd_c_tools_0_1" owner="peterli" toolshed="http://gigatoolshed.net" />
     </package>
+    <package name="libpng" version="1.6.7">
+        <repository  changeset_revision="" name="package_libpng_1_6_7" owner="peterli" toolshed="http://gigatoolshed.net" />
+    </package>
     <package name="matplotlib" version="1.2">
         <repository  changeset_revision="" name="package_matplotlib_1_2" owner="peterli" toolshed="http://gigatoolshed.net" />
     </package>
